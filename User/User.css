@@ -1,0 +1,1842 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body, html{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+button{
+    font-family: sans-serif;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: url("IMG/bg.jpeg") center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+.load{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    content: "";
+    background: black;
+    animation: load 2s  forwards;
+    z-index: 1000;
+}
+@keyframes load{
+    from{
+        width: 0%;
+        background: rgba(0,0,0,.6);
+    }
+    to{
+        width: 100%;
+        background: rgba(0,0,0,1);
+    }
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+}
+.logo{
+    font-family: 'Advent Pro', sans-serif;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    letter-spacing: 10px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    transition: .3s;
+}
+.logo:hover{
+    color: rgb(243, 219, 0);
+}
+.mainNav{
+    margin-left: auto;
+    height: 100%;
+    width: 30%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+aside{
+    position: absolute;
+    width: 150px;
+    height: calc(100% - 50px);
+    top: 50px;
+}
+.sideMenu{
+    position: relative;
+    left: -100%;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s;
+    z-index: 2;
+}
+.sideMenu::after{
+    position: absolute;
+    content: "Menu";
+    color: white;
+    height: 20px;
+    width: auto;
+    top: 45%;
+    right: -30%;
+    background: rgba(0,0,0,.8);
+    border-radius: 0px 0px 20px 20px;
+    padding: 5px 10px;
+    transform: rotate(-90deg);
+}
+.sideMenu:hover{
+    left: 0%;
+}
+.side-item{
+    margin: 40px 0px;
+    padding: 5px;
+    width: calc(100% - 10px);
+    text-align: center;
+}
+.side-item:hover{
+    box-shadow: inset 0px 0px 10px  black;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    font-size: 16px;
+
+}
+.link1{
+    transition: .2s;
+    cursor: pointer;
+    outline: none;
+}
+.link1:hover{
+color: rgb(243, 219, 0);
+}
+.link2{
+    transition: .1s;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+}
+.link2:hover{
+text-shadow: 0px 0px 2px black;
+color: rgb(243, 219, 0);
+}
+main{
+    height: calc(100% - 50px);
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50px;
+}
+.hlavnaStranka{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,3, 1fr);
+    grid-auto-rows: repeat(2, 1fr);
+    height: calc(100% - 80px);
+    top: 30px;
+    width: 70%;
+    position: absolute;
+    grid-auto-flow: initial;
+    margin-top: 40px;
+    grid-column-gap: 5px;
+}
+.fhi, .ais, .moodle{
+    height: 200px;
+    width: 300px;
+    position: relative;
+    box-shadow: 5px 5px 5px black;
+    font-family: 'Advent Pro', sans-serif;
+}
+.stranka{
+    position: absolute;
+    top: 100%;
+    height: auto;
+    width: calc(100% - 10px);
+    color: white;
+    background: black;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: default;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.fhi a, .ais a, .moodle a{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.fhi a:hover, .ais a:hover, .moodle a:hover{
+background: rgba(0,0,0,.4);
+}
+.fhi a:hover ~ .stranka:nth-child(2){
+    color: rgb(162, 0, 255);
+}
+.ais a:hover ~ .stranka:nth-child(2){
+    color: rgb(0, 15, 226);
+}
+.moodle a:hover ~ .stranka:nth-child(2){
+    color: rgb(0, 162, 255);
+}
+.fhi{
+background: url("IMG/fhi.png") center;
+background-size: cover;
+grid-row: 3;
+}
+.ais{
+background: url("IMG/ais.png") center;
+background-size: cover;
+grid-row: 3;
+}
+.moodle{
+background: url("IMG/moodle.png") center;
+background-size: cover;
+grid-row: 3;
+}
+.box{
+    position: absolute;
+    height: 600px;
+    width: 1000px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+    display: none;
+    opacity: 0;
+}
+.hodnotenie{
+    position: absolute;
+    height: 200px;
+    width: 500px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+    opacity: 0;
+    flex-direction: column;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+}
+.nadpis td{
+    padding: 10px;
+    box-shadow: inset 0px 0px 10px black;
+    text-align: center;
+    width: auto;
+    height: 18px !important;
+    font-weight: bold;
+}
+.hodnotenieZobraz td{
+    padding: 10px;
+    box-shadow: inset 0px 0px 10px black;
+    text-align: center;
+    width: auto;
+    background: white;
+    height: 30px;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+.zadania{
+    position: absolute;
+    height: 600px;
+    width: 1000px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+    opacity: 0;
+    flex-direction: row;
+    display: none;
+}
+.infoZadania{
+    height: calc(100% - 100px);
+    width: calc(100% - 100px);
+    background: white;
+    padding: 50px;
+    position: absolute;
+    z-index: 2;
+    text-align: justify;
+    opacity: 0;
+    transition: 0.4s;
+    display: none;
+    box-shadow: inset 0px 0px 10px black;
+}
+.infoZadania h1{
+    text-align: center;
+}
+.tabulka1, .tabulka2{
+    position: absolute;
+    background: white;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    z-index: 2;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 0px 10px black;
+    opacity: 0;
+    display: none;
+    transition: .4s;
+}
+.tabulka1 td, .tabulka2 td{
+    height: 40px;
+    padding: 5px;
+    box-shadow: inset 0px 0px 10px black;
+    text-align: center;
+    background: white;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+.tabulka1 th, .tabulka2 th{
+    height: 30px;
+    padding: 5px;
+    box-shadow: inset 0px 0px 10px black;
+    text-align: center;
+    background: #414141;
+    color: white;
+}
+ .vybratZadanie{
+    grid-column: 1/3;
+    position: relative;
+    height: auto;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 255, 255, .8);
+    text-align: center;
+    box-shadow: 5px 5px 5px black;
+    padding: 10px;
+    display: flex;
+    opacity: 1;
+    transition: .4s;
+} 
+.vybratZadanie h1{
+    margin-bottom: 30px;
+    font-family: 'Advent Pro', sans-serif;
+}
+.zadanie{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+.test{
+    grid-row: 1;
+    grid-column: 3/4;
+    position: relative;
+    height: auto;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    box-shadow: 5px 5px 5px black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: .4s;
+}
+.test h1{
+    font-family: 'Advent Pro', sans-serif;
+}
+.notest{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.btn-test{
+    height: 50px;
+    width: 120px;
+    background: none;
+    color: black;
+    border: solid 2px black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0px 10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    display: none;
+}
+.btn-test:hover{
+    background: black;
+    color: white;
+}
+.testBOX{
+    position: absolute;
+    min-height: 100vh;
+    padding: 20px 0px;
+    width: 100%;
+    background: url("IMG/bg.jpeg") center;
+    background-attachment: fixed;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.otazka1, .otazka2, .otazka3, .otazka4{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    border: solid 1px rgb(0, 0, 0);
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    word-wrap: wrap;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.otazka1 input, .otazka2 input, .otazka3 input, .otazka4 input{
+    margin-right: 5px;
+    cursor: pointer;
+}
+.otazka1 p, .otazka2 p, .otazka3 p, .otazka4 p{
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+.otazka1 li, .otazka2 li, .otazka3 li, .otazka4 li{
+    margin-bottom: 5px;
+}
+.test-btn{
+    height: 30px;
+    width: 320px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: white;
+    color: black;
+    border: black;
+    cursor: pointer;
+    outline: none;
+}
+.test-btn:hover{
+    box-shadow: inset 0px 0px 15px #3f3f3f;
+}
+.timer{
+    position: fixed;
+    background: rgba(0,0,0,.8);
+    top: 4%;
+    left: 5%;
+    font-size: 20px;
+    font-weight: bold;
+    border: solid 1px white;
+    padding: 5px;
+    box-shadow: 0px 0px 5px white;
+    color: white;
+}
+.odovzdatZadanie{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background: white;
+    z-index: 2;
+    display: none;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    flex-direction: column;
+    top: 8%;
+    left: 60%;
+    box-shadow: 5px 5px 5px black;
+    border: solid 1px black;
+    transition: .3s;
+}
+.odovzdatZadanie::before{
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+    border: solid 1px black;
+    top: -5%;
+    left: 50%;
+    z-index: 0;
+    background: radial-gradient(rgb(107, 0, 0), rgb(255, 0, 0));
+}
+.closeOdovzdanie{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.zadania-info, .zadania-vyber, .zadania-tab1,.zadania-tab2, .odovzdat-zadanie{
+    height: 30px;
+    width: 150px;
+    background: #3b3b3b;
+    color: white;
+    margin-bottom: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 5px 10px;
+    font-weight: 600;
+}
+.zadania-info:hover, .zadania-vyber:hover, .zadania-tab1:hover,.zadania-tab2:hover, .odovzdat-zadanie:hover{
+    box-shadow: inset 0px 0px 5px black;
+}
+.noveZadanie{
+    height: 30px;
+    width: 200px;
+    border: none;
+    box-shadow: inset 0px 0px 2px black;
+    border-radius: 10px;
+    margin-right: 10px;
+    outline: none;
+    padding-left: 10px;
+}
+.zadanieNew{
+    width: auto;
+    padding: 0px 20px;
+    height: 28px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background: #181818;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+.zobrazZadania{
+    position: absolute;
+    height: 85%;
+    width: 100%;
+    bottom: 0;
+    box-shadow: inset 0px 0px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+.zadaniaZoznam, .zadaniaZoznam2{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0%;
+    position: absolute;
+    padding: 10px;
+}
+.zadaniaZoznam td, .zadaniaZoznam2 td{
+    width: auto;
+    word-wrap: wrap;
+    height: 50px;
+    font-size: 16px;
+    text-align: left;
+    color: black;
+    padding: 5px;
+    box-shadow: inset 0px 0px 5px black;
+}
+.zadaniaZoznam th, .zadaniaZoznam2 th{
+    height: 40px;
+    box-shadow: inset 0px 0px 5px black;  
+    padding: 5px;
+    text-align: center;
+    background: #3b3b3b;
+    color: white;
+}
+.chat-area{
+    position: absolute;
+    height: 95%;
+    width: 100%;
+    top: 5%;
+    left: 0%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid rgba(0,0,0,.8);
+}
+.message-window{
+ position: relative;
+ grid-column: 1/3;
+ grid-row: 1/4;
+ background: white;
+}
+.send-message{
+    padding-left: 10px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 50px;
+    width: calc(100% - 10px);
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px black;
+}
+.largechatInput{
+    padding-left: 5px;
+    border-radius: 20px;
+    height: 25px;
+    width: 600px;
+    border: none;
+    outline: none;
+}
+.view-message{
+    height: calc(100% - 70px);
+    background: white;
+    width: calc(100% - 20px);
+    overflow: auto;
+    padding: 10px;
+}
+.message-large{
+    border: 1px solid black;
+    padding: 10px;
+    background: rgba(0,0,0,.8);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.sender{
+    color: white;
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: right;
+    border-bottom: 1px solid white;
+}
+.message-text{
+    text-align: justify;
+    color: white;
+    margin-bottom: 5px;
+}
+.time{
+    font-size: 12px;
+    color: white;
+    text-align: right;
+}
+.largechatBtn{
+    background: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 15px;
+    width: 40px;
+    color: black;
+    margin-left: 3px;
+    cursor: pointer;
+    transition: .4s;
+}
+.online{
+    grid-column: 3/3;
+    grid-row: 1/4;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: none;
+}
+.onlineScroll{
+    width: calc(95% - 15px);
+    height: calc(95% - 10px);
+    padding:5px;
+    text-align: center;
+    overflow: auto;
+}
+.person{
+    list-style: none;
+    border: solid 2px white;
+    padding: 4px;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.person i{
+    float: left;
+    background: transparent;
+}
+.online, .offline{
+    margin-top: 1px;
+}
+.online{
+    color: green;
+    text-shadow: 0px 0px 3px green;
+}
+.offline{
+    color: red;
+    text-shadow: 0px 0px 3px red;
+}
+.btn, .btnZ, .closeInfo, .closeTabulka1, .closeTabulka2, .hideHodnotenie{
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    background: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 24px;
+    transition: .3s;
+    background: none;
+    outline: none;
+}
+.btnMin{
+    position: absolute;
+    right: 65px;
+    top: 5px;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+    outline: none;
+}
+.btnMax{
+    position: absolute;
+    right: 35px;
+    top: 5px;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+    outline: none;
+}
+.btn:hover, .btnZ:hover, .closeInfo:hover, .closeTabulka1:hover, .closeTabulka2:hover, .hideHodnotenie:hover{
+    animation: pop .3s linear forwards;
+    color: red;
+}
+.btnMin:hover{
+    animation: pop .3s linear forwards;
+}
+.btnMax:hover{
+    animation: pop .3s linear forwards;
+}
+@keyframes pop{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.chat-box{
+    position: fixed;
+    bottom: -100%;
+    right: 0%;
+    width: auto;
+    height: 310px;
+    background: white;
+    transition: 1s;
+}
+.chat-nav{
+    position: absolute;
+    top: -24%;
+    z-index: 500;
+    right: 0;
+    height: 20px;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    border-bottom: solid 1px black;
+    border-radius: 5px 5px 0px 0px;
+}
+.closeChat{
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: .1s;
+}
+.closeChat:hover{
+    color: red;
+}
+
+.chat{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    padding: 5px 0px;
+    cursor: pointer;
+    height: 30px;
+    width: 260px;
+    background: rgba(0,0,0,.8);
+    color: white;
+    border: none;
+    z-index: 100;
+    transition: .3s;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: none;
+}
+.fa-envelope{
+    margin-right: 3px;
+}
+.chat:hover{
+    background: black;
+}
+.chat-room{
+    position: relative;
+    bottom: 55px;
+    right: 0%;
+    width: 250px;
+    height: 300px;
+    background: #fff;
+    text-align: justify;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    word-wrap: wrap;
+    padding: 5px 5px;   
+    background: white;
+    display: none;
+}
+.chat-input{
+    border-top: 1px solid black;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 24px;
+}
+.input{
+    padding-left: 3px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 22px;
+    padding-left: 5px;
+    width: 80%;
+    border: 1px solid grey;
+    border-radius: 0px 10px 10px 0px;
+    outline: none;
+}
+.send{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    height: 24px;
+    background: none;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 10px 0px 0px 10px;
+    width: 17%;
+    cursor: pointer;
+    transition: .3s;
+    outline: none;
+}
+.fa-paper-plane:hover{
+    transform: rotate(10deg);
+}
+.message{
+    border: 1px solid black;
+    padding: 0px 10px;
+    word-wrap: wrap;
+    padding: 3px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+}
+.profile{
+    position: absolute;
+    height: 600px;
+    width: 500px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+    display: none;
+    opacity: 0; 
+}
+.btnProf{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 24px;
+    transition: .3s;
+    background: none;
+    outline: none;
+}
+.btnProfSettings{
+    position: absolute;
+    right: 35px;
+    top: 7px;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+    outline: none;
+}
+.profileboard{
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 100%;
+    height: 95%;
+    background: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.photo{
+    position: relative;
+    grid-row: 1/3;
+    grid-column: 1/3;
+    background: transparent;
+}
+.profile-image{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    background: transparent;
+    border-radius: 50%;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150px;
+    border: solid 3px black;
+}
+.desc{
+    position: relative;
+    grid-row: 2/3;
+    grid-column: 1/3;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr 40px;
+}
+.info{
+    margin-top: 60px;
+    grid-column: 1/2;
+}
+.premenne, .premenne2{
+    margin-top: 60px;
+    grid-column: 2/3;
+    text-align: left;
+}
+.premenne li, .premenne2 li{
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.info li{
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    font-weight: 600;
+}
+.kruzok{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: url("/Elearning/User/IMG/bg.jpg") center;
+    background-size: cover;
+    z-index: 500;
+    transition: .5s;
+}
+@keyframes light{
+    0%{
+        box-shadow: 0px 0px 0px black;
+    }
+    50%{
+        box-shadow: 0px 0px 10px black;
+    }
+    100%{
+        box-shadow: 0px 0px 0px black;
+    }
+}
+#zadanieKruzku{
+    color: rgb(156, 156, 156);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+    border-left: none;
+    width: 300px;
+    height: 400px;
+    border-radius: 0px 20px 20px 0px;
+    background: rgba(0,0,0,.8);
+    animation: light 3s linear infinite;
+}
+#zadanieKruzku h2{
+    text-align: center;
+    position: absolute;
+    top: 5%;
+}
+.textkruzok{
+    color: rgb(156, 156, 156);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+    border-right: none;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(0,0,0,.8);
+    animation: light 3s linear infinite;
+    padding: 0px 10px;
+    text-align: center;
+}
+.cislokruzku{
+    background: rgba(255,255,255,.8);
+    color: black;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    outline: none;
+    text-align: center;
+}
+.zadatKruzok{
+    margin-top: 40px;
+    background: rgba(255,255,255,.8);
+    color: black;
+    font-weight: 800;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s;
+}
+.zadatKruzok:hover{
+    background: rgb(156, 156, 156);;
+}
+.fa-check:hover{
+    color: rgb(5, 190, 5);
+}
+.btnProf:hover{
+    animation: pop .3s linear forwards;
+    color: red;
+}
+.btnProfSettings:hover{
+    animation: pop .3s linear forwards;
+}
+::-webkit-scrollbar{
+    background: none;
+    width: 4px;
+}
+::-webkit-scrollbar-thumb{
+    background: black;
+}
+.mobilMenu{
+    display: none;
+}
+.mobileOverlayMenu{
+    display: none;
+}
+.back{
+    display: none;
+}
+.backChat{
+    display: none;
+}
+.mobile-chat{
+    display: none;
+}
+.mobile-profile{
+    display: none;
+}
+.backProf, .backChat, .backZadania, .backInfo, .backTbl1, .backTbl2, .odovzdatMZ, .vybratbackMZ{
+    display: none;
+}
+.mobile-zadania{
+    display: none;
+}
+.hodnotenieMobile{
+    display: none;
+}
+.backHodnotenie{
+    display: none;
+}
+.backZadania{
+    display: none;
+}
+@media (max-width: 500px){
+    .hodnotenieMobile{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        right: -100%;
+        transition: .4s;
+        box-shadow: inset 0px 0px 10px white;
+    }
+    .hodnotenieMobile h1{
+        position: absolute;
+        top: 5%;
+    }
+    .hodnotenieZobrazM td{
+        box-shadow: inset 0px 0px 5px white;
+    }
+    .vybratZadanie{
+        display: none;
+    }
+    .zadania{
+        display: none;
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    .zadaniaZoznam2{
+        display: none;
+    }
+    .mobile-zadania{
+        position: absolute;
+        right: -100%;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        transition: .4s;
+        box-shadow: inset 0px 0px 10px white;
+    }
+    .zadaniaZoznam td{
+        color: white;
+        text-align: center;
+    }
+    .zadania-menu{
+        top: 30px;
+        transform: scale(0);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        z-index: 4;
+        background: rgba(0,0,0,.8);
+        transition: .3s;
+        transform-origin: top;
+        box-shadow: inset 0px 0px 5px grey;
+    }
+    .btnZadania{
+        width: 100%;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    .zadaniaShowMenu{
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        background: rgba(0,0,0,.8);
+        font-weight: 800;
+        border: none;
+        height: 30px;
+        width: 100%;
+        color: white;
+        outline: none;
+        cursor: pointer;
+    }
+    .infoZadaniaMobile{
+        opacity: 0;
+        display: none;
+        position: absolute;
+        min-height: 100vh;
+        padding: 10px;
+        width: calc(100% - 20px);
+        background: white;
+        z-index: 3;
+        word-wrap: wrap;
+        text-align: justify;
+        transition: .4s;
+    }
+    .infoZadaniaMobile h1{
+        text-align: center;
+    }
+    .infoZadaniaMobile a{
+        font-size: 12px;
+    }
+    .TabulkaM1{
+        width: 100%;
+        height: 100%;
+        color: black;
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        top: 0;
+        z-index: 3;
+        background: white;
+        transition: .4s;
+    }
+    .TabulkaM1 table{
+        width: calc(100% - 100px);
+        }
+    .TabulkaM1 table th{
+    box-shadow: inset 0px 0px 3px black;
+    font-size: 10px;
+    padding: 10px 0px;
+    }
+    .TabulkaM1 table td{
+        width: 100%;
+        color: black;
+        font-size: 10px;
+        word-wrap: wrap;
+        padding: 0px 3px;
+        height: 70px;
+        box-shadow: inset 0px 0px 3px black;
+    }
+    .TabulkaM2{
+        display: none;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        color: black;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        z-index: 3;
+        background: white;
+        transition: .4s;
+    }
+    .TabulkaM2 table{
+        width: calc(100% - 100px);
+        }
+    .TabulkaM2 table th{
+    box-shadow: inset 0px 0px 3px black;
+    font-size: 10px;
+    padding: 10px 0px;
+    }
+    .TabulkaM2 table td{
+        width: 100%;
+        color: black;
+        font-size: 10px;
+        word-wrap: wrap;
+        padding: 0px 3px;
+        height: 70px;
+        box-shadow: inset 0px 0px 3px black;
+    }
+    .mobile-chat{
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        display: none;
+        z-index: 1;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        display: flex;
+        flex-direction: column;
+        right: -100%;
+        transition: .5s;
+    }
+    .backChat, .backZadania, .backInfo, .backTbl1, .backTbl2, .odovzdatMZ, .backHodnotenie, .vybratbackMZ{
+        display: none;
+        border: none;
+        background: transparent;
+    }
+    .backZadania .fa-times, .backInfo .fa-times, .backTbl1 .fa-times, .backTbl2 .fa-times, .odovzdatMZ .fa-fimes, .vybratbackMZ .fa-times{
+        color: white;
+        font-size: 30px;
+    }
+    .fa-times{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        color: white;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 30px;
+    }
+    .backChat .fa-times{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        color: white;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 30px;
+    }
+    .backHodnotenie .fa-times{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        color: white;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 30px;
+    }
+    .chatMobile-zone{
+        position: absolute;
+        height: 95%;
+        bottom: 5%;
+        width: 100%;
+        background: rgba(0,0,0,.8);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: auto;
+    }
+    .message-large{
+        height: auto;
+        width: calc(250px - 20px);
+        border: solid 1px white;
+        border-radius: 10px;
+        color: white;
+        margin: 10px 0px;
+        padding: 10px;
+    }
+    .odosielatelMobil{
+        text-align: right;
+        font-size: 12px;
+        border-bottom: 1px solid white;
+        margin-bottom: 5px;
+        padding-bottom: 3px;
+    }
+    .textSpravy{
+        line-height: 20px;
+        text-align: justify;
+    }
+    .chatMTime{
+        text-align: right;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .mobileMessage{
+        display: flex;
+        flex-direction: row;;
+        position: absolute;
+        bottom: 0;
+        height: 5%;
+        width: 100%;
+        background: rgba(0,0,0,.8);
+    }
+    .sendMobileMessage{
+        position: absolute;
+        width: 80%;
+        border-radius: 20px;
+        border: none;
+        padding-left: 10px;
+        height: 30px;
+        outline: none;
+        bottom: 20%;
+        left: 1%;
+    }
+    .odoslatMobil{
+        width: 15%;
+        position: absolute;
+        bottom: 20%;
+        right: 1%;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 20px;
+        font-size: 20px;
+        color: white;
+        background: transparent;
+    }
+      /*  */
+    .logo:hover{
+        color: white;
+    }
+    .container{
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        box-shadow: inset 0px 0px 20px white;
+    }
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .mobilMenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .mobile-menu-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background: radial-gradient(black, rgb(32, 32, 32));
+        opacity: .9;
+        margin: 15px 0px;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    .fas{
+        color: #3F3F3F;
+        font-size: 40px;
+    }
+    .mainNav{
+        display: none;
+    }
+    .sideMenu{
+        display: none;
+    }
+    .mobileOverlayMenu{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        right: -100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        box-shadow: inset 0px 0px 20px white;
+        list-style: none;
+        transition: .5s;
+    }
+    .overlayMenu-item{
+        margin: 30px 0px;
+    }
+    .linkM{
+        background: radial-gradient(black, rgb(59, 59, 59));
+        color: white;
+        height: 80px;
+        width: 300px;
+        border: grey 1px solid;
+        font-size: 30px;
+        cursor: pointer;
+        outline: none;
+        text-transform: uppercase;
+    }
+    .back{
+        display: none;
+        opacity: 1;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: none;
+        color: white;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition-delay: .5s;
+        transition: .3s;
+        font-size: 30px;
+    }
+    /* profil*/
+    .mobile-profile{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        right: -100%;
+        z-index: 2;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        box-shadow: inset 0px 0px 20px white;
+        display: grid;
+        grid-template-rows: 200px 1fr;
+        transition: .5s;
+    }
+    .avatar{
+        grid-row: 1/2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fa-user-graduate{
+        font-size: 120px;
+        border-radius: 50%;
+        color: white;
+    }
+    .mobileDesc{
+        margin-top: 50px;
+        grid-row: 2/3;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        color: white;
+    }
+    table{
+        margin-top: 20px;
+    }
+    td{
+        height: 30px;
+        font-size: 16px;
+        padding: 0px 20px;
+        color: white;
+    }
+    .backProf{
+        display: none;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .backProfile{
+
+        color: white;
+        font-size: 30px;
+    }
+    .tvojeZadanie{
+        position: absolute;
+        width: 100%;
+        top: 6%;
+        background: rgb(83, 83, 83);
+        box-shadow: 5px 5px 5px black;
+        height: 60px;
+        z-index: 3;
+    }
+    .tvojezadanieP{
+        width: calc(100% - 6px);
+        padding: 3px;
+        text-align: center;
+        color: white;
+        height: auto;
+        font-size: 12px;
+    }
+    .textkruzok{
+        display: none;
+    }
+    #zadanieKruzku{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 1200px){
+    .mainNav{
+        width: 50%;
+    }
+}
+@media (max-width: 375px), (max-height: 820px){
+    .spravyMobil{
+        width: 300px;
+    }
+ .mobile-menu-item{
+     margin: 40px 0px;
+     height: 150px;
+     width: 150px;
+ }
+ .overlayMenu-item{
+    margin: 30px 0px;
+}
+.linkM{
+    background: radial-gradient(black, rgb(59, 59, 59));
+    color: white;
+    height: 100px;
+    width: 350px;
+    border: grey 1px solid;
+    font-size: 30px;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+}
+}
+@media (max-width: 450px){
+    .TabulkaM1 table{
+        width: 100%;
+        }
+    .TabulkaM1 table td{
+         width: auto;
+         padding: 0px 5px;
+         }
+         .TabulkaM2 table{
+            width: 100%;
+            }
+        .TabulkaM2 table td{
+             width: auto;
+             padding: 0px 5px;
+             }
+    .spravyMobil{
+        width: 340px;
+    }
+    .mobile-menu-item{
+        margin: 35px 0px;
+        height: 150px;
+        width: 150px;
+    }
+    .back{
+        font-size: 30px;
+        top: 5px;
+    }
+        /* profil*/
+        .mobile-profile{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 20px white;
+            display: grid;
+            grid-template-rows: 300px 1fr;
+        }
+        .avatar{
+            grid-row: 1/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-user-graduate{
+            font-size: 220px;
+            border-radius: 50%;
+            color: white;
+        }
+        .mobileDesc{
+            grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        table{
+            margin-top: 40px;
+        }
+        td{
+            height: 30px;
+            font-size: 20px;
+            padding: 0px 20px;
+            color: white;
+        }
+        .info li{
+            font-size: 16px;
+
+        }
+        .premenne2 li{
+            font-size: 16px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+}
+@media (max-width: 400px){
+    .mobile-menu-item{
+        margin: 20px 0px;
+        height: 130px;
+        width: 130px;
+    }
+    .overlayMenu-item{
+        margin: 30px 0px;
+    }
+    .linkM{
+        background: radial-gradient(black, rgb(59, 59, 59));
+        color: white;
+        height: 70px;
+        width: 250px;
+        font-size: 20px;
+    }
+    .back{
+        font-size: 30px;
+        top: 5px;
+    }
+        /* profil*/
+        .mobile-profile{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 20px white;
+            display: grid;
+            grid-template-rows: 300px 1fr;
+        }
+        .avatar{
+            grid-row: 1/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-user-graduate{
+            font-size: 200px;
+            border-radius: 50%;
+            color: white;
+        }
+        .mobileDesc{
+            grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        table{
+            margin-top: 20px;
+        }
+        td{
+            height: 30px;
+            font-size: 16px;
+            padding: 0px 20px;
+            color: white;
+        }
+        .info li{
+            font-size: 14px;
+
+        }
+        .premenne2 li{
+            font-size: 14px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+}
+@media (max-width: 350px){
+    .TabulkaM2 table{
+        width: calc(100% - 100px);
+        }
+    .TabulkaM2 table{
+            width: calc(100% - 100px);
+            }
+    .TabulkaM2 table td{
+        padding: 2px;
+        height: 50px;
+
+    }
+        .TabulkaM1 table{
+            width: calc(100% - 100px);
+            }
+    .TabulkaM1 table td{
+        padding: 2px;
+        height: 50px;
+
+    }
+    .spravyMobil{
+        height: auto;
+        width: 250px;
+        border: solid 1px white;
+        border-radius: 10px;
+        color: white;
+        margin: 10px 0px;
+        padding: 10px;
+    }
+    .mobile-menu-item{
+        margin: 20px 0px;
+        height: 120px;
+        width: 120px;
+    }
+
+    .overlayMenu-item{
+        margin: 25px 0px;
+    }
+    .linkM{
+        background: radial-gradient(black, rgb(59, 59, 59));
+        color: white;
+        height: 60px;
+        width: 200px;
+        font-size: 20px;
+    }
+    .back{
+        top: 6px;
+        right: 6px;
+        font-size: 30px;
+    }
+        /* profil*/
+        .mobile-profile{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 20px white;
+            display: grid;
+            grid-template-rows: 200px 1fr;
+        }
+        .avatar{
+            grid-row: 1/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-user-graduate{
+            font-size: 120px;
+            border-radius: 50%;
+            color: white;
+        }
+        .info li{
+            font-size: 14px;
+
+        }
+        .premenne2 li{
+            font-size: 14px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .mobileDesc{
+            grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        table{
+            margin-top: 20px;
+        }
+        td{
+            height: 30px;
+            width: 100px;
+            font-size: 16px;
+            padding: 0px 20px;
+            color: white;
+            word-wrap: wrap;
+        }
+}
+

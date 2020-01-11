@@ -1,0 +1,2359 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body, html{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: url("IMG/bg.jpeg") center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+.controler{
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.panel{
+    grid-row: 1/3;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,.8);
+    box-shadow: 5px 5px 5px black;
+    align-items: center;
+    justify-content: center;
+}
+.panel h1{
+    position: absolute;
+    font-family: 'Advent Pro', sans-serif;
+    top: 0;
+    margin-top: 40px;
+    text-transform: uppercase;
+    color: black;
+}
+.panel span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.terminZadani{
+    grid-column: 2;
+    grid-row: 1;
+    background: rgba(255,255,255,.8);
+    box-shadow: 5px 5px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    flex-direction: column;
+    position: relative;
+}
+.terminZadani h1{
+    position: absolute;
+    font-family: 'Advent Pro', sans-serif;
+    top: 0;
+    margin: 40px 0px;
+    text-transform: uppercase;
+    color: black;
+}
+.checkboxL{
+    font-weight: 600;
+    margin-right: 10px;
+    text-transform: uppercase;
+    }
+.check{
+    border: 1px solid black;
+    position: relative;
+    height: 20px;
+    width: 40px;
+    background: white;
+    box-shadow: inset 0px 0px 5px rgb(75, 75, 75);
+    -webkit-appearance: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+    outline: none;
+}
+.check:checked{
+    box-shadow: 0px 0px 10px rgb(255, 166, 0), inset 0px 0px 5px rgb(150, 150, 150);
+    background: url("IMG/bg.jpeg") center;
+    background-size: cover;
+}
+.datepicker, .timepicker{
+    background:transparent;
+    color: black;
+    padding: 5px;
+    border-radius: 15px;
+    border: solid 1px black;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 40px 5px;
+    height: 20px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+.datepicker:hover, .timepicker:hover{
+    mix-blend-mode: multiply;
+    box-shadow: inset 0px 0px 5px rgb(158, 158, 158);
+    color: black;
+}
+.nastavenie{
+    padding: 2px 10px;
+    border-radius: 15px;
+    width: 240px;
+    border: solid 1px black;
+    background: transparent;
+    font-weight: bold;
+    box-shadow: inset 0px 0px 5px rgb(54, 54, 54);
+    text-transform: uppercase;
+    cursor: pointer;
+    height: 30px;
+    outline: none;
+    transition: .2s;
+}
+.nastavenie:hover{
+    background: black;
+    color: white;
+}
+.nastaveny{
+    position: absolute;
+    bottom: 20px;
+}
+.check::before{
+    content: "";
+    transition: 0.4s;
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    box-shadow: inset 0px 0px 5px rgb(71, 71, 71);
+    border-radius: 50%;
+}
+.check:checked::before{
+    left: 20px;
+}
+.load{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    content: "";
+    background: black;
+    animation: load 2s  forwards;
+    z-index: 1000;
+}
+@keyframes load{
+    from{
+        width: 0%;
+        background: rgba(0,0,0,.6);
+    }
+    to{
+        width: 100%;
+        background: rgba(0,0,0,1);
+    }
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+}
+.logo{
+    font-family: 'Advent Pro', sans-serif;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    letter-spacing: 10px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    transition: .3s;
+}
+.logo:hover{
+    color: rgb(243, 219, 0);;
+}
+.mainNav{
+    margin-left: auto;
+    height: 100%;
+    width: 30%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+aside{
+    position: absolute;
+    width: 150px;
+    height: calc(100% - 50px);
+    top: 50px;
+}
+.sideMenu{
+    position: relative;
+    left: -100%;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s;
+    z-index: 2;
+}
+.sideMenu::after{
+    position: absolute;
+    content: "Menu";
+    color: white;
+    height: 20px;
+    width: auto;
+    top: 45%;
+    right: -30%;
+    background: rgba(0,0,0,.8);
+    border-radius: 0px 0px 20px 20px;
+    padding: 5px 10px;
+    transform: rotate(-90deg);
+}
+.sideMenu:hover{
+    left: 0%;
+}
+.side-item{
+    margin: 40px 0px;
+    padding: 5px;
+    width: calc(100% - 10px);
+    text-align: center;
+}
+.side-item:hover{
+    box-shadow: inset 0px 0px 10px  black;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    font-size: 16px;
+
+}
+.link1{
+    transition: .2s;
+    cursor: pointer;
+}
+.link1:hover{
+color: rgb(243, 219, 0);;
+}
+.link2{
+    transition: .1s;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+}
+.link2:hover{
+text-shadow: 0px 0px 2px black;
+color: rgb(243, 219, 0);;
+}
+main{
+    height: calc(100% - 50px);
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box, .zadania, .hodnotenie{
+    position: absolute;
+    height: 600px;
+    width: 1000px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+}
+.otazkyHandler{
+    display: none;
+    opacity: 1;
+    flex-direction: column;
+    position: absolute;
+    height: calc(600px - 40px);
+    width: calc(1000px - 80px);
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+    padding: 20px 40px;
+}
+.tab1 h1, .tab2 h1, .tab3 h1{
+    font-family: 'Advent Pro', sans-serif;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 10px;
+}
+.tab1 label{
+    font-weight: 600;
+}
+.tab1 span{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+.tabContainer{
+    position: absolute;
+    top: 0px;
+    left: 5px;
+}
+.customRadio{
+    height: 30px;
+    width: 70px;
+    border-radius: 0%;
+    -webkit-appearance: none;
+    position: relative;
+    outline: none;
+}
+.customRadio::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+#tab1:checked::before,
+#tab2:checked::before,
+#tab3:checked::before{
+    background: url("IMG/bg.jpeg");
+    color: black;
+}
+.customRadio:hover::before,
+.customRadio:hover::before,
+.customRadio:hover::before{
+    background: url("IMG/bg.jpeg");
+    color: black;
+}
+#tab1::before{
+    content: "Pridať";
+    color: white;
+}
+#tab2::before{
+    content: "Upraviť";
+    color: white;
+}
+#tab3::before{
+    content: "Zmazať";
+    color: white;
+}
+.tab1, .tab2, .tab3{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.tab1{
+    display: block;
+}
+.tab2{
+    display: none;
+
+}
+.tab3{
+    display: none;
+
+}
+.list-box-item{
+    border-bottom: solid 1px black;
+    padding: 5px;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.list-box-item:hover{
+    border-bottom: solid 1px rgb(233, 179, 2);
+    font-weight: 600;
+}
+.list-box-item:hover  .poradieO, .list-box-item:hover  .qDelete{
+    color: rgb(233, 179, 2);
+}
+.list-box-item:hover  .poradieO{
+    font-size: 20px;
+}
+.zoznam, .updateContainer{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.qDelete{
+    position: absolute;
+    right: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    background: transparent;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    outline: none;
+}
+.qDelete:hover{
+    animation: pop .3s linear forwards;
+}
+.poradieO{
+    position: absolute;
+    left: 5px;
+    font-weight: bold;
+}
+.otazkaZobraz{
+    margin-left: 30px;
+    height: 100%;
+    width: 85%;
+    position: relative;
+    word-wrap: break-word;
+}
+.confirmDelQ{
+    height: 150px;
+    width: 300px;
+    background: url("IMG/bg.jpeg");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+}
+#deleteQ{
+    margin-bottom: 20px;
+}
+#anoQ, #nieQ{
+    cursor: pointer;
+    background: black;
+    color: white;
+    border: black;
+    height: 30px;
+    width: 70px;
+    text-transform: uppercase;
+    margin: 5px;
+}
+.zoznamOtazok{
+    display: flex;
+    height: 90%;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+}
+.updateQ{
+    border-bottom: solid 1px black;
+    padding: 5px;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.updateQ:hover{
+    border-bottom: solid 1px rgb(233, 179, 2);
+    font-weight: 600;
+}
+.updateQ:hover  .poradieQ, .updateQ:hover  .btnUpdateQ{
+    color: rgb(233, 179, 2);
+}
+.updateQ:hover  .poradieQ{
+    font-size: 20px;
+}
+.poradieQ{
+    position: absolute;
+    left: 5px;
+    font-weight: bold;
+}
+.otazkaU{
+    margin-left: 30px;
+    height: 100%;
+    width: 85%;
+    position: relative;
+    word-wrap: break-word;
+}
+.btnUpdateQ{
+    border: none;
+    background: none;
+    position: absolute;
+    right: 15px;
+    outline: none;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+}
+.btnUpdateQ:hover{
+animation: pop .3s linear forwards;
+}
+.formularO{
+    display: flex;
+    flex-direction: column;
+}
+.otazkyInput, .odpovedInput{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid rgb(114, 114, 114);
+    outline: none;
+}
+.otazkyInput:focus, .odpovedInput:focus{
+    border-bottom: 2px solid rgb(214, 182, 3);
+}
+.spravnaOdpoved, .spravnaOdpovedU{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    -webkit-appearance: none;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+.spravnaOdpoved::before{
+    position: absolute;
+    content: "";
+    height: 80%;
+    width: 80%;
+    background: transparent;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+}
+.spravnaOdpovedU::before{
+    position: absolute;
+    content: "";
+    height: 80%;
+    width: 80%;
+    background: transparent;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+}
+#pridatOtazku{
+    height: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: black;
+    border: black;
+    color: white;
+    outline: none;
+}
+#pridatOtazku:hover{
+    background: url("IMG/bg.jpeg");
+    color: black;
+    font-weight: bold;
+}
+.spravnaOdpoved:checked::before, .spravnaOdpovedU:checked::before{
+    background: url("IMG/bg.jpeg") center;
+    background-size: cover;
+}
+.hodnotenie{
+    display: none;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    transition: .4s;
+}
+.riadok{
+    cursor: pointer;
+}
+.vyberStudenta{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    font-weight: bold;
+}
+.zobrazenieMena{
+border-bottom: 1px solid black;
+width: 200px;
+display: flex;
+align-items: center;
+justify-content: start;
+}
+.zobrazenieKruzku{
+width: 50px;
+padding: 0px 10px;
+margin-right: 5px;
+border: solid 1px black;
+text-align: center;
+border-radius: 0px 20px 20px 0px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.studentiHodnotenie{
+    height: 90%;
+    width: 95%;
+    position: absolute;
+    top:10%;
+    overflow: scroll;
+}
+.zobrazenieHodnotenia{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.studentInput{
+    border: solid 1px black;
+    text-align: center;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: inset 0px 0px 3px black;
+}
+.studentBtn{
+    border: solid 1px black;
+    background: transparent;
+    text-transform: uppercase;
+    padding: 0px 10px;
+    margin-left: 10px;
+    background: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 30px;
+    outline: none;
+}
+.alert1, .alert2, .alert3{
+    display: none;
+    opacity: 0;
+    height: 100px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    z-index: 5;
+    border: solid 2px red;
+    box-shadow: inset 0px 0px 10px red;
+    transition: .4s;
+}
+.studentBtn:hover{
+    box-shadow: inset 0px 0px 5px rgb(99, 99, 99);
+}
+.zobrazenieHodnotenia td, .zobrazenieHodnotenia th{
+    text-align: center;
+    height: 30px;
+    width: auto;
+    box-shadow: 0px 0px 10px black;
+}
+.nadpisH{
+    background: rgb(71, 71, 71);
+    color: white;
+}
+.box{
+    display: none;
+    opacity: 0;
+}
+.zadania{
+    position: relative;
+    display: none;
+    opacity: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .4s;
+    opacity: 0;
+}
+.formZadania{
+    position: absolute;
+    top: 5%;
+    width: calc(100% - 20px);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.noveZadanie{
+    height: 30px;
+    width: 200px;
+    border: none;
+    box-shadow: inset 0px 0px 2px black;
+    border-radius: 10px;
+    margin-right: 10px;
+    outline: none;
+    padding-left: 10px;
+}
+.zadanieNew, .resetZadania, .zadanieDel, .kruzok1, .kruzok2, .kruzok3, .kruzok4{
+    width: auto;
+    padding: 0px 20px;
+    height: 28px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background: rgb(43, 43, 43);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+
+    font-size: 14px;
+}
+.zadanieNew{
+    border-radius: 10px 0px 0px 10px;
+    border-right: none;
+    border-bottom: 2px solid black;
+}
+.zadanieDel{
+    border-radius: 0px;
+    border-bottom: 2px solid black;
+}
+.resetZadania{
+    border-radius: 0px 10px 10px 0px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+.zadanieNew:hover,.resetZadania:hover, .zadanieDel:hover, .kruzok1:hover, .kruzok2:hover, .kruzok3:hover, .kruzok4:hover{
+box-shadow: inset 0px 0px 10px black;
+}
+.kruzok1, .kruzok2, .kruzok3, .kruzok4{
+    margin-right: 10px; 
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+.zobrazZadania{
+    position: absolute;
+    height: 85%;
+    width: 100%;
+    bottom: 0;
+    box-shadow: inset 0px 0px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+.zadaniaZoznam{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0%;
+    position: absolute;
+    padding: 10px;
+}
+.zadaniaZoznam td{
+    width: auto;
+    word-wrap: wrap;
+    height: 50px;
+    font-size: 16px;
+    color: black;
+    padding: 5px;
+    box-shadow: inset 0px 0px 5px black;
+}
+.zadaniaZoznam th{
+    height: 40px;
+    box-shadow: inset 0px 0px 5px black;  
+    padding: 5px;
+}
+.studenti{
+    position: absolute;
+    height: 600px;
+    width: 1000px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+    display: none;
+    opacity: 0;
+}
+.zobrazStudentov{
+    position: absolute;
+    top: 5%;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.uprava{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: rgba(0,0,0,.8);
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upravaOtazok{
+    height: 500px;
+    width: 900px;
+    position: absolute;
+    background: white;
+    box-shadow: 5px 5px 5px black;
+    border: solid 1px black;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.upravaOtazokHide{
+    display: none;
+}
+.upravaOtazok span{
+    display: flex;
+    width: 90%;
+}
+.update-input{
+    width: 100%;
+    background: transparent;
+    margin-bottom: 30px;
+    height: 20px;
+    border: none;
+    border-bottom: solid 1px black;
+    outline: none;
+    padding-left: 10px;
+}
+.update-input:focus{
+   border-bottom:  solid 1px rgb(233, 179, 2);
+}
+#otazka{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 10%;
+    font-family: 'Advent Pro', sans-serif;
+    text-align: center;
+}
+#btnUpdateQ{
+    width: 90%;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: black;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    outline: none;
+    position: absolute;
+    bottom: 15%;
+}
+#btnUpdateQ:hover{
+    background: url("img/bg.jpeg");
+    color: black;
+    font-weight: 600;
+}
+.tabulkaS, .tabulkaSL{
+    position: absolute;
+    top:0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    color: white;
+    text-align: center;
+}
+.tabulkaSL tr:hover{
+    background: rgba(255,255,255,.8);
+    color: black;
+}
+.tabulkaS td{
+    border-bottom: solid 1px white;
+    height: 50px;
+    width: auto;
+    padding: 0px 5px;
+}
+
+.delUname{
+    border: none;
+    height: 25px;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 5px;
+}
+.subDel{
+    border: solid 1px rgba(0,0,0,.8);
+    color: white;
+    background: rgba(0,0,0,.8);
+    padding: 5px 10px;
+    text-transform: uppercase;;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+.subDel:hover{
+background: rgba(255,255,255,.8);
+border: solid 1px black;
+color: black;
+}
+.chat-area{
+    position: absolute;
+    height: 95%;
+    width: 100%;
+    top: 5%;
+    left: 0%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid rgba(0,0,0,.8);
+}
+.message-window{
+ position: relative;
+ grid-column: 1/3;
+ grid-row: 1/4;
+ background: white;
+}
+.send-message{
+    padding-left: 10px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 50px;
+    width: calc(100% - 10px);
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px black;
+}
+.largechatInput{
+    padding-left: 5px;
+    border-radius: 20px;
+    height: 25px;
+    width: 600px;
+    border: none;
+    outline: none;
+}
+.view-message{
+    height: calc(100% - 70px);
+    background: white;
+    width: calc(100% - 20px);
+    overflow: auto;
+    padding: 10px;
+}
+.message-large{
+    border: 1px solid black;
+    padding: 10px;
+    background: rgba(0,0,0,.8);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.sender{
+    color: white;
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: right;
+    border-bottom: 1px solid white;
+}
+.message-text{
+    text-align: justify;
+    color: white;
+    margin-bottom: 5px;
+}
+.time{
+    font-size: 12px;
+    color: white;
+    text-align: right;
+}
+.largechatBtn{
+    background: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 15px;
+    width: 40px;
+    color: black;
+    margin-left: 3px;
+    cursor: pointer;
+    transition: .4s;
+    outline: none;
+}
+.online{
+    grid-column: 3/3;
+    grid-row: 1/4;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: none;
+}
+.onlineScroll{
+    width: calc(95% - 15px);
+    height: calc(95% - 10px);
+    padding:5px;
+    text-align: center;
+    overflow: auto;
+}
+.person{
+    list-style: none;
+    border: solid 2px white;
+    padding: 4px;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.person i{
+    float: left;
+    background: transparent;
+}
+.online, .offline{
+    margin-top: 1px;
+}
+.online{
+    color: green;
+    text-shadow: 0px 0px 3px green;
+}
+.offline{
+    color: red;
+    text-shadow: 0px 0px 3px red;
+}
+.btnStudenti, .btn, .btnZ, .btnO, .btnHodnotenie, .btnUClose{
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    background: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 24px;
+    transition: .3s;
+    background: none;
+    outline: none;
+}
+.btnMin{
+    position: absolute;
+    right: 65px;
+    top: 5px;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+    outline: none;
+}
+.btnMax{
+    position: absolute;
+    right: 35px;
+    top: 5px;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+    outline: none;
+}
+.chatDelete{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+    outline: none; 
+}
+.btnStudenti:hover, .btn:hover, .btnZ:hover, .btnHodnotenie:hover, .btnO:hover, .btnUClose:hover{
+    animation: pop .3s linear forwards;
+    color: red;
+}
+.btnMin:hover{
+    animation: pop .3s linear forwards;
+}
+.btnMax:hover{
+    animation: pop .3s linear forwards;
+}
+.chatDelete:hover{
+    animation: pop .3s linear forwards;
+}
+@keyframes pop{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.chat-box{
+    position: fixed;
+    bottom: -100%;
+    right: 0%;
+    width: auto;
+    height: 310px;
+    background: white;
+    transition: 1s;
+}
+.chat-nav{
+    position: absolute;
+    top: -24%;
+    z-index: 500;
+    right: 0;
+    height: 20px;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    border-bottom: solid 1px black;
+    border-radius: 5px 5px 0px 0px;
+}
+.closeChat{
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: .1s;
+}
+.closeChat:hover{
+    color: red;
+}
+
+.chat{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    padding: 5px 0px;
+    cursor: pointer;
+    height: 30px;
+    width: 260px;
+    background: rgba(0,0,0,.8);
+    color: white;
+    border: none;
+    z-index: 100;
+    transition: .3s;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: none;
+}
+.fa-envelope{
+    margin-right: 3px;
+}
+.chat:hover{
+    background: black;
+}
+.chat-room{
+    position: relative;
+    bottom: 55px;
+    right: 0%;
+    width: 250px;
+    height: 300px;
+    background: #fff;
+    text-align: justify;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    word-wrap: wrap;
+    padding: 5px 5px;   
+    background: white;
+    display: none;
+}
+.chat-input{
+    border-top: 1px solid black;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 24px;
+}
+.input{
+    padding-left: 3px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 22px;
+    padding-left: 5px;
+    width: 80%;
+    border: 1px solid grey;
+    border-radius: 0px 10px 10px 0px;
+    outline: none;
+}
+.send{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    height: 24px;
+    background: none;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 10px 0px 0px 10px;
+    width: 17%;
+    cursor: pointer;
+    transition: .3s;
+    outline: none;
+}
+.fa-paper-plane:hover{
+    transform: rotate(10deg);
+}
+.message{
+    border: 1px solid black;
+    padding: 0px 10px;
+    word-wrap: wrap;
+    padding: 3px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+}
+.profile{
+    position: absolute;
+    height: 600px;
+    width: 500px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.8);
+    transition: .4s;
+    display: none;
+    opacity: 0; 
+}
+.btnProf{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 24px;
+    transition: .3s;
+    background: none;
+    outline: none;
+}
+.btnProfSettings{
+    position: absolute;
+    right: 35px;
+    top: 7px;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+    outline: none;
+}
+.profileboard{
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 100%;
+    height: 95%;
+    background: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.photo{
+    position: relative;
+    grid-row: 1/3;
+    grid-column: 1/3;
+    background: transparent;
+}
+.profile-image{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    background: transparent;
+    border-radius: 50%;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150px;
+    border: solid 3px black;
+}
+.desc{
+    position: relative;
+    grid-row: 2/3;
+    grid-column: 1/3;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr 40px;
+}
+.info{
+    margin-top: 60px;
+    grid-column: 1/2;
+}
+.premenne{
+    margin-top: 60px;
+    grid-column: 2/3;
+    text-align: left;
+}
+.premenne li{
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.info li{
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    font-weight: 600;
+}
+.settings{
+    position: relative;
+    margin-top: 57px;
+}
+.settings li{
+    grid-column: 3/4;
+    list-style: none;
+    margin-bottom: 11px;
+    height: 20px;
+}
+.meno, .priezvisko, .kruzok, .email, .heslo{
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+    font-size: 22px;
+    display: none;
+    opacity: 0;
+    transition: .2s;
+}
+.meno:hover, .priezvisko:hover, .kruzok:hover, .email:hover, .heslo:hover{
+    animation: pop .3s linear forwards;  
+}
+.change-settings{
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 0;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+.change-settings li{
+    visibility: hidden;
+    flex-direction: row;
+    display: flex;
+    box-shadow: 5px 10px 5px black;
+}
+.change-settings input{
+    background: white;
+    border: none;
+    box-shadow: inset 0px 0px 2px black;
+    padding-left: 5px;
+    height: 25px;
+    outline: none;
+}
+.change-settings button{
+    background: black;
+    border: none;
+    color: white;
+    width: 30px;
+    height: 26px;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    outline: none;
+}
+.fa-check:hover{
+    color: rgb(5, 190, 5);
+}
+.btnProf:hover{
+    animation: pop .3s linear forwards;
+    color: red;
+}
+.btnProfSettings:hover{
+    animation: .3s pop linear forwards;
+}
+::-webkit-scrollbar{
+    background: none;
+    width: 4px;
+}
+::-webkit-scrollbar-thumb{
+    background: black;
+}
+.mobilMenu{
+    display: none;
+}
+.mobileOverlayMenu{
+    display: none;
+}
+.back{
+    display: none;
+}
+.backChat{
+    display: none;
+}
+.mobile-chat{
+    display: none;
+}
+.mobile-profile{
+    display: none;
+}
+.BackStud{
+    display: none;
+}
+.studentiMob{
+    display: none;
+}
+.mobile-zadania{
+    display: none;
+}
+.BackZadania{
+    display: none;
+}
+.BackHodnotenie{
+    display: none;
+}
+.hodnotenieM{
+    display: none;
+}
+@media (max-width: 500px){
+    .otazkyHandler{
+        display: none;
+    }
+    .controler{
+        display: none;
+    }
+    .hodnotenieM{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: -100%;
+        width: 100%;
+        z-index: 2;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        color: white;
+        transition: .4s;
+    }
+    .zadania{
+        display: none;
+    }
+    .mobile-zadania{
+        height: 100%;
+        width: 100%;
+        right: -100%;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 3;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        box-shadow: inset 0px 0px 10px white;
+        transition: .4s;
+    }
+    .menu-zadanie{
+        width: 100%;
+        background: black;
+        position: absolute;
+        top:25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform-origin: top;
+        transform: scale(0);
+        transition: .4s;
+        z-index: 5;
+    }
+    .menuZadania{
+        position: absolute;
+        letter-spacing: 3px;
+        top: 0%;
+        width: 100%;
+        height: 30px;
+        color: white;
+        border: solid 1px white;
+        background: #181818;
+        z-index: 5;
+    }
+    .noveZadanie{
+        text-align: center;
+        margin: 0px;
+        width: 100%;
+        border-radius: 0;  
+    }
+    .formZadania{
+        flex-direction: column;
+    }
+    .kruzok1M,.kruzok2M,.kruzok3M,.kruzok4M, .zadanieDelM,.zadanieNewM{
+        width: 100%;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        padding: 0px 20px;
+        height: 28px;
+        border: none;
+        font-size: 16px;
+        background: rgb(43, 43, 43);
+        color: white;
+        cursor: pointer;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    .mobile-zadania{
+        top: 0;       
+        position: absolute;
+    }
+    .zobrazZadania{
+        position: absolute;
+        top: 30px;
+        height: calc(100% - 30px);
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+    }
+    .zadanieDelM,.zadanieNewM{
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+    }
+    .zobrazZadania{
+        height: 100%;
+    }
+    .zadaniaZoznam2{
+        position: relative;
+        top: 70px;
+    }
+    .zadaniaZoznam2 td{
+        font-size: 10px;
+        margin: 0;
+        padding: 3px;
+        box-shadow: inset 0px 0px 3px white;
+        text-align: center;
+    }
+    .zadaniaZoznam2 th{
+        font-size: 12px;
+        color: white;
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    .studentiMob{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        z-index: 5;
+        top: 0;
+        right: -100%;
+        transition: .4s;
+    }
+    .tabulkaS{
+        position: absolute;
+        height: 90%;
+        top: 0%;
+        left: 0;
+        width: 100vw;
+        background: rgba(0,0,0,.8);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: auto;
+    }
+    .tabulkaS td{
+        width: auto;
+        word-wrap: wrap;
+        font-size: 12px;
+    }
+    .zmazanieStudenta{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6%;
+        background: rgba(0,0,0,.8);  
+    }
+    .inputDelStud{
+        position: absolute;
+        bottom: 10%;
+        margin-left: 5px;
+        height: 80%;
+        width: 60%;
+        border: none;
+        border-radius: 20px;
+        padding-left: 5px;
+        outline: none;
+    }
+    .studentZmaz{
+        padding: 3px 10px;
+        position: absolute;
+        right: 5%;
+        bottom: 10%;
+        height: 80%;
+        border-radius: 20px;
+        border: none;
+        float: right;
+        margin-right: 5px;
+        background: white;
+        color: black;
+        font-weight: 400;
+        outline: none;
+    }
+    .mobile-chat{
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        display: none;
+        z-index: 1;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        display: flex;
+        flex-direction: column;
+        right: -100%;
+        transition: .5s;
+    }
+    .backChat{
+        display: none;
+        border: none;
+        background: transparent;   
+    }
+    .backChat .fa-times{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        color: white;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 30px;
+    }
+    .chatMobile-zone{
+        position: absolute;
+        height: 95%;
+        bottom: 5%;
+        width: 100%;
+        background: rgba(0,0,0,.8);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: auto;
+    }
+    .spravyMobil{
+        height: auto;
+        width: calc(250px - 20px);
+        border: solid 1px white;
+        border-radius: 10px;
+        color: white;
+        margin: 10px 0px;
+        padding: 10px;
+    }
+    .odosielatelMobil{
+        text-align: right;
+        font-size: 12px;
+        border-bottom: 1px solid white;
+        margin-bottom: 5px;
+        padding-bottom: 3px;
+    }
+    .textSpravy{
+        line-height: 20px;
+        text-align: justify;
+    }
+    .chatMTime{
+        text-align: right;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .mobileMessage{
+        display: flex;
+        flex-direction: row;;
+        position: absolute;
+        bottom: 0;
+        height: 5%;
+        width: 100%;
+        background: rgba(0,0,0,.8);
+    }
+    .sendMobileMessage{
+        position: absolute;
+        width: 80%;
+        border-radius: 20px;
+        border: none;
+        padding-left: 10px;
+        height: 30px;
+        outline: none;
+        bottom: 20%;
+        left: 1%;
+    }
+    .odoslatMobil{
+        width: 15%;
+        position: absolute;
+        bottom: 20%;
+        right: 1%;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 20px;
+        font-size: 20px;
+        color: white;
+        background: transparent;
+    }
+      /*  */
+    .logo:hover{
+        color: white;
+    }
+    .container{
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        box-shadow: inset 0px 0px 20px white;
+    }
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobilMenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .mobile-menu-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background: radial-gradient(black, rgb(32, 32, 32));
+        opacity: .9;
+        margin: 15px 0px;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    .fas{
+        color: #3F3F3F;
+        font-size: 40px;
+    }
+    .mainNav{
+        display: none;
+    }
+    .sideMenu{
+        display: none;
+    }
+    .mobileOverlayMenu{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        right: -100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        box-shadow: inset 0px 0px 20px white;
+        list-style: none;
+        transition: .5s;
+    }
+    .overlayMenu-item{
+        margin: 30px 0px;
+    }
+    .linkM{
+        background: radial-gradient(black, rgb(59, 59, 59));
+        color: white;
+        height: 80px;
+        width: 300px;
+        border: grey 1px solid;
+        font-size: 30px;
+        cursor: pointer;
+        outline: none;
+        text-transform: uppercase;
+    }
+    .back{
+        display: none;
+        opacity: 1;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: none;
+        color: white;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition-delay: .5s;
+        transition: .3s;
+        font-size: 30px;
+    }
+    
+    .BackStud{
+        display: none;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: white;
+    }
+    .BackStud{
+        color: white;
+        font-size: 30px;
+    }
+    .BackHodnotenie{
+        display: none;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: white;
+        font-size: 30px;
+    }
+    .BackZadania{
+        display: none;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: white;
+    }
+    .BackZadania{
+
+        color: white;
+        font-size: 30px;
+    }
+
+}
+@media (max-width: 1200px){
+    .mainNav{
+        width: 50%;
+    }
+    .mobile-zadania{
+        display: none;
+    }
+}
+
+@media (max-width: 450px){
+    .spravyMobil{
+        width: 340px;
+    }
+    .mobile-menu-item{
+        margin: 35px 0px;
+        height: 150px;
+        width: 150px;
+    }
+    .back{
+        font-size: 30px;
+        top: 5px;
+    }
+        /* profil*/
+        .mobile-profile{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 20px white;
+            display: grid;
+            grid-template-rows: 300px 1fr;
+        }
+        .avatar{
+            grid-row: 1/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-user-graduate{
+            font-size: 220px;
+            border-radius: 50%;
+            color: white;
+        }
+        .mobileDesc{
+            grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        table{
+            margin-top: 40px;
+        }
+        td{
+            height: 30px;
+            font-size: 20px;
+            padding: 0px 20px;
+            color: white;
+        }
+        .mobile-zadania{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 3;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 10px white;
+        }
+        .menu-zadanie{
+            width: 100%;
+            background: black;
+            position: absolute;
+            top:25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transform-origin: top;
+            transform: scale(0);
+            transition: .4s;
+            z-index: 4;
+        }
+        .menuZadania{
+            position: absolute;
+            letter-spacing: 3px;
+            top: 0%;
+            width: 100%;
+            height: 30px;
+            color: white;
+            border: solid 1px white;
+            background: #181818;
+            z-index: 5;
+        }
+        .noveZadanieM{
+            text-align: center;
+            margin: 0px;
+            width: 100%;
+            border-radius: 0;
+            height: 30px;  
+        }
+        .formZadaniaM{
+            flex-direction: column;
+        }
+        .kruzok1M,.kruzok2M,.kruzok3M,.kruzok4M{
+            width: 100%;
+            margin: 0;
+            border: none;
+            border-radius: 0;
+            padding: 0px 20px;
+            height: 28px;
+            border: none;
+            font-size: 16px;
+            background: rgb(43, 43, 43);
+            color: white;
+            cursor: pointer;
+            outline: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .zobrazZadania{
+            position: absolute;
+            top: 30px;
+            height: calc(100% - 30px);
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        }
+        .zadanieNew, .zadanieDel{
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        .zadaniaZoznam2{
+            top: 0;
+            position: relative;
+        }
+        .zadaniaZoznam2 td{
+            font-size: 16px;
+            margin: 0;
+            padding: 5px;
+            box-shadow: inset 0px 0px 3px white;
+            text-align: center;
+        }
+        .zadaniaZoznam2 th{
+            margin-top: 20px;
+            font-size: 16px;
+            color: white;
+        }
+}
+@media (max-width: 400px){
+    .mobile-menu-item{
+        margin: 20px 0px;
+        height: 130px;
+        width: 130px;
+    }
+    .overlayMenu-item{
+        margin: 30px 0px;
+    }
+    .linkM{
+        background: radial-gradient(black, rgb(59, 59, 59));
+        color: white;
+        height: 70px;
+        width: 250px;
+        font-size: 20px;
+    }
+    .back{
+        font-size: 30px;
+        top: 5px;
+    }
+        /* profil*/
+        .mobile-profile{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 20px white;
+            display: grid;
+            grid-template-rows: 300px 1fr;
+        }
+        .avatar{
+            grid-row: 1/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-user-graduate{
+            font-size: 200px;
+            border-radius: 50%;
+            color: white;
+        }
+        .mobileDesc{
+            grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        table{
+            margin-top: 20px;
+        }
+        td{
+            height: 30px;
+            font-size: 16px;
+            padding: 0px 20px;
+            color: white;
+        }
+        .mobile-zadania{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 3;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 10px white;
+        }
+        .menu-zadanie{
+            width: 100%;
+            background: black;
+            position: absolute;
+            top:25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transform-origin: top;
+            transform: scale(0);
+            transition: .4s;
+            z-index: 4;
+        }
+        .menuZadania{
+            position: absolute;
+            letter-spacing: 3px;
+            top: 0%;
+            width: 100%;
+            height: 30px;
+            color: white;
+            border: solid 1px white;
+            background: #181818;
+            z-index: 5;
+        }
+        .noveZadanie{
+            text-align: center;
+            margin: 0px;
+            width: 100%;
+            border-radius: 0;  
+        }
+        .formZadania{
+            flex-direction: column;
+        }
+        .kruzok1M,.kruzok2M,.kruzok3M,.kruzok4M{
+            width: 100%;
+            margin: 0;
+            border: none;
+            border-radius: 0;
+            padding: 0px 20px;
+            height: 28px;
+            border: none;
+            font-size: 16px;
+            background: rgb(43, 43, 43);
+            color: white;
+            cursor: pointer;
+            outline: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .zobrazZadania{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        }
+        .zadanieNew, .zadanieDel{
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        .zadaniaZoznam2{
+            height: 90%;
+            top: 0;
+        }
+        .zadaniaZoznam2 td{
+            font-size: 14px;
+            margin: 0;
+            padding: 3px;
+            box-shadow: inset 0px 0px 3px white;
+            text-align: center;
+        }
+        .zadaniaZoznam2 th{
+            font-size: 14px;
+            color: white;
+        }
+        .tabulkaS td{
+            width: auto;
+            word-wrap: wrap;
+            font-size: 11px;
+        }
+    }
+@media (max-width: 350px){
+    .spravyMobil{
+        height: auto;
+        width: 250px;
+        border: solid 1px white;
+        border-radius: 10px;
+        color: white;
+        margin: 10px 0px;
+        padding: 10px;
+    }
+    .mobile-menu-item{
+        margin: 20px 0px;
+        height: 120px;
+        width: 120px;
+    }
+
+    .overlayMenu-item{
+        margin: 25px 0px;
+    }
+    .linkM{
+        background: radial-gradient(black, rgb(59, 59, 59));
+        color: white;
+        height: 60px;
+        width: 200px;
+        font-size: 20px;
+    }
+    .back{
+        top: 6px;
+        right: 6px;
+        font-size: 30px;
+    }
+        /* profil*/
+        .mobile-profile{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 20px white;
+            display: grid;
+            grid-template-rows: 200px 1fr;
+        }
+        .avatar{
+            grid-row: 1/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-user-graduate{
+            font-size: 120px;
+            border-radius: 50%;
+            color: white;
+        }
+        .mobileDesc{
+            grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        table{
+            margin-top: 20px;
+        }
+        td{
+            height: 30px;
+            width: 100px;
+            font-size: 16px;
+            padding: 0px 20px;
+            color: white;
+            word-wrap: wrap;
+        }
+        .mobile-zadania{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 3;
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            box-shadow: inset 0px 0px 10px white;
+        }
+        .menu-zadanie{
+            width: 100%;
+            background: black;
+            position: absolute;
+            top:25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transform-origin: top;
+            transform: scale(0);
+            transition: .4s;
+            z-index: 4;
+        }
+        .menuZadania{
+            position: absolute;
+            letter-spacing: 3px;
+            top: 0%;
+            width: 100%;
+            height: 30px;
+            color: white;
+            border: solid 1px white;
+            background: #181818;
+            z-index: 5;
+        }
+        .noveZadanie{
+            text-align: center;
+            margin: 0px;
+            width: 100%;
+            border-radius: 0;  
+        }
+        .formZadania{
+            flex-direction: column;
+        }
+        .kruzok1M,.kruzok2M,.kruzok3M,.kruzok4M{
+            width: 100%;
+            margin: 0;
+            border: none;
+            border-radius: 0;
+            padding: 0px 20px;
+            height: 28px;
+            border: none;
+            font-size: 16px;
+            background: rgb(43, 43, 43);
+            color: white;
+            cursor: pointer;
+            outline: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .zobrazZadania{
+            position: absolute;
+            top: 30px;
+            height: calc(100% - 30px);
+            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        }
+        .zadanieNew, .zadanieDel{
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        .zadaniaZoznam2{
+            position: relative;
+            top: 70px;
+        }
+        .zadaniaZoznam2 td{
+            font-size: 10px;
+            margin: 0;
+            padding: 3px;
+            box-shadow: inset 0px 0px 3px white;
+            text-align: center;
+        }
+        .zadaniaZoznam2 th{
+            font-size: 12px;
+            color: white;
+            padding: 3px;
+        }
+        .tabulkaS td{
+            width: auto;
+            word-wrap: wrap;
+            font-size: 9px;
+        }
+        .hodnotenieM td{
+            font-size: 9px;
+        }
+    }
+
+
+

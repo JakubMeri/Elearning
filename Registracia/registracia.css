@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+.container{
+    height: 100vh;
+    position: relative;
+    background-image: url(Img/register-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.8);
+}
+nav a{
+    position: relative;
+    text-decoration: none;
+    margin-right: 50px;
+    text-transform: uppercase;
+    color: white;
+}
+nav .option::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: white;
+    transition: .5s;
+}
+nav .option:hover::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f04337;
+}
+.logo{
+    font-family: 'Advent Pro', sans-serif;
+    position: absolute;
+    top: 5px;
+    letter-spacing: 10px;
+    left: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    transition: 1s;
+}
+.logo:hover{
+   color: #f04337; 
+}
+.dropp-menu{
+    display: none;
+}
+.menu{
+    position: absolute;
+    top: 0%;
+    right: .5%;
+    border: none;
+    background: none;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    transform: rotate(90deg);
+    display: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.menu:hover{
+    letter-spacing: 1px;    
+}
+form{
+ height: 600px;
+ width: 700px;
+}
+.box{
+ box-shadow: 0px 0px 10px black;
+ color: white;
+ position: relative;
+ height: 100%;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ transition: .5s;
+ border: none;
+}
+.box:hover{
+    background: rgba(0,0,0,.3);
+}
+.box h1{
+    position: absolute;
+    top: 10px;
+    left: auto;
+}
+.inputs{
+    position: relative;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+label{
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.vstup{
+  height: 30px;
+  width: 300px;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 25px;
+  padding-left: 10px;
+  margin: 10px 0px;
+  font-size: 20px;
+  background: rgba(255,255,255,.6);
+  color: black;
+  outline: none;
+}
+.vstup:hover{
+    transition: .2s;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px black;
+}
+.vstup:focus{
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px black;
+}
+.btn{
+ margin-top: 20px;
+ width: 310px;
+ height: 40px;
+ border-radius: 25px;
+ font-size: 20px;
+ background: rgba(0,0,0,.8);
+ color: white;
+ cursor: pointer;
+ border: none;
+ transition: .2s;
+ outline: none;
+}
+.btn:hover{
+    background: black;
+}
+.prelink{
+position: absolute;
+bottom: 50px;
+display: flex;
+flex-direction: column;
+left: 50px;
+}
+.rel{
+position: relative;
+text-decoration: none;
+color: white;
+margin: 5px 0px;
+}
+.rel::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0%;
+    background: #f04337;
+    transition: .4s;
+}
+.rel:nth-child(1):hover::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 62%;
+    background: #f04337;
+}
+.rel:nth-child(2):hover::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #f04337;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 10px;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 500px){
+    .dropp-menu{
+        position: absolute;
+        left: 0;
+        top: 50px;
+        height: 100px;
+        width: 100%;
+        background: rgba(0,0,0,.8);
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: none;
+    }
+    .dropp-item{
+        color: white;
+        padding: 5px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .option{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    form{
+        width: 100%;
+        height: 80%;
+    }
+    .box{
+        height: 100%;
+    }
+    .box:hover{
+        background: transparent;
+    }
+    .prelink{
+        left: 14%;
+        bottom: 0%;
+    }
+    footer{
+        height: 30px;
+    }
+    .inputs{
+        top: 0;
+    }
+    .box h1{
+        top: 30px;
+        margin-bottom: 30px;
+    }
+    .rel{
+        bottom: -10px;
+    }
+}
+@media (max-width: 400px){
+    .box{
+        height: 100%;
+    }
+    .box h1{
+        top: 1%;
+    }
+    .box label{
+        font-size: 15px;
+        padding: 0;
+        margin: 0;
+    }
+    .vstup{
+        font-size: 15px;
+        height: 24px;
+    }
+    .prelink{
+        bottom: 5%;
+        left: 10%;
+    }
+}
+@media (max-width: 350px){
+    .box{
+        height: 100%;
+    }
+    .box h1{
+        top: 1%;
+    }
+    .box label{
+        font-size: 15px;
+    }
+    .vstup{
+        font-size: 15px;
+        height: 24px;
+    }
+    .prelink{
+        bottom: -3%;
+        left: 3%;
+    }
+}
+
+
+
+

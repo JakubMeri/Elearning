@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    min-height: 100vh;
+    font-family: sans-serif;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    display: none
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url(Img/main-bg.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: black;
+    animation: load 2s  forwards;
+    z-index: 100;
+}
+@keyframes load{
+    from{
+        left: 0;
+        background: rgba(0,0,0,1);
+    }
+    to{
+        left: -100%;
+        background: rgba(0,0,0,.6);
+    }
+}
+nav{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.8);
+}
+nav a{
+    position: relative;
+    text-decoration: none;
+    margin-right: 50px;
+    text-transform: uppercase;
+    color: white;
+}
+nav .option::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: white;
+    transition: .5s;
+}
+nav .option:hover::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: bisque;
+}
+.logo{
+    font-family: 'Advent Pro', sans-serif;
+    letter-spacing: 10px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    transition: 1s;
+}
+.logo:hover{
+   color: bisque; 
+}
+.dropp-menu{
+    display: none;
+}
+.menu{
+    position: absolute;
+    top: 0%;
+    right: .5%;
+    border: none;
+    background: none;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    transform: rotate(90deg);
+    display: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.menu:hover{
+    letter-spacing: 1px;    
+}
+section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    position: absolute;
+    height: 400px;
+    width: 800px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, transparent, rgba(0,0,0,.6));
+    padding: 40px;
+}
+.box h1{
+    margin-bottom: 80px;
+    font-size: 30px;
+}
+.box p{
+    line-height: 25px;
+    text-align: justify;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    height: 40px;
+    width:200px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+    bottom: 10%;
+    left: 50%;
+    font-weight: bold;
+}
+.btn:hover{
+    background: rgba(0,0,0,.8);
+    color: white;
+}
+footer{
+    position: absolute;
+    font-size: 10px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url(Img/main-fliped-bg.jpeg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-model{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 80%;
+    width: 70%;
+    grid-gap: 20px;
+    margin-top: 100px;
+}
+.prva, .druha, .tretia{
+    height: 500px;
+}
+.prva{
+    background: rgba(0,0,0,.6);
+    grid-column: 1;
+}
+.druha{
+    background: rgba(0,0,0,.6);
+    grid-column: 2;
+}
+.tretia{
+    background: rgba(0,0,0,.6);
+    grid-column: 3; 
+}
+@media (max-width: 800px){
+.box{
+    width: 90%;
+}
+}
+@media (max-width: 500px){
+    body, html{
+        overflow: auto;
+    }
+    .menu{
+        display: block;
+    }
+    .dropp-menu{
+        position: absolute;
+        left: 0;
+        top: 50px;
+        height: 100px;
+        width: 100%;
+        background: rgba(0,0,0,.8);
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: none;
+    }
+    .dropp-item{
+        color: white;
+        padding: 5px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .option{
+        display: none;
+    }
+    ::-webkit-scrollbar{
+        display: block;
+        background: black;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: bisque;
+        border-radius: 20px;
+    }
+    .container{
+        width: 100%;
+        overflow: hidden;
+    }
+    #about{
+        height: 100%;
+        background: #000;
+    }
+    .box{
+        top: 0px;
+        width: 90%;
+        background: rgba(0,0,0,.4);
+        height: calc(100% - 100px);
+    }
+    .box h1{
+        margin-top: 50px;
+    }
+    .btn{
+        top: 80%;
+    }
+    .box-model{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+    }
+    .prva, .druha, .tretia{
+        height: 400px;
+        background: white;
+    }
+    .prva{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .druha{
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .tretia{
+        grid-row: 3;
+        grid-column: 1;
+        margin-bottom: 30px;
+    }
+    footer{
+        color: #fff;
+    }
+}
+@media (max-width: 350px){
+    .box{
+        top: 0px;
+        width: 90%;
+        background: rgba(0,0,0,.4);
+        height: calc(100% - 100px);
+    }
+    .box h1{
+        margin-top: 50px;
+    }
+    .box p{
+        margin-top: -30px;
+    }
+    .btn{
+        top: 95%;
+    }
+} 
+
