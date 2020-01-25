@@ -10,5 +10,3 @@ otvorene otazky,
 heslo
 
 reset emailu
-
-povolit rovnakych pouzivatelov

@@ -2,7 +2,7 @@
 session_start();
 require "../conn.php";
 
- $sql = "SELECT * FROM uzivatelia WHERE meno =  '".$_SESSION['meno']."'";
+ $sql = "SELECT * FROM uzivatelia WHERE meno =  '".$_SESSION['meno']."' AND priezvisko = '".$_SESSION['priezvisko']."' AND email = '".$_SESSION['uzivatel']."'";
  $result = mysqli_query($conn, $sql);
  if(mysqli_num_rows($result) > 0){      
  $uzivatel = mysqli_fetch_all($result, MYSQLI_ASSOC);
