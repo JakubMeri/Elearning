@@ -20,19 +20,19 @@ $uzivatel = "user";
 
     }
     else{
-        $sql = "SELECT meno FROM uzivatelia WHERE meno = ?";
+        $sql = "SELECT email FROM uzivatelia WHERE email = ?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)){
         header("Location: register.php?error=sqlerror");
         exit();
         }
         else{
-            mysqli_stmt_bind_param($stmt, "s", $meno);
+            mysqli_stmt_bind_param($stmt, "s", $email);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $resultCheck = mysqli_stmt_num_rows($stmt);
             if($resultCheck > 0){
-                header("Location: register.php?error=uzivatel_uz_existuje");
+                header("Location: register.php?error=email_sa_uz_pouziva");
                 exit();
             }
             else{
