@@ -579,7 +579,7 @@ backChat.addEventListener("click", () => {
 
       xhr.send(params);
     }
-    else if(denT > den || mesiacT >= mesiac && rokT >= rok){
+    else if(denT > den && mesiacT >= Number(mesiac) && rokT >= rok){
       let params = "zobraz=" + 0;
       let xhr = new XMLHttpRequest();
       xhr.open('POST', 'hideZadanieBtn.php', true);
