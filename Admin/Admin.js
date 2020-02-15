@@ -1070,7 +1070,12 @@ e.preventDefault();
 let poleInput = [];
 let poleCheck = [];
 inputy.forEach(a =>{
-poleInput.push(a.value);
+if(a.value == ""){
+
+}
+else{
+  poleInput.push(a.value);
+}
 a.value = "";
 });
 checkBox.forEach(a =>{
