@@ -135,6 +135,9 @@ setTimeout(() => {
 //Vypnutie okna
 btnCloseProf.addEventListener("click", () => {
     profileBox.style.opacity = "0";
+    setTimeout(()=>{
+      profileBox.style.display = "none";
+  },200)
     });
 //Otvorenie profilu
 showProfile.addEventListener("click", () =>{
@@ -495,6 +498,107 @@ backChat.addEventListener("click", () => {
     }, 0);
     }
   }
+  // Zobrazenie datumu na odovzdanie zadania
+  let datumOdov = document.querySelector(".datumOdov");
+
+  (function datumOdovzdania(){
+    let xhr = new XMLHttpRequest();
+  xhr.open('GET', 'datumOdov.php', true);
+
+  xhr.onload = function(){
+    if(this.status == 200){
+      let date = JSON.parse(this.responseText);
+      if(date[0].mesiac < 10){
+        if(date[0].den < 10){
+          let output = `Dátum odovzdania: 0${date[0].den}. 0${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+          datumOdov.innerHTML = output;
+        }
+        else{
+        let output = `Dátum odovzdania: ${date[0].den}. 0${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+        datumOdov.innerHTML = output;
+        }
+      }
+      else{
+        if(date[0].den < 10){
+          let output = `Dátum odovzdania: 0${date[0].den}. ${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+          datumOdov.innerHTML = output;
+        }
+        else{
+        let output = `Dátum odovzdania: ${date[0].den}. ${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+        datumOdov.innerHTML = output;
+        }
+    }
+
+     if(date[0].zobraz != 1){ 
+      odovzdatBtn.style.display = "none";
+    
+    }
+    else{
+      odovzdatBtn.style.display = "block";
+    }
+    }
+ 
+  }
+  xhr.send();
+})();
+
+
+  //Skrytie odovzdania
+  function skrytZadania(){
+    let datum = new Date();
+    let denT = datum.getDate();
+    let mesiacT = datum.getMonth() + 1;
+    let rokT = datum.getFullYear();
+    let hodT = datum.getHours();
+    let minT = datum.getMinutes();
+    if(minT < 10){
+      minT = "0" + minT;
+    }
+    if(hodT < 10){
+      hodT = "0" + hodT;
+    }
+    let date = datumOdov.innerHTML;
+    let rep = date.replace("Dátum odovzdania: ", "");
+    let reg = /[.:]?\s?/;
+    let pole = rep.split(reg);
+    let den = pole[0] + pole[1];
+    let mesiac = pole[2] + pole[3];
+    let rok = pole[4] + pole[5] + pole[6] + pole[7];
+    let hod = pole[10] + pole[11];
+    let min = pole[12] + pole[13];
+
+    if(denT == den && mesiacT == mesiac && rokT == rok && hodT == hod && minT == min){
+      let params = "zobraz=" + 0;
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', 'hideZadanieBtn.php', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+      xhr.onload = function(){
+        console.log(this.responseText);
+      }
+
+      xhr.send(params);
+    }
+    else if(denT > den || mesiacT >= mesiac && rokT >= rok){
+      let params = "zobraz=" + 0;
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', 'hideZadanieBtn.php', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+      xhr.onload = function(){
+        console.log(this.responseText);
+      }
+
+      xhr.send(params);
+    }
+    else{
+    }
+
+  }
+  setTimeout(() => {
+    skrytZadania();
+  }, 1000);
+
 
 
       //Profil udaje
@@ -633,11 +737,13 @@ backChat.addEventListener("click", () => {
             }, 300);
         });
         //Show zadania
+        let zadanieHide = null;
         const showZadania = document.querySelector(".showZadania");
         const zadania = document.querySelector(".zadania");
         showZadania.addEventListener("click", () => {
             loadZadanie();
             zadania.style.display = "flex";
+            zadanieHide = setInterval(skrytZadania, 5000);
             setTimeout(() => {
                 zadania.style.opacity = "1";
             }, 0);
@@ -645,6 +751,7 @@ backChat.addEventListener("click", () => {
         //Hide zadania
         const hideZadania = document.querySelector(".btnZ");
         hideZadania.addEventListener("click", () => {
+          clearInterval(zadanieHide);
             zadania.style.opacity = "0";
             menuZadania.style.transform = "scale(0)";
             zobrazZadania = !zobrazZadania;
@@ -1012,6 +1119,11 @@ testBtn8.addEventListener("click", () => {
   loadtest('testPrednaska/test8.php');
   odpocet();
 });
+//SKUSKA
+let skuskaBtn = document.getElementById("skuska");
+skuskaBtn.addEventListener("click", () => {
+  window.location = "http://localhost/Elearning/User/skuska/skuska.php";
+});
 //HODNOTENIE TESTU
 let body = 0;
 let vyhodnotenie1 = document.getElementById("test1");
@@ -1115,5 +1227,6 @@ const showTest = (vstup, btn) => {
       break;
   }
 }
+
 
 

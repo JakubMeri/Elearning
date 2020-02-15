@@ -17,7 +17,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
-    <link rel="stylesheet" href="User.css?version=57">
+    <link rel="stylesheet" href="User.css?version=59">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -70,6 +70,7 @@ else{
         <div class="vybratZadanie">
         <h1>Popis zadania:</h1><br>
              <p class="zadanie"></p>
+             <p class="datumOdov"></p>
         </div>
 <!-- TESTY -->
         <div class="test">
@@ -82,6 +83,7 @@ else{
             <button class="btn-test" id="prednaska6">Test 6</button>
             <button class="btn-test" id="prednaska7">Test 7</button>
             <button class="btn-test" id="prednaska8">Test 8</button>
+            <button class="btn-test" id="skuska">Skúška</button>
         </div>
         <div class="fhi"><a target="_blank" href="https://fhi.euba.sk/"></a><div class="stranka"><p>FHI</p></div></div>
         <div class="ais"><a target="_blank" href="https://ais2.euba.sk/ais/start.do"></a><div class="stranka"><p>AIS</p></div></div>
@@ -144,7 +146,7 @@ else{
                 <button class="btnZadania" id="ZMT1">Tabuľka 1</button>
                 <button class="btnZadania" id="ZMT2">Tabuľka 2</button>
                 <button class="btnZadania" id="ZVM">Vybrať zadanie</button>
-                <button class="btnZadania" id="ZOM">Odovzdať zadanie</button>
+<!--                 <button class="btnZadania" id="ZOM">Odovzdať zadanie</button> -->
                 </div>
                 <div class="tvojeZadanie">
                     <p class="tvojezadanieP">Zadanie</p>
@@ -249,8 +251,12 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
 </div>
 
 <div class="odovzdatZadanie">
+<form action="" enctype="multipart/form-data" id="file-form" method="POST">
 <button class="closeOdovzdanie"><i class="fas fa-times"></i></button>
     <label for="file">Sem vlož zadanie:</label><input type="file" name="file">
+    <button id="upload">Nahrať</button>
+    <progress max="100" value="0" id="progress" style="visibility: hidden;"></progress>
+</form>
 </div>
             <button class="btnZ"><i class="fas fa-times"></i></button> 
             <button class="zadania-info">Info</button>

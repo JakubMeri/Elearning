@@ -713,17 +713,17 @@ zadaniaBackM.style.display = "none";
 //Hodnotenie
 
 function zobrazHodnotenie(){
-var xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 xhr.open('GET', 'hodnotenie.php', true);
 
 xhr.onload = function(){
   if(this.status == 200){
-    var studenti = JSON.parse(this.responseText);
+    let studenti = JSON.parse(this.responseText);
     
-    var output = '';
+    let output = '';
     output += "<tr class='nadpisH'><td>ID</td><td>Študent</td><td>Krúžok</td><td>Semester</td><td>Zadanie</td><td>Skuska</td><td>SPOLU</td></tr>";
   
-    for(var i in studenti){
+    for(let i in studenti){
       let spoluBody = Number(studenti[i].semester) + Number(studenti[i].zadanie) + Number(studenti[i].Skuska);
       let poradie = Number(i) + 1;
       output += `<tr class='riadok'><td>${poradie}</td> <td>${studenti[i].meno} ${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].semester}</td><td>${studenti[i].zadanie}</td><td>${studenti[i].Skuska}</td><td>${spoluBody}</td></tr><br>`;
@@ -929,16 +929,24 @@ else{
     let den = datum.value.substr(8,3);
     let mesiac = datum.value.substr(5,2);
     let rok = datum.value.substr(0,4);
+    let zobraz = 1;
     zobrazenyTermin.innerHTML = den +"." + mesiac+"."+rok + " / " + cas.value;
+
+    let params = `den= ${den} &mesiac= ${mesiac} &rok= ${rok} &cas= ${cas.value} &zobraz= ${zobraz}`;
+    testHandler(params, "odovzdanieZadania.php");
   }
   });
   
+
+
+
+
   //Zapnutie testu
   let testOn = document.querySelectorAll(".check");
 
-  function testHandler(params){
+  function testHandler(params, url){
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', "testHandler.php", true);
+    xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   
     xhr.onload = function(){
@@ -954,12 +962,12 @@ else{
       if(a.checked == true){
         const hodnota = 1;
         let params = "nazovTestu=" + a.id +"&zapnutie=" + hodnota;
-          testHandler(params);
+          testHandler(params, "testHandler.php");
       }
       else{
         const hodnota = 0;
         let params = "nazovTestu=" + a.id +"&zapnutie=" + hodnota;
-        testHandler(params);
+        testHandler(params, "testHandler.php");
       }
     });
   });
@@ -1259,3 +1267,27 @@ loadQueAnsw();
   upravaOtazok.classList.add("upravaOtazokHide");
   upravaOtazok.classList.remove("upravaOtazok");
  });
+
+ //show heslo
+ const showHeslo = () => {
+   fetch("showPwd.php")
+   .then(data => data.json())
+   .then(res =>{
+    document.getElementById("aktualneHeslo").innerHTML = res[0].heslo;
+   });
+ }
+ showHeslo();
+
+//nastavenie noveho hesla na skusku
+let hesloInput = document.getElementById("nastavHeslo");
+let setHeslo = document.getElementById("hesloOk");
+
+setHeslo.addEventListener("click", () => {
+  let params = "heslo=" + hesloInput.value;
+  testHandler(params,"updatePwd.php");
+  setTimeout(() => {
+    showHeslo();
+  }, 100);
+  hesloInput.value = "";
+})
+ 

@@ -17,7 +17,7 @@ require "../conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AdminPage</title>
-    <link rel="stylesheet" href="AdminPage.css?version=19">
+    <link rel="stylesheet" href="AdminPage.css?version=19a">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -56,14 +56,15 @@ require "../conn.php";
         <div class="controler">
             <div class="panel">
                 <h1>testy</h1>
-                <span><label class="checkboxL" id="on1">Prednaska 1</label><input class="check" type="checkbox" name="" id="testBtn1"></span>
-                <span><label class="checkboxL" id="on2">Prednaska 2</label><input class="check" type="checkbox" name="" id="testBtn2"></span>
-                <span><label class="checkboxL" id="on3">Prednaska 3</label><input class="check" type="checkbox" name="" id="testBtn3"></span>
-                <span><label class="checkboxL" id="on4">Prednaska 4</label><input class="check" type="checkbox" name="" id="testBtn4"></span>
-                <span><label class="checkboxL" id="on5">Prednaska 5</label><input class="check" type="checkbox" name="" id="testBtn5"></span>
-                <span><label class="checkboxL" id="on6">Prednaska 6</label><input class="check" type="checkbox" name="" id="testBtn6"></span>
-                <span><label class="checkboxL" id="on7">Prednaska 7</label><input class="check" type="checkbox" name="" id="testBtn7"></span>
-                <span><label class="checkboxL" id="on8">Prednaska 8</label><input class="check"type="checkbox" name="" id="testBtn8"></span>
+                <span><label class="checkboxL" id="on1">Prednáška 1</label><input class="check" type="checkbox" name="" id="testBtn1"></span>
+                <span><label class="checkboxL" id="on2">Prednáška 2</label><input class="check" type="checkbox" name="" id="testBtn2"></span>
+                <span><label class="checkboxL" id="on3">Prednáška 3</label><input class="check" type="checkbox" name="" id="testBtn3"></span>
+                <span><label class="checkboxL" id="on4">Prednáška 4</label><input class="check" type="checkbox" name="" id="testBtn4"></span>
+                <span><label class="checkboxL" id="on5">Prednáška 5</label><input class="check" type="checkbox" name="" id="testBtn5"></span>
+                <span><label class="checkboxL" id="on6">Prednáška 6</label><input class="check" type="checkbox" name="" id="testBtn6"></span>
+                <span><label class="checkboxL" id="on7">Prednáška 7</label><input class="check" type="checkbox" name="" id="testBtn7"></span>
+                <span><label class="checkboxL" id="on8">Prednáška 8</label><input class="check"type="checkbox" name="" id="testBtn8"></span>
+                <span><label class="checkboxL" id="on9">Skúška test</label><input class="check"type="checkbox" name="" id="skuskaBtn"></span>
             </div>
 <!-- Termin odovzdania zadani -->
             <div class="terminZadani">
@@ -75,6 +76,18 @@ require "../conn.php";
                 <input class="nastavenie" type="submit" value="nastaviť">
                 <h2 class="nastaveny"></h2>
             </div>
+            <!-- Nastavenie hesla na skusku -->
+        <div class="nastavenieHesla">
+            <h1>Heslo na skúšku</h1>
+            <br><br><br><br>
+            <span>
+                <input type="text" id="nastavHeslo">
+                <button id="hesloOk">Nastaviť</button>
+            </span>
+            <br>
+            <br>
+            <h3>Aktuálne heslo: <span id="aktualneHeslo"></span></h3>
+        </div>
         </div>
 <!-- Pridavanie otazok skuska -->
         <div class="otazkyHandler">
@@ -324,7 +337,7 @@ require "../conn.php";
         <button class="chat"><i class="fas fa-envelope"></i>Chat</button>
        
     </div>
-    <script type="text/javascript" src="Admin.js?v=13"></script>
+    <script type="text/javascript" src="Admin.js?v=15"></script>
 
 
 </body>

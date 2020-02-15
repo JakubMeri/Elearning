@@ -1,12 +1,8 @@
 
 
---> ODOVZDANIE ZADANIA S CASOVYM LIMITOM / DOWNLOAD ZADANI
-
-skusku naprogramovat:
-nastavit datum a cas,
-samostatne okno,
-jeden pokus,
-otvorene otazky,
-heslo
+--> ODOVZDANIE ZADANIA  / DOWNLOAD ZADANI
 
 reset emailu
+
+
+nastavit test na mobil
