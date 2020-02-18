@@ -58,11 +58,13 @@ else{
         <!-- TEST1 -->
     <div class="testBOX" style="display: none">
         <p class="timer">00:00:00</p>
+        <div class="mobileCont">
         <div class="otazka1"></div>
         <div class="otazka2"></div>
         <div class="otazka3"></div>
-        <div class="otazka4"></div>
+        <div class="otazka4"></div> 
         <button id="test1" type="submit" class="test-btn">Odoslať</button>
+        </div>
     </div>
         <main>
         <div class="hlavnaStranka">
@@ -101,6 +103,7 @@ else{
                 <li class="overlayMenu-item"> <button class="linkM" id="showZadaniaM">Zadania</button></li>
                 <li class="overlayMenu-item"> <button id="showMChat" class="linkM">Online chat</button></li>
                 <li class="overlayMenu-item"> <button id="showMProfile" class="linkM">Profil</button></li>  
+                <li class="overlayMenu-item"> <button id="showTest" class="linkM">dostupné testy</button></li>  
             </div>
 <!--Mobile chat-->
             <div class="mobile-chat">

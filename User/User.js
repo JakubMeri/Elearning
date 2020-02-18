@@ -967,7 +967,8 @@ backHodnotenieM.style.display = "block";
       
     
       for(let i in hodnotenieMobile){
-        output += `<tr><td>SEMESTER</td><td>${hodnotenieMobile[i].semester}</td><tr><td>ZADANIE</td><td>${hodnotenieMobile[i].zadanie}</td></tr><tr><td>SKÚŠKA</td><td>${hodnotenieMobile[i].Skuska}</td></tr><tr><td>SPOLU</td><td>0</td></tr><br>`;
+        let spoluBody = Number(hodnotenieMobile[i].semester) + Number(hodnotenieMobile[i].zadanie) + Number(hodnotenieMobile[i].Skuska);
+        output += `<tr><td>SEMESTER</td><td>${hodnotenieMobile[i].semester}</td><tr><td>ZADANIE</td><td>${hodnotenieMobile[i].zadanie}</td></tr><tr><td>SKÚŠKA</td><td>${hodnotenieMobile[i].Skuska}</td></tr><tr><td>SPOLU</td><td>${spoluBody}</td></tr><br>`;
       }
 
     document.querySelector(".hodnotenieZobrazM").innerHTML = output;
@@ -1228,5 +1229,32 @@ const showTest = (vstup, btn) => {
   }
 }
 
+//test mobil
+let showTestBtn = document.getElementById("showTest");
+showTestBtn.addEventListener("click", () => {
+let testy = document.querySelectorAll(".btn-test");
+testy.forEach( a => {
+  if(a.style.display == "block"){
+    if(a.innerHTML == "Skúška"){
+      showTestBtn.innerHTML = "Použi NTB";
+      setTimeout(() => {
+        showTestBtn.innerHTML = "dostupné testy";
+      }, 3000);
+    }
+    else{
 
-
+   
+    let cisloTestu = a.innerHTML.split(" ")[1];
+  test.style.display = "flex";
+  loadtest(`testPrednaska/test${cisloTestu}.php`);
+  odpocet(); 
+}
+  }
+  else{
+    showTestBtn.innerHTML = "Žiaden test";
+    setTimeout(() => {
+      showTestBtn.innerHTML = "dostupné testy";
+    }, 3000);
+  }
+});
+});
