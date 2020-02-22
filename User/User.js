@@ -730,7 +730,8 @@ backChat.addEventListener("click", () => {
         });
         //Schovat odovzdanie
         const closeOdovzdanie = document.querySelector(".closeOdovzdanie");
-        closeOdovzdanie.addEventListener("click", () => {
+        closeOdovzdanie.addEventListener("click", (e) => {
+            e.preventDefault();
             odovzdatZadanie.style.opacity = "0";
             setTimeout(() => {
             odovzdatZadanie.style.display = "none";

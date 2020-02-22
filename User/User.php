@@ -254,10 +254,11 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
 </div>
 
 <div class="odovzdatZadanie">
-<form action="" enctype="multipart/form-data" id="file-form" method="POST">
+<form action="" enctype="multipart/form-data" id="file-form">
 <button class="closeOdovzdanie"><i class="fas fa-times"></i></button>
-    <label for="file">Sem vlož zadanie:</label><input type="file" name="file">
-    <button id="upload">Nahrať</button>
+    <label for="file">Sem vlož zadanie:</label><input type="file" name="file" id="odovzdaneZadanie">
+    <br>
+    <button name="upload" id="upload">Nahrať</button>
     <progress max="100" value="0" id="progress" style="visibility: hidden;"></progress>
 </form>
 </div>
@@ -385,7 +386,8 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
         <button class="chat"><i class="fas fa-envelope"></i>Chat</button>
        
     </div>
-    <script type="text/javascript" src="User.js?v=6c"></script>
+    <script type="text/javascript" src="User.js?v=6d"></script>
+    <script type="text/javascript" src="jQuery.js"></script>
     <?php
 
 
