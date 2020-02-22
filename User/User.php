@@ -256,10 +256,10 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
 <div class="odovzdatZadanie">
 <form action="" enctype="multipart/form-data" id="file-form">
 <button class="closeOdovzdanie"><i class="fas fa-times"></i></button>
-    <label for="file">Sem vlož zadanie:</label><input type="file" name="file" id="odovzdaneZadanie">
+    <label id="sprievodnyText" for="file">Sem vlož zadanie:</label><input type="file" name="file" id="odovzdaneZadanie">
     <br>
     <button name="upload" id="upload">Nahrať</button>
-    <progress max="100" value="0" id="progress" style="visibility: hidden;"></progress>
+    <p class="hlaska"></p>
 </form>
 </div>
             <button class="btnZ"><i class="fas fa-times"></i></button> 
@@ -387,7 +387,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
        
     </div>
     <script type="text/javascript" src="User.js?v=6d"></script>
-    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript" src="jQuery.js?v=1"></script>
     <?php
 
 

@@ -12,12 +12,16 @@ $('#upload').on('click', function(e) {
         data: form_data,                         
         type: 'POST',
         success: function(php_script_response){
-            console.log(php_script_response); 
+            console.log(php_script_response);
+            $(".hlaska").html("ODOVZDANÉ");
         }
-     });  
+     });
+     setTimeout(() => {  
      $(".odovzdatZadanie").css("opacity", "0");
      setTimeout(() => {
         $(".odovzdatZadanie").css("display", "none");
+        $(".hlaska").html("");
      }, 300);
+    }, 2000);
      $('#odovzdaneZadanie').val("");
 });

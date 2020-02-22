@@ -1259,3 +1259,18 @@ testy.forEach( a => {
   }
 });
 });
+
+//už odovzdané zadanie
+
+const hideOdovzdanie = () => {
+  fetch("hodnotenie.php")
+  .then( res => res.json())
+  .then( data => {
+    if(Number(data[0].odovzdane) == 1){
+      document.getElementById("odovzdaneZadanie").style.display = "none";
+      document.getElementById("upload").style.display = "none";
+      document.getElementById("sprievodnyText").innerHTML = "ODOVZDANÉ!";
+    }
+  });
+}
+hideOdovzdanie();
