@@ -50,27 +50,81 @@ body, html{
     margin-top: 20px;
 }
 .nastavenieHesla{
-    grid-column: 3;
-    grid-row: 1;
+    grid-column: 2;
+    grid-row: 2;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 5px 5px 5px black;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 350px;
+    width: 380px;
     overflow: hidden;
     flex-direction: column;
     position: relative;
     padding: 10px;
     flex-wrap: wrap;
 }
-.nastavenieHesla h1{
+.nastavenieHesla h1, .odovzdaneZadania h1{
     position: absolute;
     font-family: 'Advent Pro', sans-serif;
     top: 0;
     margin: 40px 0px;
     text-transform: uppercase;
     color: black;
+}
+.odovzdaneZadania{
+    grid-column: 3;
+    grid-row: 1/3;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 5px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.containerZadania{
+    position: relative;
+    top: 30px;
+    height: 85%;
+    width: 90%;
+    box-shadow: inset 0px 0px 5px black;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.containerZadania span{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.containerZadania span p{
+    position: absolute;
+    left: 10px;
+}
+.containerZadania a{
+    padding: 5px 0px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+.containerZadania span:hover a{
+   background: black;
+   color: white;
+}
+.containerZadania span:hover p{
+    color: white;
 }
 #nastavHeslo{
     width: 180px;

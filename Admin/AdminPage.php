@@ -88,7 +88,14 @@ require "../conn.php";
             <br>
             <h3>Aktuálne heslo: <span id="aktualneHeslo"></span></h3>
         </div>
+        <!-- ODOVZDANE ZADANIA -->
+        <div class="odovzdaneZadania">
+            <h1>Odovzdané zadania</h1>
+            <div class="containerZadania">
+                
+            </div>
         </div>
+    </div>
 <!-- Pridavanie otazok skuska -->
         <div class="otazkyHandler">
             <div class="confirmDelQ">

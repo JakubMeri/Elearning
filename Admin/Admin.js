@@ -1295,4 +1295,25 @@ setHeslo.addEventListener("click", () => {
   }, 100);
   hesloInput.value = "";
 })
- 
+
+
+//RENDER ZADANIA
+let zadaniaContainer = document.querySelector(".containerZadania");
+
+const loadVsetkyZadania = () => {
+  fetch("zadaniaFolder.php")
+  .then(res => res.text())
+  .then(data => {
+    let pole = data.split(",");
+    for(let i = 0; i < pole.length; i++){
+      let cislo = i +1;
+      if(pole[i] == ""){
+
+      }
+      else{
+        zadaniaContainer.innerHTML += `<span><p>${cislo}.</p><a href=../Upload/${pole[i]}>${pole[i].replace(".pdf", "")}</a></span>`;
+      }
+    }
+    })
+}
+loadVsetkyZadania();
