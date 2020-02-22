@@ -990,6 +990,54 @@ grid-row: 3;
     margin-left: 50px;
     font-weight: 600;
 }
+.reset{
+    position: absolute;
+    bottom: 30px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.reset p{
+    font-weight: bold;
+}
+.reset span{
+    display: flex;
+    align-items: center;
+}
+.uspesnyReset{
+    margin-top: 3px;
+    text-transform: uppercase;
+    color: green;
+}
+#noveHeslo{
+    width: 200px;
+    border-radius: 25px;
+    height: 30px;
+    border: solid 1px black;
+    box-shadow: inset 0px 0px 3px black;
+    margin: 0px 10px;
+    background: transparent;
+    padding-left: 10px;
+    outline: none;
+}
+#resetHesla{
+    height: 30px;
+    width: 100px;
+    border: solid 1px black;
+    box-shadow: inset 0px 0px 3px black;
+    margin: 0px 10px;
+    background: transparent;
+    border-radius: 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+#resetHesla:hover{
+    background: black;
+    color: white;
+}
 .kruzok{
     position: absolute;
     height: 100%;

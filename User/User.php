@@ -17,7 +17,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
-    <link rel="stylesheet" href="User.css?version=59">
+    <link rel="stylesheet" href="User.css?version=59a">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -328,7 +328,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
                         <li>Priezvisko:</li>
                         <li>Krúžok:</li>
                         <li>Email:</li>
-                    </ul>
+                    </ul>                    
                     </div>
                 <div class="premenne">
                     <ul>
@@ -337,6 +337,8 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
                 </div>
                 </div>
             </div>
+            <div class="reset"><span><p>Reštart hesla:</p><input type="text" id="noveHeslo" placeholder="Nové heslo..."><button id="resetHesla">Reset</button></span><p class="uspesnyReset"></p></div>
+            
         </div>
         <!-- Hodnotenie -->
         <div class="hodnotenie">

@@ -1274,3 +1274,25 @@ const hideOdovzdanie = () => {
   });
 }
 hideOdovzdanie();
+
+//nove heslo
+document.getElementById("resetHesla").addEventListener("click", () =>{
+  let hlaska = document.querySelector(".uspesnyReset");
+  let params = "heslo="+ document.getElementById("noveHeslo").value;
+        
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', 'noveHeslo.php', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  xhr.onload = function(){
+    hlaska.style.display = "block";
+    hlaska.innerHTML = "ZMENENÉ HESLO!";
+  }
+
+  xhr.send(params);
+  document.getElementById("noveHeslo").value = "";
+  setTimeout(() => {
+    hlaska.style.display = "none";
+    hlaska.innerHTML = "";
+  }, 2000);
+});
