@@ -817,7 +817,7 @@ document.querySelector(".zobrazenieMena").innerHTML = "Študent";
 document.querySelector(".zobrazenieKruzku").innerHTML = "Krúžok"
 setTimeout(() => {
   zobrazHodnotenie();
-}, 0);
+}, 10);
 }
 });
 //Show hodnotenie

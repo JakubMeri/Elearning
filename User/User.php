@@ -17,7 +17,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
-    <link rel="stylesheet" href="User.css?version=59a">
+    <link rel="stylesheet" href="User.css?version=59b">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -252,12 +252,18 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
         <tr><td><b>Modelovanie<b></td><td>Požiadavky</td><td>Vzor</td><td>Základné časti modelu, Šablóna modelu,</td><td>Možnosť zahrnúť kreatívne „syntézy“</td></tr>
     </table>
 </div>
-
 <div class="odovzdatZadanie">
+<div class="odovzdatAlert">
+    <h3>Chceš naozaj odovzdať zadanie?</h3>
+    <span>
+        <button id="odovzdat">Áno</button>
+        <button id="neodovzdat">Nie</button>
+    </span>
+</div>
 <form action="" enctype="multipart/form-data" id="file-form">
 <button class="closeOdovzdanie"><i class="fas fa-times"></i></button>
     <label id="sprievodnyText" for="file">Sem vlož zadanie:</label><input type="file" name="file" id="odovzdaneZadanie">
-    <br>
+    <p>Zadanie musí byť vo formáte PDF!</p>
     <button name="upload" id="upload">Nahrať</button>
     <p class="hlaska"></p>
 </form>
@@ -389,7 +395,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
        
     </div>
     <script type="text/javascript" src="User.js?v=6e"></script>
-    <script type="text/javascript" src="jQuery.js?v=1"></script>
+    <script type="text/javascript" src="jQuery.js?v=1a"></script>
     <?php
 
 
