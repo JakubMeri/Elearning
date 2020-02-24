@@ -388,7 +388,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
         <button class="chat"><i class="fas fa-envelope"></i>Chat</button>
        
     </div>
-    <script type="text/javascript" src="User.js?v=6d"></script>
+    <script type="text/javascript" src="User.js?v=6e"></script>
     <script type="text/javascript" src="jQuery.js?v=1"></script>
     <?php
 

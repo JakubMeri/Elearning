@@ -597,7 +597,7 @@ backChat.addEventListener("click", () => {
   }
   setTimeout(() => {
     skrytZadania();
-  }, 1000);
+  }, 2000);
 
 
 
