@@ -36,7 +36,7 @@ $uzivatel = "user";
                 exit();
             }
             else{
-                $sql = "INSERT INTO uzivatelia (meno, priezvisko, email, heslo, typ_uzivatela, semester, zadanie, Skuska, spolu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO uzivatelia (meno, priezvisko, email, heslo, typ_uzivatela, semester, zadanie, Skuska, spolu, odovzdane) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
                     header("Location: register.php?error=sqlerror");
@@ -45,7 +45,7 @@ $uzivatel = "user";
                 else{
                     $hashovanieHesla = password_hash($heslo, PASSWORD_DEFAULT);
                     $nula = 0;
-                    mysqli_stmt_bind_param($stmt, "sssssssss", $meno, $priezvisko, $email, $hashovanieHesla, $uzivatel,$nula,$nula,$nula,$nula);
+                    mysqli_stmt_bind_param($stmt, "ssssssssss", $meno, $priezvisko, $email, $hashovanieHesla, $uzivatel,$nula,$nula,$nula,$nula, $nula);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../Login/login.php?Zaregistrovany");
                     exit();
