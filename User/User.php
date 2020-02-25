@@ -17,7 +17,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
-    <link rel="stylesheet" href="User.css?version=59b">
+    <link rel="stylesheet" href="User.css?version=59c">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -254,7 +254,8 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
 </div>
 <div class="odovzdatZadanie">
 <div class="odovzdatAlert">
-    <h3>Chceš naozaj odovzdať zadanie?</h3>
+    <h3>Zadanie je možné odovzdať len 1<br>
+    Chceš naozaj odovzdať zadanie?</h3>
     <span>
         <button id="odovzdat">Áno</button>
         <button id="neodovzdat">Nie</button>
@@ -304,15 +305,25 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
                 <div class="onlineScroll">
                     <?php
                     
-                    $sql = "SELECT * FROM chat";
+                    $sql = "SELECT * FROM uzivatelia ORDER BY onlineU DESC";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
-                    $row = mysqli_fetch_assoc($result);
+                        while($row = $result->fetch_assoc()) {
+                        if($row['onlineU'] == 1){
+                        echo "<li class='person'>";
+                        echo "<i class='online far fa-dot-circle'></i>";
+                        echo $row['meno']. " ".$row['priezvisko'];
+                        echo "</li>";
+                         }
+                        else{
+                            echo "<li class='person'>";
+                            echo "<i class='offline far fa-dot-circle'></i>";
+                            echo $row['meno']. " ".$row['priezvisko'];
+                            echo "</li>";  
+                        }
+                        }
                     }
-                    echo "<li class='person'>";
-                    echo "<i class='online far fa-dot-circle'></i>";
-                    echo $_SESSION['meno'];
-                    echo "</li>";
+
                     ?>
                 </div>
               </div>

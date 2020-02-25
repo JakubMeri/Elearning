@@ -688,11 +688,9 @@ grid-row: 3;
 }
 .person{
     list-style: none;
-    border: solid 2px white;
     padding: 4px;
     color: white;
-    border-radius: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .person i{
     float: left;
@@ -1020,6 +1018,7 @@ grid-row: 3;
     bottom: 40px;
 }
 #odovzdat, #neodovzdat{
+    font-family: 'Advent Pro', sans-serif;
     width: 100px;
     height: 30px;
     text-transform: uppercase;

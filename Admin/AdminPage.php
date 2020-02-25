@@ -17,7 +17,7 @@ require "../conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AdminPage</title>
-    <link rel="stylesheet" href="AdminPage.css?version=19a">
+    <link rel="stylesheet" href="AdminPage.css?version=19b">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -257,17 +257,27 @@ require "../conn.php";
               </div>
               <div class="online">
                 <div class="onlineScroll">
-                    <?php
+                <?php
                     
-                    $sql = "SELECT * FROM chat";
+                    $sql = "SELECT * FROM uzivatelia ORDER BY onlineU DESC";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
-                    $row = mysqli_fetch_assoc($result);
+                        while($row = $result->fetch_assoc()) {
+                        if($row['onlineU'] == 1){
+                        echo "<li class='person'>";
+                        echo "<i class='online far fa-dot-circle'></i>";
+                        echo $row['meno']. " ".$row['priezvisko'];
+                        echo "</li>";
+                         }
+                        else{
+                            echo "<li class='person'>";
+                            echo "<i class='offline far fa-dot-circle'></i>";
+                            echo $row['meno']. " ".$row['priezvisko'];
+                            echo "</li>";  
+                        }
+                        }
                     }
-                    echo "<li class='person'>";
-                    echo "<i class='online far fa-dot-circle'></i>";
-                    echo $_SESSION['meno'];
-                    echo "</li>";
+
                     ?>
                 </div>
               </div>

@@ -1150,11 +1150,9 @@ color: black;
 }
 .person{
     list-style: none;
-    border: solid 2px white;
     padding: 4px;
     color: white;
-    border-radius: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .person i{
     float: left;

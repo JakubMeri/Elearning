@@ -35,10 +35,24 @@ else{
                 $_SESSION['priezvisko'] = $row['priezvisko'];
                 if($row['typ_uzivatela'] == "admin"){
                     header("Location: /Elearning/Admin/AdminPage.php?prihlaseny");
+                    $query = "UPDATE uzivatelia SET onlineU = 1 WHERE email = '".$_SESSION['uzivatel']."'";
+
+                    if(mysqli_query($conn, $query)){
+    
+                    } else {
+                     echo 'ERROR: '. mysqli_error($conn);
+                    }
                     exit();  
                 }
                 else if($row['typ_uzivatela'] == "user"){
                     header("Location: /Elearning/User/User.php?prihlaseny");
+                    $query = "UPDATE uzivatelia SET onlineU = 1 WHERE email = '".$_SESSION['uzivatel']."'";
+
+                    if(mysqli_query($conn, $query)){
+    
+                    } else {
+                     echo 'ERROR: '. mysqli_error($conn);
+                    }
                     exit();  
                 } 
             }
