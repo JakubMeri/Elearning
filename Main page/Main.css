@@ -137,13 +137,18 @@ section{
 }
 .box h1{
     margin-bottom: 80px;
-    font-size: 30px;
+    font-size: 35px;
+    font-family: 'Advent Pro', sans-serif;
+    letter-spacing: 1px;
 }
 .box p{
     line-height: 25px;
     text-align: justify;
 }
 .btn{
+    font-family: 'Advent Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,6 +223,15 @@ footer{
 @media (max-width: 800px){
 .box{
     width: 90%;
+    background: transparent;
+}
+.box h1{
+    font-size: 30px;
+    letter-spacing: 0;
+    text-align: center;
+}
+.btn{
+    background: rgba(0,0,0,.6);
 }
 }
 @media (max-width: 500px){
@@ -270,13 +284,13 @@ footer{
         top: 0px;
         width: 90%;
         background: rgba(0,0,0,.4);
-        height: calc(100% - 100px);
+        height: calc(100% - 110px);
     }
     .box h1{
         margin-top: 50px;
     }
     .btn{
-        top: 80%;
+        top: 90%;
     }
     .box-model{
         display: grid;
@@ -302,6 +316,7 @@ footer{
     }
     footer{
         color: #fff;
+        background: rgba(0,0,0,.4);
     }
 }
 @media (max-width: 350px){
@@ -309,16 +324,16 @@ footer{
         top: 0px;
         width: 90%;
         background: rgba(0,0,0,.4);
-        height: calc(100% - 100px);
+        height: calc(100% - 110px);
     }
     .box h1{
-        margin-top: 50px;
+        margin-top: 30px;
     }
     .box p{
-        margin-top: -30px;
+        margin-top: -60px;
     }
     .btn{
-        top: 95%;
+        top: 93%;
     }
 } 
 

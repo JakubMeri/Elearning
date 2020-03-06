@@ -116,6 +116,7 @@ form{
     top: 10px;
     left: auto;
     text-transform: uppercase;
+    font-family: 'Advent Pro', sans-serif;
 }
 .inputs{
     position: relative;

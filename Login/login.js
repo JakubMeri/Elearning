@@ -31,7 +31,7 @@ let display = true;
 menuBtn.addEventListener('click', () => {
 if(display === true){
     droppMenu.style.display = "flex";
-    menuBtn.innerHTML = "X";
+    menuBtn.innerHTML = `<i class="fas fa-times"></i>`;
 }
     else if(display === false){
     droppMenu.style.display = "none";

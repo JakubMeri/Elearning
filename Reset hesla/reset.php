@@ -7,12 +7,13 @@
     <title>Obnova hesla</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <link rel="stylesheet" href="reset.css">
+    <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
 <body>
     <div class="container">
             <div class="dropp-menu">
-                    <a class="dropp-item" href="/Login/login.php">prihlásenie</a>
-                    <a class="dropp-item" href="/Registracia/register.php">registrácia</a>
+                    <a class="dropp-item" href="/Elearning/Login/login.php">prihlásenie</a>
+                    <a class="dropp-item" href="/Elearning/Registracia/register.php">registrácia</a>
             </div>
         <nav>
            <a class="logo" href="/Elearning/Main%20page/Main.html">UIES</a>
