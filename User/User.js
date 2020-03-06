@@ -508,6 +508,11 @@ backChat.addEventListener("click", () => {
   xhr.onload = function(){
     if(this.status == 200){
       let date = JSON.parse(this.responseText);
+      if(date[0].zobraz == 0){
+        let output =  `Dátum odovzdania vypršal.`;
+        datumOdov.innerHTML = output; 
+      }
+      else{
       if(date[0].mesiac < 10){
         if(date[0].den < 10){
           let output = `Dátum odovzdania: 0${date[0].den}. 0${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
@@ -528,7 +533,7 @@ backChat.addEventListener("click", () => {
         datumOdov.innerHTML = output;
         }
     }
-
+  }
      if(date[0].zobraz != 1){ 
       odovzdatBtn.style.display = "none";
     

@@ -944,6 +944,28 @@ else{
   //Zapnutie testu
   let testOn = document.querySelectorAll(".check");
 
+  const checkBoxes = () => {
+    fetch("zobrazenieTestu.php")
+    .then(res => res.json())
+    .then(data => data.forEach( a => {
+      testOn.forEach( b => {
+        if(b.id == a.nazovTestu){
+          if(a.zapnutie == 1){
+            b.checked = true;
+          }
+          else{
+            b.checked = false;
+          }
+        }
+        else{
+
+        }
+      });
+    }));
+  }
+checkBoxes();
+
+
   function testHandler(params, url){
     let xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);

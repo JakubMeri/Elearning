@@ -19,6 +19,10 @@ button{
     background-size: cover;
     overflow-x: hidden;
 }
+::selection{
+    background: black;
+    color: white;
+}
 .load{
     position: absolute;
     top: 0;

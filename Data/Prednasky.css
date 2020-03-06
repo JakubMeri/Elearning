@@ -15,6 +15,49 @@ body, html{
     background: url("IMG/prednaska.jpeg") center;
     background-size: cover;
 }
+.predcontainer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+.prednaskyBox{
+    border-top: 1px solid white;
+    position: absolute;
+    bottom: -50px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background: rgba(0,0,0,.8);
+    transition: .3s;
+}
+.prednaskyBox a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+.prednaskyBox a:hover{
+    color: rgb(243, 219, 0);
+}
+.prednaskyBox::before{
+    content: "DOWNLOAD";
+    padding: 10px;
+    position: absolute;
+    background: rgba(0,0,0,.8);
+    top: -41px;
+    border: solid 1px white;
+    left: 0;
+    color: white;
+}
+.prednaskyBox:hover{
+    bottom: 0;
+}
 nav{
     position: fixed;
     top: 0;
@@ -77,11 +120,11 @@ aside{
     height: 20px;
     width: auto;
     top: 45%;
-    right: -36%;
+    right: -39%;
     background: rgba(0,0,0,.8);
-    border-radius: 0px 0px 20px 20px;
     padding: 5px 10px;
     transform: rotate(-90deg);
+    text-transform: uppercase;
 }
 .sideMenu:hover{
     left: 0%;
@@ -332,6 +375,9 @@ footer{
 }
 }
 @media (max-width: 500px){
+    .prednaskyBox{
+        display: none;
+    }
     ::-webkit-scrollbar{
         display: none;
     }

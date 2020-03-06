@@ -16,7 +16,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prednášky</title>
-    <link rel="stylesheet" href="Prednasky.css?v=4">
+    <link rel="stylesheet" href="Prednasky.css?v=4a">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
@@ -46,6 +46,18 @@ else{
         </ul>
         </aside>
         <main>
+        <div class="predcontainer">
+        <div class="prednaskyBox">
+            <a target="_blank" href="/Elearning/Data/Download/1.pdf">Prednáška 1</a>
+            <a target="_blank" href="/Elearning/Data/Download/2.pdf">Prednáška 2</a>
+            <a target="_blank" href="/Elearning/Data/Download/3.pdf">Prednáška 3</a>
+            <a target="_blank" href="/Elearning/Data/Download/4.pdf">Prednáška 4</a>
+            <a target="_blank" href="/Elearning/Data/Download/5.pdf">Prednáška 5</a>
+            <a target="_blank" href="/Elearning/Data/Download/6.pdf">Prednáška 6</a>
+            <a target="_blank" href="/Elearning/Data/Download/7.pdf">Prednáška 7</a>
+            <a target="_blank" href="/Elearning/Data/Download/8.pdf">Prednáška 8</a>
+        </div>
+    </div>
             <div class="mobileMenu">
                <li><button class="predM1 mobile-menu-item">Prednáška 1</button></li>
                <li><button class="predM2 mobile-menu-item">Prednáška 2</button></li>

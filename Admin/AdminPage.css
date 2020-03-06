@@ -16,6 +16,10 @@ body, html{
     background-size: cover;
     overflow-x: hidden;
 }
+::selection{
+    background: black;
+    color: white;
+}
 .controler{
     position: absolute;
     height: 80%;
