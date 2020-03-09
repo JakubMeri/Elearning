@@ -244,7 +244,7 @@ backChat.addEventListener("click", () => {
               
               for(var i in message){
                 output += `<div class='message-large'>
-                <p class='sender'>${message[i].meno}</p>
+                <p class='sender'>${message[i].meno} ${message[i].priezvisko}</p>
                 <p class='message-text'>${message[i].sprava}</p>
                 <p class='time'>${message[i].cas}</p>
                 </div>`
@@ -272,8 +272,7 @@ backChat.addEventListener("click", () => {
 
               }
               else{
-              let params = "sprava="+ sprava;
-              
+              let params = "sprava=" + sprava;
         
         
               let xhr = new XMLHttpRequest();
@@ -304,7 +303,7 @@ backChat.addEventListener("click", () => {
               
               for(var i in message){
                 output += `<div class='message-large'>
-                <p class='sender'>${message[i].meno}</p>
+                <p class='sender'>${message[i].meno} ${message[i].priezvisko}</p>
                 <p class='message-text'>${message[i].sprava}</p>
                 <p class='time'>${message[i].cas}</p>
                 </div>`
@@ -363,7 +362,7 @@ backChat.addEventListener("click", () => {
               
               for(var i in message){
                 output += `<div class='spravyMobil'>
-                <p class='odosielatelMobil'>${message[i].meno}</p>
+                <p class='odosielatelMobil'>${message[i].meno} ${message[i].priezvisko}</p>
                 <p class='textSpravy'>${message[i].sprava}</p>
                 <p class='chatMTime'>${message[i].cas}</p>
                 </div>`

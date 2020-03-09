@@ -1089,7 +1089,7 @@ grid-row: 3;
     display: none;
     align-items: center;
     justify-content: center;
-    background: url("/Elearning/User/IMG/bg.jpg") center;
+    background: url("IMG/bg.jpeg") center;
     background-size: cover;
     z-index: 500;
     transition: .5s;

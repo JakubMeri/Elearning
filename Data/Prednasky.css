@@ -375,6 +375,9 @@ footer{
 }
 }
 @media (max-width: 500px){
+    .predcontainer{
+        display: none;
+    }
     .prednaskyBox{
         display: none;
     }
