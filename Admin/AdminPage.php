@@ -289,7 +289,9 @@ require "../conn.php";
                  
 
               <div class="zobrazStudentov">
-                    <table class="tabulkaSL"></table>
+                    <table class="tabulkaSL">
+                        <!-- Nacitane data -->
+                    </table>
               </div>
               <div class="uprava">
               <form class="StudentReset">
@@ -354,7 +356,7 @@ require "../conn.php";
         <button class="chat"><i class="fas fa-envelope"></i>Chat</button>
        
     </div>
-    <script type="text/javascript" src="Admin.js?v=15a"></script>
+    <script type="text/javascript" src="Admin.js?v=15b"></script>
 
 
 </body>

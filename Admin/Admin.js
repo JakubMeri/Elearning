@@ -269,14 +269,14 @@ function loadUsers(){
       var studenti = JSON.parse(this.responseText);
       
       var output = '';
-      output += "<tr class='nadpis'><td>ID</td><td>Meno</td><td>Priezvisko</td><td>Krúžok</td><td>Email</td></tr>";
+      output += "<thead><tr class='nadpis'><th>ID</th><th>Meno</th><th>Priezvisko</th><th>Krúžok</th><th>Email</th></tr></thead><tbody>";
     
       for(var i in studenti){
         let pocet = Number(i) + 1;
         output += `<tr><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr><br>`;
       }
-
-    document.querySelector(".tabulkaSL").innerHTML = output;
+      output += "</tbody>";
+      document.querySelector(".tabulkaSL").innerHTML = output;
    
 
       
@@ -375,7 +375,7 @@ function loadChat(){
       
       for(var i in message){
         output += `<div class='message-large'>
-        <p class='sender'>${message[i].meno}</p>
+        <p class='sender'>${message[i].meno} ${message[i].priezvisko}</p>
         <p class='message-text'>${message[i].sprava}</p>
         <p class='time'>${message[i].cas}</p>
         </div>`
@@ -429,7 +429,7 @@ function loadChatMin(){
       
       for(var i in message){
         output += `<div class='message-large'>
-        <p class='sender'>${message[i].meno}</p>
+        <p class='sender'>${message[i].meno} ${message[i].priezvisko}</p>
         <p class='message-text'>${message[i].sprava}</p>
         <p class='time'>${message[i].cas}</p>
         </div>`
@@ -482,7 +482,7 @@ function loadSpravaM(){
       
       for(var i in message){
         output += `<div class='spravyMobil'>
-        <p class='odosielatelMobil'>${message[i].meno}</p>
+        <p class='odosielatelMobil'>${message[i].meno} ${message[i].priezvisko}</p>
         <p class='textSpravy'>${message[i].sprava}</p>
         <p class='chatMTime'>${message[i].cas}</p>
         </div>`
@@ -614,12 +614,22 @@ delZadanieM.addEventListener("click", (e)=>{
             
             for(var i in zadania){
               let poradie = Number(i) + 1;
-              output += `<tr>
-              <td>${poradie}</td>
-              <td>${zadania[i].popiszadania}</td>
-              <td>${zadania[i].Kruzok}</td>
-              <td>${zadania[i].priradene}</td>
-              </tr>`;
+              if(zadania[i].priradene == null){
+                output += `<tr>
+                <td>${poradie}</td>
+                <td>${zadania[i].popiszadania}</td>
+                <td>${zadania[i].Kruzok}</td>
+                <td>Nepriradené</td>
+                </tr>`;
+              }
+              else{
+                output += `<tr>
+                <td>${poradie}</td>
+                <td>${zadania[i].popiszadania}</td>
+                <td>${zadania[i].Kruzok}</td>
+                <td>${zadania[i].priradene}</td>
+                </tr>`;
+              }
             }
       
             document.querySelector(".zadaniaZoznam").innerHTML = output;
