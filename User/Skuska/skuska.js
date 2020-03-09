@@ -2,7 +2,7 @@ let testBox = document.querySelector(".testBox");
 let datum = document.getElementById("datum");
 let textPocetOtazok = document.getElementById("pocetOtazok");
 let casNaTestBox = document.getElementById("maxCas");
-let pocetOtazok = 7; //<---nastavenia poctu otazok
+let pocetOtazok = 20; //<---nastavenia poctu otazok
 let casNaTest = 40;//<--nastavenie casu na skusku
 casNaTestBox.innerHTML = casNaTest;
 
