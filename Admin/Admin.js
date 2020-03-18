@@ -882,7 +882,8 @@ function loadHodnotenie(){
     
       for(var i in studenti){
         let poradie = Number(i) + 1;
-        output += `<tr class='riadok'><td>${poradie}</td> <td>${studenti[i].meno} ${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].spolu}</td></tr><br>`;
+        let spolu = Number(studenti[i].semester) + Number(studenti[i].zadanie) + Number(studenti[i].Skuska);
+        output += `<tr class='riadok'><td>${poradie}</td> <td>${studenti[i].meno} ${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${spolu}</td></tr><br>`;
       }
   
     document.querySelector(".zobrazenieHodnotenia2").innerHTML = output;
