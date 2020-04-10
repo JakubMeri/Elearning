@@ -2,7 +2,7 @@
 session_start();
 require "../conn.php";
 $meno = $_SESSION['meno'];
-$datumC = date('d-m-Y H:i:s', time() + 3600);
+$datumC = date('d-m-Y H:i:s', time() + 7200);
 $priezvisko = $_SESSION['priezvisko'];
 
     if(isset($_POST['sprava'])){

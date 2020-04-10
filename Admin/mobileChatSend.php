@@ -4,7 +4,7 @@ require "../conn.php";
 $meno = $_SESSION['meno'];
 $priezvisko = $_SESSION['priezvisko'];
 
-$datumC = date('d-m-Y H:i:s', time() + 3600);
+$datumC = date('d-m-Y H:i:s', time() + 7200);
 echo $datumC;
 
     if(isset($_POST['sprava'])){
