@@ -507,6 +507,7 @@ backChat.addEventListener("click", () => {
   xhr.onload = function(){
     if(this.status == 200){
       let date = JSON.parse(this.responseText);
+      console.log(date[0].zobraz)
       if(date[0].zobraz == 0){
         let output =  `Dátum odovzdania vypršal.`;
         datumOdov.innerHTML = output; 
@@ -514,21 +515,21 @@ backChat.addEventListener("click", () => {
       else{
       if(date[0].mesiac < 10){
         if(date[0].den < 10){
-          let output = `Dátum odovzdania: 0${date[0].den}. 0${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+          let output = `Dátum odovzdania: 0${date[0].den}. 0${date[0].mesiac}. ${date[0].rok}  ${date[0].cas}`;
           datumOdov.innerHTML = output;
         }
         else{
-        let output = `Dátum odovzdania: ${date[0].den}. 0${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+        let output = `Dátum odovzdania: ${date[0].den}. 0${date[0].mesiac}. ${date[0].rok}  ${date[0].cas}`;
         datumOdov.innerHTML = output;
         }
       }
       else{
         if(date[0].den < 10){
-          let output = `Dátum odovzdania: 0${date[0].den}. ${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+          let output = `Dátum odovzdania: 0${date[0].den}. ${date[0].mesiac}. ${date[0].rok}  ${date[0].cas}`;
           datumOdov.innerHTML = output;
         }
         else{
-        let output = `Dátum odovzdania: ${date[0].den}. ${date[0].mesiac}.${date[0].rok}  ${date[0].cas}`;
+        let output = `Dátum odovzdania: ${date[0].den}. ${date[0].mesiac}. ${date[0].rok}  ${date[0].cas}`;
         datumOdov.innerHTML = output;
         }
     }
@@ -584,6 +585,18 @@ backChat.addEventListener("click", () => {
       xhr.send(params);
     }
     else if(denT > den && mesiacT >= Number(mesiac) && rokT >= rok){
+      let params = "zobraz=" + 0;
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', 'hideZadanieBtn.php', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+      xhr.onload = function(){
+        console.log(this.responseText);
+      }
+
+      xhr.send(params);
+    }
+    else if(mesiacT >= Number(mesiac) && rokT >= rok){
       let params = "zobraz=" + 0;
       let xhr = new XMLHttpRequest();
       xhr.open('POST', 'hideZadanieBtn.php', true);
