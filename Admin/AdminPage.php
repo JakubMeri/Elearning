@@ -96,6 +96,13 @@ require "../conn.php";
             </div>
         </div>
     </div>
+    <div class="zmazatAlert">
+    <h3>Chceš naozaj zmazať zadanie?</h3>
+    <span>
+        <button id="zmazatZadanie">Áno</button>
+        <button id="nezmazatZadanie">Nie</button>
+    </span>
+</div>
 <!-- Pridavanie otazok skuska -->
         <div class="otazkyHandler">
             <div class="confirmDelQ">
