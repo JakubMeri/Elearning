@@ -264,7 +264,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
 <form action="" enctype="multipart/form-data" id="file-form">
 <button class="closeOdovzdanie"><i class="fas fa-times"></i></button>
     <label id="sprievodnyText" for="file">Sem vlož zadanie:</label><input type="file" name="file" id="odovzdaneZadanie">
-    <p>Zadanie musí byť vo formáte PDF!</p>
+    <p class="hideSpravaZadanie">Zadanie musí byť vo formáte PDF!</p>
     <button name="upload" id="upload">Nahrať</button>
     <p class="hlaska"></p>
 </form>

@@ -740,6 +740,7 @@ backChat.addEventListener("click", () => {
         const odovzdatBtn = document.querySelector(".odovzdat-zadanie");
 
         odovzdatBtn.addEventListener("click", () => {
+            hideOdovzdanie();
             odovzdatZadanie.style.display = "flex";
             setTimeout(() => {
             odovzdatZadanie.style.opacity = "1";
@@ -1286,12 +1287,12 @@ const hideOdovzdanie = () => {
     if(Number(data[0].odovzdane) == 1){
       document.getElementById("odovzdaneZadanie").style.display = "none";
       document.getElementById("upload").style.display = "none";
+      document.querySelector(".hideSpravaZadanie").style.display = "none";
       document.getElementById("sprievodnyText").innerHTML = "ODOVZDANÉ!";
     }
   });
 }
 hideOdovzdanie();
-
 //nove heslo
 document.getElementById("resetHesla").addEventListener("click", () =>{
   let hlaska = document.querySelector(".uspesnyReset");

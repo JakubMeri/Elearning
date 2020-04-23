@@ -937,18 +937,23 @@ else{
 
   }
   else{
+    loadDatumOdovzdania();
     let den = datum.value.substr(8,3);
     let mesiac = datum.value.substr(5,2);
     let rok = datum.value.substr(0,4);
     let zobraz = 1;
-    zobrazenyTermin.innerHTML = den +"." + mesiac+"."+rok + " / " + cas.value;
+    
 
     let params = `den= ${den} &mesiac= ${mesiac} &rok= ${rok} &cas= ${cas.value} &zobraz= ${zobraz}`;
     testHandler(params, "odovzdanieZadania.php");
   }
   });
-  
-
+  //LOAD DATUM ODOVZDANIA
+  const loadDatumOdovzdania = () => {
+    fetch("datumOdovzdaniaZadani").then(res => res.json())
+    .then(data => zobrazenyTermin.innerHTML = data[0].den +"." + data[0].mesiac+"."+data[0].rok + " / " + data[0].cas)
+  }
+  loadDatumOdovzdania();
 
 
 
