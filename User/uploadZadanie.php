@@ -6,15 +6,26 @@ session_start();
         echo 'Error: ' . $_FILES['file']['error'];
     }
     else {
-        move_uploaded_file($_FILES['file']['tmp_name'], '../Upload/' . $_FILES['file']['name']);
-
-        $query = "UPDATE uzivatelia SET odovzdane = 1 WHERE email = '".$_SESSION['uzivatel']."'";
-          
-        if(mysqli_query($conn, $query)){
-    
-        } else {
-          echo 'ERROR: '. mysqli_error($conn);
+      if(file_exists('../Upload/' . $_FILES['file']['name'])){
+        echo 0;
+      }
+      else{
+        if(strtolower(pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION)) != "pdf"){
+          echo 1;
         }
+        else{
+          echo 2;
+          move_uploaded_file($_FILES['file']['tmp_name'], '../Upload/' . $_FILES['file']['name']);
+
+          $query = "UPDATE uzivatelia SET odovzdane = 1 WHERE email = '".$_SESSION['uzivatel']."'";
+            
+          if(mysqli_query($conn, $query)){
+      
+          } else {
+            echo 'ERROR: '. mysqli_error($conn);
+          }
+        }
+      }
       }
 
 

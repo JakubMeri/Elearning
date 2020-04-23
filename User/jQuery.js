@@ -15,7 +15,15 @@ $('#upload').on('click', function(e) {
         type: 'POST',
         success: function(php_script_response){
             console.log(php_script_response);
-            $(".hlaska").html("ODOVZDANÉ");
+            if(php_script_response == 0){
+                $(".hlaska").html("Zadanie s daným názvom už existuje!");
+            }
+            else if(php_script_response == 1){
+                $(".hlaska").html("Zadanie musí byť vo formáte PDF!");
+            }
+            else{
+                $(".hlaska").html("ODOVZDANÉ!");
+            }
         }
      });
      $('.odovzdatAlert').css('display', 'none');

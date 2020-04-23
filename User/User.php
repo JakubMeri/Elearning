@@ -406,7 +406,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
        
     </div>
     <script type="text/javascript" src="User.js?v=7a"></script>
-    <script type="text/javascript" src="jQuery.js?v=1a"></script>
+    <script type="text/javascript" src="jQuery.js?v=1b"></script>
     <?php
 
 

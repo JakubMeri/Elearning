@@ -596,7 +596,7 @@ backChat.addEventListener("click", () => {
 
       xhr.send(params);
     }
-    else if(mesiacT >= Number(mesiac) && rokT >= rok){
+    else if(mesiacT > Number(mesiac) && rokT >= rok){
       let params = "zobraz=" + 0;
       let xhr = new XMLHttpRequest();
       xhr.open('POST', 'hideZadanieBtn.php', true);
