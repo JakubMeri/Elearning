@@ -566,13 +566,13 @@ backChat.addEventListener("click", () => {
     let rep = date.replace("Dátum odovzdania: ", "");
     let reg = /[.:]?\s?/;
     let pole = rep.split(reg);
-    let den = pole[0] + pole[1];
-    let mesiac = pole[2] + pole[3];
-    let rok = pole[4] + pole[5] + pole[6] + pole[7];
-    let hod = pole[10] + pole[11];
-    let min = pole[12] + pole[13];
+    let den = Number(pole[0] + pole[1]);
+    let mesiac = Number(pole[2] + pole[3]);
+    let rok = Number(pole[4] + pole[5] + pole[6] + pole[7]);
+    let hod = Number(pole[10] + pole[11]);
+    let min = Number(pole[12] + pole[13]);
 
-    if(denT == den && mesiacT == mesiac && rokT == rok && hodT == hod && minT == min){
+    if(denT == den && mesiacT == mesiac && rokT == rok && hodT >= hod && minT >= min){
       let params = "zobraz=" + 0;
       let xhr = new XMLHttpRequest();
       xhr.open('POST', 'hideZadanieBtn.php', true);
@@ -584,7 +584,7 @@ backChat.addEventListener("click", () => {
 
       xhr.send(params);
     }
-    else if(denT > den && mesiacT >= Number(mesiac) && rokT >= rok){
+    else if(denT > den && mesiacT >= mesiac && rokT >= rok){
       let params = "zobraz=" + 0;
       let xhr = new XMLHttpRequest();
       xhr.open('POST', 'hideZadanieBtn.php', true);
@@ -596,7 +596,7 @@ backChat.addEventListener("click", () => {
 
       xhr.send(params);
     }
-    else if(mesiacT > Number(mesiac) && rokT >= rok){
+    else if(mesiacT > mesiac && rokT >= rok){
       let params = "zobraz=" + 0;
       let xhr = new XMLHttpRequest();
       xhr.open('POST', 'hideZadanieBtn.php', true);
