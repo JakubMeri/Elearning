@@ -94,7 +94,7 @@ body, html{
 .zmazatAlert{
     position: absolute;
     z-index: 2;
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
     width: 300px;
@@ -128,6 +128,7 @@ body, html{
     background: white;
     border: solid 2px black;
     cursor: pointer;
+    outline: none;
 }
 #zmazatZadanie:hover, #nezmazatZadanie:hover{
     background: black;
@@ -145,31 +146,54 @@ body, html{
     align-items: center;
     flex-direction: column;
 }
-.containerZadania span{
+.zadanie-info{
     width: 100%;
     display: flex;
     align-items: center;
     position: relative;
+    justify-content: center;
 }
-.containerZadania span p{
+.zadanie-info p{
     position: absolute;
     left: 10px;
 }
-.containerZadania a{
+.zadanie-info a{
     padding: 5px 0px;
     text-decoration: none;
-    width: 100%;
+    width: 80%;
     text-align: center;
     color: black;
     font-family: 'Advent Pro', sans-serif;
     font-weight: bold;
     border: 1px solid transparent;
 }
-.containerZadania span:hover a{
+.zadanie-info:hover{
+    background: black;
+}
+.zadanie-info button{
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+.zadanie-info:hover button{
+    color: white;
+}
+.zadanie-info button:hover{
+    color: red;
+    transform: scale(1.1);
+}
+.zadanie-info:hover{
+    background: black;
+}
+.zadanie-info:hover a{
    background: black;
    color: white;
 }
-.containerZadania span:hover p{
+.zadanie-info:hover p{
     color: white;
 }
 #nastavHeslo{

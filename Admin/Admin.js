@@ -1091,7 +1091,7 @@ function skuskaHandler(params, url){
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
   xhr.onload = function(){
-    console.log(xhr.responseText);
+   
   }
 
   xhr.send(params);
@@ -1337,6 +1337,7 @@ const loadVsetkyZadania = () => {
   fetch("zadaniaFolder.php")
   .then(res => res.text())
   .then(data => {
+    zadaniaContainer.innerHTML="";
     let pole = data.split(",");
     for(let i = 0; i < pole.length; i++){
       let cislo = i +1;
@@ -1344,9 +1345,37 @@ const loadVsetkyZadania = () => {
 
       }
       else{
-        zadaniaContainer.innerHTML += `<span><p>${cislo}.</p><a href=../Upload/${pole[i]}>${pole[i].replace(".pdf", "")}</a></span>`;
+        zadaniaContainer.innerHTML += `<span class="zadanie-info" data-zadanie="${pole[i]}"><p>${cislo}.</p><a target="_blank" href=../Upload/${pole[i]}>${pole[i].replace(".pdf", "")}</a><button><i class="zmazanie-zadania fa fa-times"></i></button></span>`;
       }
     }
+    setTimeout(() => {
+      deleteZadanieHandler();
+    }, 500);
     })
 }
 loadVsetkyZadania();
+
+const deleteZadanieHandler = () => {
+let zmazat = document.querySelectorAll(".zadanie-info");
+const alertBox = document.querySelector(".zmazatAlert");
+const deleteZadanie = document.getElementById("zmazatZadanie");
+const dontdeleteZadanie = document.getElementById("nezmazatZadanie");
+let data;
+zmazat.forEach( zmazat => {
+  zmazat.addEventListener("click", e => {
+    if(e.target.classList.contains("zmazanie-zadania")){
+      alertBox.style.display = "flex";
+      deleteZadanie.addEventListener("click", () => {
+        data=`zmaz=${e.target.parentElement.parentElement.dataset.zadanie}`;
+        skuskaHandler(data, "deleteZadanie.php");
+        alertBox.style.display="none";
+        loadVsetkyZadania(); 
+      });
+      dontdeleteZadanie.addEventListener("click", () => {
+        alertBox.style.display="none";
+      });
+      skuskaHandler(data, "deleteZadanie.php"); 
+    }
+  });
+})
+}
