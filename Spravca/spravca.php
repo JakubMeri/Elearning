@@ -10,8 +10,12 @@
 </head>
 <body>
     <div class="container">
-        <button class="logout"><i class="fas fa-power-off"></i></button>
-        <div id="load"></div>
+    <button class="logout"><i class="fas fa-power-off"></i></button>
+    <div id="load"></div>
+    <div class="mobile">
+        <h2>Dostupné len na PC<span class="ping">|</span></h2>
+    </div>
+    <div class="wrapper">
         <h1>Správa užívateľov</h1>
         <table class="tabulkaSL">
         <!-- Sem sa nacitaju data z databazy -->
@@ -32,6 +36,7 @@
                 <option value="spravca">Správca</option>
             </select>
             <button class="set-data">Nastaviť</button>
+        </div>
         </div>
     </div>
 <script src="spravca.js"></script>
