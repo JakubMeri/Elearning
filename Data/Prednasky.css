@@ -24,6 +24,40 @@ body, html{
     justify-content: center;
     overflow-y: hidden;
 }
+.teacher-content{
+    position: relative;
+    top: 0px;
+    width: calc(80% - 200px);
+    height: calc(90vh - 100px);
+    background: rgba(255,255,255,.8);
+    padding: 50px 100px;
+    overflow: auto;
+    box-shadow: inset 0px 0px 2px black;
+}
+.show-teacher-data{
+    position: absolute;
+    height: 90%;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%);
+    width: calc(100% - 100px);
+    overflow: auto;
+    padding: 0px 50px;
+}
+.dopln-info{
+    font-family: 'Advent Pro', sans-serif;
+    position: absolute;
+    top: 10px;
+    font-size: 30px;
+    left: 50%;
+    transform:translate(-50%);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: black;
+}
 .prednaskyBox{
     border-top: 1px solid white;
     position: absolute;
@@ -87,7 +121,7 @@ nav{
 .mainNav{
     margin-left: auto;
     height: 100%;
-    width: 30%;
+    width: 45%;
     list-style: none;
     display: flex;
     align-items: center;
@@ -375,6 +409,9 @@ footer{
 }
 }
 @media (max-width: 500px){
+    .teacher-content{
+        display: none;
+    }
     .predcontainer{
         display: none;
     }

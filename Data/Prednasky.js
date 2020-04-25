@@ -308,6 +308,15 @@ setTimeout(() => {
 }, 2000);
 });
 
+//Load prednasky info
+const loadPrednaskaInfo = () =>{
+    let NAHLAD = document.querySelector(".show-teacher-data");
+    fetch("loadData.php")
+    .then(res => res.json())
+    .then(data => NAHLAD.innerHTML= data[0].obsah)
+}
+loadPrednaskaInfo();
+
 
 
 

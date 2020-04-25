@@ -1,0 +1,143 @@
+body{
+    overflow: hidden;
+}
+.editovanie{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+}
+.editovanie button{
+height: 40px;
+outline: none;
+background: black;
+border: 2px solid black;
+color: white;
+cursor: pointer;
+font-size: 20px;
+}
+.editovanie button:hover{
+color: rgb(243, 219, 0);
+}
+.teacher-content{
+    display: none;
+    position: relative;
+    margin: auto;
+    top: 50px;
+    width: calc(80% - 200px);
+    height: calc(90vh - 100px);
+    background: white;
+    padding: 50px 100px;
+    overflow: auto;
+    box-shadow: inset 0px 0px 2px black;
+    z-index: 2;
+    text-align: justify;
+}
+.controler-teacher{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 20px;
+    top: 20px;
+    height: 20px;
+    width: 80px;
+    justify-content: space-around;
+}
+.show-teacher-data{
+    position: absolute;
+    height: 90%;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    width: calc(100% - 100px);
+    overflow: auto;
+    padding: 0px 50px;
+}
+.close-prew, .set{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.set::before{
+    position: absolute;
+    content: "Upraviť obsah";
+    background: black;
+    color: white;
+    height: auto;
+    width: 90px;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 5px;
+    bottom: -30px;
+    left: -40px;
+    opacity: 0;
+    z-index: 2;
+    visibility: hidden;
+}
+.set::after{
+    position: absolute;
+    content: "";
+    background: black;
+    color: white;
+    height: 5px;
+    width: 5px;
+    font-size: 12px;
+    transform: rotate(45deg) translate(-50%);
+    padding: 5px;
+    bottom: -25px;
+    left: 45%;
+    opacity: 0;
+    visibility: hidden;
+}
+.set:hover::before, .set:hover::after{
+    animation: .3s hint linear forwards alternate;
+    animation-delay: 1s;
+}
+@keyframes hint{
+    from{
+        opacity: 0;
+        visibility: hidden;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.set:hover{
+    transform-origin: center; 
+}
+.set:hover i{
+    animation: rotateSettings 2s linear infinite; 
+}
+@keyframes rotateSettings{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.close-prew:hover{
+    transform: scale(1.1);
+    transform-origin: center;
+    color: red;
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+}

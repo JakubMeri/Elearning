@@ -16,22 +16,39 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prednášky</title>
-    <link rel="stylesheet" href="Prednasky.css?v=4a">
+    <link rel="stylesheet" href="Prednasky.css?v=5">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
 <body>
     <div class="container">
     <div id="load"></div>
-        <nav>
-            <a class="logo" href="/Elearning/Main page/Main.html">UIES</a>
-            <a class="home" href="/Elearning/home.php"><i class="home fas fa-home"></i></a>
-            <ul class="mainNav">
-                <li class="main-item"> <a class="link link1" href="/Elearning/home.php">Hlavná stránka</a></li>
-                <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
-                <li class="main-item"> <button class="logout link link1" href="#">Logout</button></li>
-            </ul>
-        </nav>
+    <?php
+                if(isset($_SESSION['uzivatel']) && $_SESSION['typ'] == "admin"){
+                echo '
+                <nav>
+                <a class="logo" href="/Elearning/Main page/Main.html">UIES</a>
+                <a class="home" href="/Elearning/home.php"><i class="home fas fa-home"></i></a>
+                    <ul class="mainNav" style="width: 45% !important">
+                        <li class="main-item"> <a class="link link1" href="/Elearning/home.php">Hlavná stránka</a></li>
+                        <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
+                        <li class="main-item"> <a class="link link1" href="/Elearning/Data/upravaObsahu.php">Úprava obsahu</a></li>
+                        <li class="main-item"> <button class="logout link link1" href="#">Logout</button></li>
+                    </ul>
+            </nav>';
+                }
+                else{
+                echo '<nav>
+                    <a class="logo" href="/Elearning/Main page/Main.html">UIES</a>
+                    <a class="home" href="/Elearning/home.php"><i class="home fas fa-home"></i></a>
+                    <ul class="mainNav" style="width: 30% !important">
+                        <li class="main-item"> <a class="link link1" href="/Elearning/home.php">Hlavná stránka</a></li>
+                        <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
+                        <li class="main-item"> <button class="logout link link1" href="#">Logout</button></li>
+                    </ul>
+                 </nav>';
+                }
+        ?>
         <aside>
         <ul class="sideMenu">
             <li class="side-item"> <button class="pred1 link link2">Prednáška č.1</button></li>
@@ -47,6 +64,12 @@ else{
         </aside>
         <main>
         <div class="predcontainer">
+            <div class="teacher-content">
+                <h3 class="dopln-info">Doplňujúce informácie ku predmetu</h3>
+            <div class="show-teacher-data">
+    
+    </div>
+            </div>
         <div class="prednaskyBox">
             <a target="_blank" href="/Elearning/Data/Download/1.pdf">Prednáška 1</a>
             <a target="_blank" href="/Elearning/Data/Download/2.pdf">Prednáška 2</a>
@@ -126,7 +149,7 @@ else{
             <button class="btn1">&lt;</button>
             <button class="btn2">&gt;</button>
          </div>
-          </div> 
+          </div>
         </main>
     </div>
     <script type="text/javascript" src="Prednasky.js?v=3"></script>
