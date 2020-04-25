@@ -143,12 +143,14 @@ tbody tr:hover{
     color: black;
 }
 .kruzok{
-    width: 200px;
+    width: 50px;
+    text-align: center;
     border: solid 2px yellowgreen;
     background: black;
     color: yellowgreen;
     padding: 5px;
     outline: none;
+    font-weight: bold;
 }
 .email{
     display: none;
