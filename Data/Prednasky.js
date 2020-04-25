@@ -11,12 +11,14 @@ let btnPred6 = document.querySelector(".pred6");
 let btnPred7 = document.querySelector(".pred7");
 let btnPred8 = document.querySelector(".pred8");
 let logout = document.querySelector(".logout");
+let prednaskyInfo = document.querySelector(".teacher-content");
 
 btn.addEventListener("click", () => {
 box.style.opacity = "0";
 
 setTimeout(()=>{
     box.style.display = "none";
+    prednaskyInfo.style.display = "block";
 },400)
 
 });
@@ -52,6 +54,7 @@ box.style.height = "100%";
    //Zobrazenie Prednasky 1
 btnPred1.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array1[0]}) center`;
@@ -83,6 +86,7 @@ btnPred1.addEventListener("click", () => {
 //Zobrazenie Prednasky 2
 btnPred2.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array2[0]}) center`;
@@ -114,6 +118,7 @@ btnPred2.addEventListener("click", () => {
 //Zobrazenie Prednasky 3
 btnPred3.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array3[0]}) center`;
@@ -145,6 +150,7 @@ btnPred3.addEventListener("click", () => {
 //Zobrazenie Prednasky 4
 btnPred4.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array4[0]}) center`;
@@ -176,6 +182,7 @@ btnPred4.addEventListener("click", () => {
 //Zobrazenie Prednasky 5
 btnPred5.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array5[0]}) center`;
@@ -207,6 +214,7 @@ btnPred5.addEventListener("click", () => {
 //Zobrazenie Prednasky 6
 btnPred6.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array6[0]}) center`;
@@ -238,6 +246,7 @@ btnPred6.addEventListener("click", () => {
 //Zobrazenie Prednasky 7
 btnPred7.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array7[0]}) center`;
@@ -269,6 +278,7 @@ btnPred7.addEventListener("click", () => {
 //Zobrazenie Prednasky 8
 btnPred8.addEventListener("click", () => {
     box.style.display = "flex";
+    prednaskyInfo.style.display = "none";
     const url = "/Elearning/Data/Prednasky/";
     let count = 0;
     slide.style.background = `url(${url}${array8[0]}) center`;

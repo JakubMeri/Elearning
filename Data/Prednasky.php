@@ -16,7 +16,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prednášky</title>
-    <link rel="stylesheet" href="Prednasky.css?v=5">
+    <link rel="stylesheet" href="Prednasky.css?v=5a">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
@@ -65,7 +65,7 @@ else{
         <main>
         <div class="predcontainer">
             <div class="teacher-content">
-                <h3 class="dopln-info">Doplňujúce informácie ku predmetu</h3>
+                <h3 class="dopln-info">Doplňujúce informácie k predmetu</h3>
             <div class="show-teacher-data">
     
     </div>
