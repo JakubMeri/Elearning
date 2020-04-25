@@ -6,12 +6,13 @@
     <title>SPRAVCA</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
-    <link rel="stylesheet" href="spravca.css">
+    <link rel="stylesheet" href="spravca.css?version=1">
 </head>
 <body>
     <div class="container">
         <button class="logout"><i class="fas fa-power-off"></i></button>
         <div id="load"></div>
+        <h1>Správa užívateľov</h1>
         <table class="tabulkaSL">
         <!-- Sem sa nacitaju data z databazy -->
         </table>

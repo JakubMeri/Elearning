@@ -13,6 +13,10 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-direction: column;
+}
+.container h1{
+    margin-bottom: 20px;
 }
 .overlay{
     height: 100%;
