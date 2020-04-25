@@ -273,7 +273,7 @@ function loadUsers(){
     
       for(var i in studenti){
         let pocet = Number(i) + 1;
-        output += `<tr><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr><br>`;
+        output += `<tr><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr>`;
       }
       output += "</tbody>";
       document.querySelector(".tabulkaSL").innerHTML = output;
