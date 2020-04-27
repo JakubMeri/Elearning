@@ -364,7 +364,7 @@ require "../conn.php";
         <button class="chat"><i class="fas fa-envelope"></i>Chat</button>
        
     </div>
-    <script type="text/javascript" src="Admin.js?v=15b"></script>
+    <script type="text/javascript" src="Admin.js?v=15c"></script>
 
 
 </body>
