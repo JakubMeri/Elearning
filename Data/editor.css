@@ -42,9 +42,10 @@ color: rgb(243, 219, 0);
     flex-direction: row;
     right: 20px;
     top: 20px;
-    height: 20px;
+    height: 25px;
     width: 80px;
     justify-content: space-around;
+    align-items: center;
 }
 .show-teacher-data{
     position: absolute;
@@ -58,8 +59,8 @@ color: rgb(243, 219, 0);
 }
 .close-prew, .set{
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     font-size: 20px;
     background: none;
     border: none;
@@ -70,6 +71,9 @@ color: rgb(243, 219, 0);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.close-prew{
+    font-size: 24px;
 }
 .set::before{
     position: absolute;
@@ -131,9 +135,19 @@ color: rgb(243, 219, 0);
     }
 }
 .close-prew:hover{
-    transform: scale(1.1);
-    transform-origin: center;
+    animation: .3s pop linear forwards;
     color: red;
+}
+@keyframes pop{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 .overlay{
     position: absolute;

@@ -16,7 +16,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uprava Obsahu</title>
     <link rel="stylesheet" href="../Admin/AdminPage.css?version=1b">
-    <link rel="stylesheet" href="editor.css?version=1a">
+    <link rel="stylesheet" href="editor.css?version=1b">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script type="text/javascript" src="./ckeditor/ckeditor.js" charset="utf-8"></script>
