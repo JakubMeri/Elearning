@@ -9,7 +9,7 @@ require "../conn.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registrácia</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
-    <link rel="stylesheet" href="registracia.css">
+    <link rel="stylesheet" href="registracia.css?version=1">
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
 <body>
@@ -24,7 +24,7 @@ require "../conn.php";
            <a class="option" href="/Elearning/Registracia/register.php">registrácia</a>
            <button class="menu">|||</button>
        </nav>    
-    <form action="registrovanieSa.php" method="post">
+    <form class="register-form" action="registrovanieSa.php" method="post">
         <div class="box">
             <h1>REGISTRÁCIA</h1>
             <div class="inputs">
@@ -38,7 +38,7 @@ require "../conn.php";
             <input class="vstup" type="password" placeholder="Heslo" name="heslo">
             <label>Kontrola Hesla:</label>
             <input class="vstup" type="password" placeholder="Heslo" name="overenieHesla">
-            <input class="btn" type="Submit" value="Registrovať" name="registrovat">
+            <input class="btn" type="submit" value="Registrovať" name="registrovat">
             </div>
             <div class="prelink">
             <a class="rel" href="/Elearning/Login/login.php">Prihlásenie</a>
@@ -46,6 +46,9 @@ require "../conn.php";
             </div>
         </div>
     </form>   
+    <div class="popup">
+        <p class="popMessage"></p>
+    </div> 
     <footer>Developed in &copy;2019 by Jakub Méri</footer>   
          
           
@@ -58,6 +61,6 @@ require "../conn.php";
                  
                    
     </div>
-    <script type="text/javascript" src="registracia.js"></script>
+    <script type="text/javascript" src="registracia.js?version=1"></script>
 </body>
 </html>

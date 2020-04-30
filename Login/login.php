@@ -34,7 +34,7 @@ if(isset($_SESSION['typ'])){
            <a class="option" href="/Elearning/Registracia/register.php">registrácia</a>
            <button class="menu">|||</button>
        </nav>    
-    <form action="logovanie.php" method="post">
+    <form class="login-form" action="logovanie.php" method="post">
         <div class="box">
         <h1>Prihlásenie</h1>
             <div class="inputs">

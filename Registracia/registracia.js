@@ -1,19 +1,71 @@
+let popup = document.querySelector(".popup");
+let msg = document.querySelector(".popMessage");
+let btn = document.querySelector(".register-form");
 let vstup = document.querySelectorAll(".vstup");
-let btn = document.querySelector(".btn");
-btn.addEventListener("click", (e) => {
+btn.addEventListener("submit", (e) => {
    if(vstup[0].value == ""){
-       console.log("vypln meno");
+       vstup[0].style.border = "solid 1px red";
+       e.preventDefault();
+       msg.textContent = "Zadaj Meno!";
+       popup.style.display = "flex";   
+       popup.style.opacity = "1"; 
    }
-   if(vstup[1].value == ""){
-       console.log("vypln email");
+   else if(vstup[1].value == ""){
+       e.preventDefault();
+       vstup[1].style.border = "solid 1px red";
+       msg.textContent = "Zadaj Priezvisko!";
+       popup.style.display = "flex";   
+       popup.style.opacity = "1"; 
   }
-   if(vstup[2].value == ""){
-   console.log("vypln heslo");
+   else if(vstup[2].value == ""){
+   e.preventDefault();
+   vstup[2].style.border = "solid 1px red";
+   msg.textContent = "Zadaj Email!";
+   popup.style.display = "flex";   
+   popup.style.opacity = "1"; 
   }
-   if(vstup[2].value != vstup[3].value){
-       console.log("heslo sa nezhoduje");
+  else if(vstup[3].value == ""){
+    e.preventDefault();
+    vstup[3].style.border = "solid 1px red";
+    msg.textContent = "Zadaj Heslo!";
+    popup.style.display = "flex";   
+    popup.style.opacity = "1"; 
    }
+   else if(vstup[3].value.length < 8){
+    e.preventDefault();
+    vstup[3].style.border = "solid 1px red";
+    msg.textContent = "Heslo musí mať viac ako 8 znakov!";
+    popup.style.display = "flex";   
+    popup.style.opacity = "1"; 
+   }
+   else if(vstup[4].value == ""){
+    e.preventDefault();
+    vstup[4].style.border = "solid 1px red";
+    msg.textContent = "Zadaj Overovacie Heslo!";
+    popup.style.display = "flex";   
+    popup.style.opacity = "1"; 
+   }
+   else if(vstup[3].value != vstup[4].value){
+       e.preventDefault();
+       vstup[3].style.border = "solid 1px red";
+       vstup[4].style.border = "solid 1px red";
+       msg.textContent = "Heslá sa nezhodujú!";
+       popup.style.display = "flex";   
+       popup.style.opacity = "1"; 
+   }
+   else{
+
+}
+setTimeout(() => {
+   popup.style.opacity = "0";
+   popup.style.display = "none"; 
+}, 3000);
 });
+
+vstup.forEach( input => {
+    input.addEventListener("keyup", () =>{
+        input.style.border = "1px solid black";
+})});
 
 let menuBtn = document.querySelector(".menu");
 let droppMenu = document.querySelector(".dropp-menu");
