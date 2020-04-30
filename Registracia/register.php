@@ -61,6 +61,6 @@ require "../conn.php";
                  
                    
     </div>
-    <script type="text/javascript" src="registracia.js?version=1a"></script>
+    <script type="text/javascript" src="registracia.js?version=1b"></script>
 </body>
 </html>

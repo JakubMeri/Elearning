@@ -6,6 +6,7 @@ btn.addEventListener("submit", (e) => {
    if(vstup[0].value == ""){
        vstup[0].style.border = "solid 1px rgb(189, 2, 2)";
        vstup[0].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
+       vstup[0].focus();
        e.preventDefault();
        msg.textContent = "Zadaj Meno!";
        popup.style.display = "flex";   
@@ -17,7 +18,8 @@ btn.addEventListener("submit", (e) => {
        vstup[1].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
        msg.textContent = "Zadaj Priezvisko!";
        popup.style.display = "flex";   
-       popup.style.opacity = "1"; 
+       popup.style.opacity = "1";
+       vstup[1].focus(); 
   }
    else if(vstup[2].value == ""){
    e.preventDefault();
@@ -25,7 +27,8 @@ btn.addEventListener("submit", (e) => {
    vstup[2].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
    msg.textContent = "Zadaj Email!";
    popup.style.display = "flex";   
-   popup.style.opacity = "1"; 
+   popup.style.opacity = "1";
+   vstup[2].focus(); 
   }
   else if(vstup[3].value == ""){
     e.preventDefault();
@@ -33,7 +36,8 @@ btn.addEventListener("submit", (e) => {
     vstup[3].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
     msg.textContent = "Zadaj Heslo!";
     popup.style.display = "flex";   
-    popup.style.opacity = "1"; 
+    popup.style.opacity = "1";
+    vstup[3].focus(); 
    }
    else if(vstup[3].value.length < 8){
     e.preventDefault();
@@ -41,7 +45,8 @@ btn.addEventListener("submit", (e) => {
     vstup[3].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
     msg.textContent = "Heslo musí mať viac ako 8 znakov!";
     popup.style.display = "flex";   
-    popup.style.opacity = "1"; 
+    popup.style.opacity = "1";
+    vstup[3].focus(); 
    }
    else if(vstup[4].value == ""){
     e.preventDefault();
@@ -49,7 +54,8 @@ btn.addEventListener("submit", (e) => {
     vstup[4].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
     msg.textContent = "Zadaj Overovacie Heslo!";
     popup.style.display = "flex";   
-    popup.style.opacity = "1"; 
+    popup.style.opacity = "1";
+    vstup[4].focus(); 
    }
    else if(vstup[3].value != vstup[4].value){
        e.preventDefault();
@@ -59,7 +65,8 @@ btn.addEventListener("submit", (e) => {
        vstup[4].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
        msg.textContent = "Heslá sa nezhodujú!";
        popup.style.display = "flex";   
-       popup.style.opacity = "1"; 
+       popup.style.opacity = "1";
+       vstup[3].focus(); 
    }
    else{
 
