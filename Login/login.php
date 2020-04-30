@@ -56,6 +56,6 @@ if(isset($_SESSION['typ'])){
     </div>     
              
     </div>
-    <script type="text/javascript" src="login.js?version=1"></script>
+    <script type="text/javascript" src="login.js?version=1a"></script>
 </body>
 </html>

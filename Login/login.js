@@ -33,7 +33,7 @@ btn.addEventListener("submit", (e) => {
 
 vstup.forEach( input => {
     input.addEventListener("keyup", () =>{
-        input.style.border = "1px solid white";
+        input.style.border = "1px solid rgba(255,255,255,.6)";
         input.style.boxShadow = "none";
     });   
 });
