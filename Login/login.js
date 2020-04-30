@@ -9,7 +9,8 @@ btn.addEventListener("submit", (e) => {
        popup.style.display = "flex";   
        popup.style.opacity = "1"; 
        msg.textContent = "Zadaj Email!";
-       vstup[0].style.border = "1px solid red";
+       vstup[0].style.border = "2px solid rgb(189, 2, 2)";
+       vstup[0].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
        vstup[0].focus();
    }
    else if(vstup[1].value == ""){
@@ -17,7 +18,8 @@ btn.addEventListener("submit", (e) => {
        popup.style.display = "flex";   
        popup.style.opacity = "1"; 
        msg.textContent = "Zadaj Heslo!";
-       vstup[1].style.border = "1px solid red";
+       vstup[1].style.border = "2px solid rgb(189, 2, 2)";
+       vstup[1].style.boxShadow = "inset 0px 0px 4px rgb(189, 2, 2)";
        vstup[1].focus();
   }
   else{
@@ -29,13 +31,12 @@ btn.addEventListener("submit", (e) => {
   }, 3000);
 });
 
-vstup[0].addEventListener("keyup", () =>{
-    vstup[0].style.border = "1px solid black";
+vstup.forEach( input => {
+    input.addEventListener("keyup", () =>{
+        input.style.border = "1px solid white";
+        input.style.boxShadow = "none";
+    });   
 });
-vstup[1].addEventListener("keyup", () =>{
-    vstup[1].style.border = "1px solid black";
-});
-
 //dropp menu
 let menuBtn = document.querySelector(".menu");
 let droppMenu = document.querySelector(".dropp-menu");

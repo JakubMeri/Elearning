@@ -230,9 +230,10 @@ margin: 5px 0px;
     display: none;
     transition: .4s;
     border-radius: 20px;
+    border: solid 2px rgb(189, 2, 2);
 }
 .popMessage{
-    color: red;
+    color: rgb(189, 2, 2);
 }
 footer{
     position: absolute;

@@ -9,7 +9,7 @@ require "../conn.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registrácia</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
-    <link rel="stylesheet" href="registracia.css?version=1">
+    <link rel="stylesheet" href="registracia.css?version=1a">
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
 <body>

@@ -19,7 +19,7 @@ if(isset($_SESSION['typ'])){
     <link rel="stylesheet" href="">
     <title>Prihlásenie</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
-    <link rel="stylesheet" href="login.css?version=52">
+    <link rel="stylesheet" href="login.css?version=52a">
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
 <body>
@@ -56,6 +56,6 @@ if(isset($_SESSION['typ'])){
     </div>     
              
     </div>
-    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="login.js?version=1"></script>
 </body>
 </html>
