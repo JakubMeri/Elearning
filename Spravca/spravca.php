@@ -6,7 +6,7 @@
     <title>SPRAVCA</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
-    <link rel="stylesheet" href="spravca.css?version=1">
+    <link rel="stylesheet" href="spravca.css?version=1a">
 </head>
 <body>
     <div class="container">
