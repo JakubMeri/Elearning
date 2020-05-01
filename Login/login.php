@@ -19,7 +19,7 @@ if(isset($_SESSION['typ'])){
     <link rel="stylesheet" href="">
     <title>Prihlásenie</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
-    <link rel="stylesheet" href="login.css?version=52a">
+    <link rel="stylesheet" href="login.css?version=52b">
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
 <body>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Obnova hesla</title>
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="reset.css?version=1">
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
 <body>
