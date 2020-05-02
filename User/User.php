@@ -51,7 +51,7 @@ else{
         <ul class="sideMenu">
             <li class="side-item"> <button class="link link2" id="showHodnotenie">Hodnotenie</button></li>
             <li class="side-item"> <button class="showZadania link link2">Zadania</button></li>
-            <li class="side-item"> <button id="showChat" class="link link2">Online chat</button></li>
+            <li class="side-item"> <button id="showChat" class="link link2">Diskusia</button></li>
             <li class="side-item"> <button id="showProfile" class="link link2">Profil</button></li>
         </ul>
         </aside>
@@ -101,7 +101,7 @@ else{
             <div class="mobileOverlayMenu">
                 <li class="overlayMenu-item"> <button class="linkM" id="hodnotenieM">Hodnotenie</button></li>
                 <li class="overlayMenu-item"> <button class="linkM" id="showZadaniaM">Zadania</button></li>
-                <li class="overlayMenu-item"> <button id="showMChat" class="linkM">Online chat</button></li>
+                <li class="overlayMenu-item"> <button id="showMChat" class="linkM">Diskusia</button></li>
                 <li class="overlayMenu-item"> <button id="showMProfile" class="linkM">Profil</button></li>  
                 <li class="overlayMenu-item"> <button id="showTest" class="linkM">dostupné testy</button></li>  
             </div>
@@ -402,7 +402,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
           
             </div>
         </div>
-        <button class="chat"><i class="fas fa-envelope"></i>Chat</button>
+        <button class="chat"><i class="fas fa-envelope"></i>Diskusia</button>
        
     </div>
     <script type="text/javascript" src="User.js?v=7a"></script>

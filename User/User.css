@@ -1219,7 +1219,7 @@ grid-row: 3;
     display: none;
 }
 :root{
-    --background: radial-gradient(rgb(240, 129, 2), rgb(156, 83, 0));
+    --background: radial-gradient(rgb(54, 54, 54), rgb(0, 0, 0));
 }
 @media (max-width: 500px){
     .hodnotenieMobile{
@@ -1235,7 +1235,7 @@ grid-row: 3;
         background: var(--background);
         right: -100%;
         transition: .4s;
-        box-shadow: inset 0px 0px 10px white;
+        box-shadow: inset 0px 0px 5px white;
     }
     .hodnotenieMobile h1{
         position: absolute;
@@ -1268,7 +1268,7 @@ grid-row: 3;
         justify-items: center;
         background: var(--background);
         transition: .4s;
-        box-shadow: inset 0px 0px 10px white;
+        box-shadow: inset 0px 0px 5px white;
     }
     .zadaniaZoznam td{
         color: white;
@@ -1566,7 +1566,7 @@ grid-row: 3;
     }
     .container{
         background: var(--background);
-        box-shadow: inset 0px 0px 20px white;
+        box-shadow: inset 0px 0px 5px white;
     }
     main{
         display: flex;
@@ -1594,8 +1594,10 @@ grid-row: 3;
         margin: 15px 0px;
         text-decoration: none;
         outline: none;
-        border: none;
         cursor: pointer;
+        border: solid 1px grey;
+        box-shadow: 5px 5px 5px black,
+        -2px -2px 2px rgb(173, 173, 173);
     }
     .fas{
         color: #3F3F3F;
@@ -1618,7 +1620,7 @@ grid-row: 3;
         flex-direction: column;
         z-index: 1;
         background: var(--background);
-        box-shadow: inset 0px 0px 20px white;
+        box-shadow: inset 0px 0px 5px white;
         list-style: none;
         transition: .5s;
     }
@@ -1630,11 +1632,13 @@ grid-row: 3;
         color: white;
         height: 80px;
         width: 300px;
-        border: grey 1px solid;
+        border: none;
         font-size: 30px;
         cursor: pointer;
         outline: none;
         text-transform: uppercase;
+        box-shadow: 5px 5px 5px black,
+        -2px -2px 3px rgb(146, 146, 146);
     }
     .back{
         display: none;
@@ -1659,7 +1663,7 @@ grid-row: 3;
         right: -100%;
         z-index: 2;
         background: var(--background);
-        box-shadow: inset 0px 0px 20px white;
+        box-shadow: inset 0px 0px 5px white;
         display: grid;
         grid-template-rows: 200px 1fr;
         transition: .5s;
@@ -1794,7 +1798,7 @@ grid-row: 3;
             position: absolute;
             z-index: 2;
             background: var(--background);
-            box-shadow: inset 0px 0px 20px white;
+            box-shadow: inset 0px 0px 5px white;
             display: grid;
             grid-template-rows: 300px 1fr;
         }
@@ -1862,7 +1866,7 @@ grid-row: 3;
             position: absolute;
             z-index: 2;
             background: var(--background);
-            box-shadow: inset 0px 0px 20px white;
+            box-shadow: inset 0px 0px 5px white;
             display: grid;
             grid-template-rows: 300px 1fr;
         }
@@ -1960,7 +1964,7 @@ grid-row: 3;
             position: absolute;
             z-index: 2;
             background: var(--background);
-            box-shadow: inset 0px 0px 20px white;
+            box-shadow: inset 0px 0px 5px white;
             display: grid;
             grid-template-rows: 200px 1fr;
         }

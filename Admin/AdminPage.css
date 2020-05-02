@@ -1673,7 +1673,7 @@ color: black;
 }
 
 :root{
-    --background: radial-gradient(rgb(240, 129, 2), rgb(156, 83, 0));
+    --background: radial-gradient(rgb(54, 54, 54), rgb(0, 0, 0));
 }
 @media (max-width: 500px){
     .otazkyHandler{
@@ -1709,7 +1709,7 @@ color: black;
         z-index: 3;
         background: var(--background);
         text-shadow: 1px 1px 1px black;
-        box-shadow: inset 0px 0px 10px white;
+        box-shadow: inset 0px 0px 5px white;
         transition: .4s;
     }
     .menu-zadanie{
@@ -1967,7 +1967,7 @@ color: black;
     }
     .container{
         background: var(--background);
-        box-shadow: inset 0px 0px 20px white;
+        box-shadow: inset 0px 0px 5px white;
     }
     main{
         display: flex;
@@ -1994,7 +1994,9 @@ color: black;
         margin: 15px 0px;
         text-decoration: none;
         outline: none;
-        border: none;
+        border: solid 1px grey;
+        box-shadow: 5px 5px 5px black,
+        -2px -2px 2px rgb(173, 173, 173);
         cursor: pointer;
     }
     .fas{
@@ -2018,7 +2020,7 @@ color: black;
         flex-direction: column;
         z-index: 1;
         background: var(--background);
-        box-shadow: inset 0px 0px 20px white;
+        box-shadow: inset 0px 0px 5px white;
         list-style: none;
         transition: .5s;
         overflow: hidden;
@@ -2029,13 +2031,15 @@ color: black;
     .linkM{
         background: radial-gradient(black, rgb(59, 59, 59));
         color: white;
+        border: none;
         height: 80px;
         width: 300px;
-        border: grey 1px solid;
         font-size: 30px;
         cursor: pointer;
         outline: none;
         text-transform: uppercase;
+        box-shadow: 5px 5px 5px black,
+        -2px -2px 3px rgb(146, 146, 146);
     }
     .back{
         display: none;
@@ -2127,7 +2131,7 @@ color: black;
             position: absolute;
             z-index: 2;
             background: var(--background);
-            box-shadow: inset 0px 0px 20px white;
+            box-shadow: inset 0px 0px 5px white;
             display: grid;
             grid-template-rows: 300px 1fr;
         }
@@ -2157,7 +2161,7 @@ color: black;
             position: absolute;
             z-index: 3;
             background: var(--background);
-            box-shadow: inset 0px 0px 10px white;
+            box-shadow: inset 0px 0px 5px white;
         }
         .menu-zadanie{
             width: 100%;
@@ -2266,7 +2270,7 @@ color: black;
             position: absolute;
             z-index: 2;
             background: var(--background);
-            box-shadow: inset 0px 0px 20px white;
+            box-shadow: inset 0px 0px 5px white;
             display: grid;
             grid-template-rows: 300px 1fr;
         }
@@ -2305,7 +2309,7 @@ color: black;
             position: absolute;
             z-index: 3;
             background: var(--background);
-            box-shadow: inset 0px 0px 10px white;
+            box-shadow: inset 0px 0px 5px white;
         }
         .menu-zadanie{
             width: 100%;
@@ -2428,7 +2432,7 @@ color: black;
             position: absolute;
             z-index: 2;
             background: var(--background);
-            box-shadow: inset 0px 0px 20px white;
+            box-shadow: inset 0px 0px 5px white;
             display: grid;
             grid-template-rows: 200px 1fr;
         }
@@ -2469,7 +2473,7 @@ color: black;
             position: absolute;
             z-index: 3;
             background: var(--background);
-            box-shadow: inset 0px 0px 10px white;
+            box-shadow: inset 0px 0px 5px white;
         }
         .menu-zadanie{
             width: 100%;

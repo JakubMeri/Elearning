@@ -424,8 +424,8 @@ footer{
         display: none;
     }
     .container{
-        background: radial-gradient(rgb(240, 129, 2), rgb(156, 83, 0));
-        box-shadow: inset 0px 0px 20px white;
+        background: radial-gradient(rgb(54, 54, 54), rgb(0, 0, 0));
+        box-shadow: inset 0px 0px 5px white;
     }
     .home{
         position: absolute;
@@ -454,6 +454,8 @@ footer{
         width: 200px;
         margin: 20px 0px;
         text-transform: uppercase;
+        box-shadow: 5px 5px 5px black,
+        -2px -2px 3px rgb(146, 146, 146);
     }
 .mainNav{
     display: none;
