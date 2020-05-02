@@ -1597,7 +1597,9 @@ grid-row: 3;
         cursor: pointer;
         border: solid 1px grey;
         box-shadow: 5px 5px 5px black,
-        -2px -2px 2px rgb(173, 173, 173);
+        -2px -2px 2px rgb(173, 173, 173),
+        inset 2px 2px 2px black,
+        inset -2px -2px 2px white;
     }
     .fas{
         color: #3F3F3F;

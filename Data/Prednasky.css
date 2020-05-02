@@ -455,7 +455,9 @@ footer{
         margin: 20px 0px;
         text-transform: uppercase;
         box-shadow: 5px 5px 5px black,
-        -2px -2px 3px rgb(146, 146, 146);
+        -2px -2px 3px rgb(146, 146, 146),
+        inset 2px 2px 2px black,
+        inset -2px -2px 2px rgb(206, 206, 206);
     }
 .mainNav{
     display: none;
