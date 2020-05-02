@@ -263,7 +263,7 @@ body, html{
     height: 20px;
     width: 40px;
     background: white;
-    box-shadow: inset 0px 0px 5px rgb(75, 75, 75);
+    box-shadow: inset 0px 0px 5px rgb(172, 172, 172);
     -webkit-appearance: none;
     border-radius: 50px;
     cursor: pointer;
@@ -315,6 +315,8 @@ body, html{
 .nastaveny{
     position: absolute;
     bottom: 20px;
+    font-family: 'Advent Pro', sans-serif;
+    text-shadow: 1px 1px 1px grey;
 }
 .check::before{
     content: "";

@@ -42,7 +42,7 @@ else{
             <button class="odovzdatMZ"><i class="odovzdatMZ fas fa-times"></i></button>
             <button class="vybratbackMZ"><i class="vybratbackMZ fas fa-times"></i></button>
             <ul class="mainNav">
-                <li class="main-item"> <a class="link link1" href="/Elearning/User/User.php">Hlavná stránka</a></li>
+                <li class="main-item"> <a class="link link1" href="/Elearning/User/User.php">Domov</a></li>
                 <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
                 <li class="main-item"> <button class="link link1 logout" >Logout</button></li>
             </ul>
