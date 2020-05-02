@@ -1671,6 +1671,10 @@ color: black;
 .hodnotenieM{
     display: none;
 }
+
+:root{
+    --background: radial-gradient(rgb(240, 129, 2), rgb(156, 83, 0));
+}
 @media (max-width: 500px){
     .otazkyHandler{
         display: none;
@@ -1686,8 +1690,9 @@ color: black;
         right: -100%;
         width: 100%;
         z-index: 2;
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: var(--background);
         color: white;
+        text-shadow: 1px 1px 1px black;
         transition: .4s;
         overflow: auto;
     }
@@ -1702,7 +1707,8 @@ color: black;
         flex-direction: column;
         position: absolute;
         z-index: 3;
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: var(--background);
+        text-shadow: 1px 1px 1px black;
         box-shadow: inset 0px 0px 10px white;
         transition: .4s;
     }
@@ -1755,6 +1761,7 @@ color: black;
         outline: none;
         text-transform: uppercase;
         font-size: 14px;
+        text-shadow: 1px 1px 1px black;
     }
     .mobile-zadania{
         top: 0;       
@@ -1764,7 +1771,7 @@ color: black;
         position: absolute;
         top: 30px;
         height: calc(100% - 30px);
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: var(--background);
     }
     .zadanieDelM,.zadanieNewM{
         width: 100%;
@@ -1778,6 +1785,7 @@ color: black;
     .zadaniaZoznam2{
         position: relative;
         top: 70px;
+        text-shadow: 1px 1px 1px black;
     }
     .zadaniaZoznam2 td{
         font-size: 10px;
@@ -1800,7 +1808,7 @@ color: black;
         justify-content: center;
         align-items: center;
         height: 100%;
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: var(--background);background: var(--background);
         z-index: 5;
         top: 0;
         right: -100%;
@@ -1863,7 +1871,7 @@ color: black;
         width: 100vw;
         display: none;
         z-index: 1;
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: var(--background);
         display: flex;
         flex-direction: column;
         right: -100%;
@@ -1958,7 +1966,7 @@ color: black;
         color: white;
     }
     .container{
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: var(--background);
         box-shadow: inset 0px 0px 20px white;
     }
     main{
@@ -2009,7 +2017,7 @@ color: black;
         justify-content: center;
         flex-direction: column;
         z-index: 1;
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: var(--background);
         box-shadow: inset 0px 0px 20px white;
         list-style: none;
         transition: .5s;
@@ -2118,7 +2126,7 @@ color: black;
             width: 100%;
             position: absolute;
             z-index: 2;
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
             box-shadow: inset 0px 0px 20px white;
             display: grid;
             grid-template-rows: 300px 1fr;
@@ -2148,7 +2156,7 @@ color: black;
             flex-direction: column;
             position: absolute;
             z-index: 3;
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
             box-shadow: inset 0px 0px 10px white;
         }
         .menu-zadanie{
@@ -2206,7 +2214,7 @@ color: black;
             position: absolute;
             top: 30px;
             height: calc(100% - 30px);
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
         }
         .zadanieNew, .zadanieDel{
             width: 100%;
@@ -2257,7 +2265,7 @@ color: black;
             width: 100%;
             position: absolute;
             z-index: 2;
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
             box-shadow: inset 0px 0px 20px white;
             display: grid;
             grid-template-rows: 300px 1fr;
@@ -2296,7 +2304,7 @@ color: black;
             flex-direction: column;
             position: absolute;
             z-index: 3;
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
             box-shadow: inset 0px 0px 10px white;
         }
         .menu-zadanie{
@@ -2353,7 +2361,7 @@ color: black;
             position: absolute;
             top: 0;
             height: 100%;
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
         }
         .zadanieNew, .zadanieDel{
             width: 100%;
@@ -2419,7 +2427,7 @@ color: black;
             width: 100%;
             position: absolute;
             z-index: 2;
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
             box-shadow: inset 0px 0px 20px white;
             display: grid;
             grid-template-rows: 200px 1fr;
@@ -2460,7 +2468,7 @@ color: black;
             flex-direction: column;
             position: absolute;
             z-index: 3;
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
             box-shadow: inset 0px 0px 10px white;
         }
         .menu-zadanie{
@@ -2517,7 +2525,7 @@ color: black;
             position: absolute;
             top: 30px;
             height: calc(100% - 30px);
-            background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+            background: var(--background);
         }
         .zadanieNew, .zadanieDel{
             width: 100%;

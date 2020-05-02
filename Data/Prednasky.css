@@ -424,7 +424,7 @@ footer{
         display: none;
     }
     .container{
-        background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
+        background: radial-gradient(rgb(240, 129, 2), rgb(156, 83, 0));
         box-shadow: inset 0px 0px 20px white;
     }
     .home{
