@@ -1689,7 +1689,7 @@ color: black;
         background: linear-gradient(to top, #0A5FF0,#5C45B6, #BD00F5);
         color: white;
         transition: .4s;
-        overflow: hidden;
+        overflow: auto;
     }
     .zadania{
         display: none;

@@ -2,7 +2,7 @@
 // Create Connection
 require "../conn.php";
 
-$sql = 'SELECT * FROM uzivatelia';
+$sql = 'SELECT * FROM uzivatelia WHERE typ_uzivatela = "user"';
 
 // Get Result
 $result = mysqli_query($conn, $sql);

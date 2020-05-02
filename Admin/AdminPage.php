@@ -17,7 +17,7 @@ require "../conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AdminPage</title>
-    <link rel="stylesheet" href="AdminPage.css?version=20">
+    <link rel="stylesheet" href="AdminPage.css?version=20a">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -47,8 +47,8 @@ require "../conn.php";
         <ul class="sideMenu">
             <li class="side-item"> <button class="link link2" id="showHodnotenie">Hodnotenie</button></li>
             <li class="side-item"> <button class="link link2" id="showZadania">Zadania</button></li>
-            <li class="side-item"> <button id="showChat" class="link link2">Online chat</button></li>
-            <li class="side-item"> <button id="showStudenti" class="link link2">Studenti</button></li>
+            <li class="side-item"> <button id="showChat" class="link link2">Diskusia</button></li>
+            <li class="side-item"> <button id="showStudenti" class="link link2">Študenti</button></li>
             <li class="side-item"> <button id="showTest" class="link link2">Testy</button></li>
         </ul>
         </aside>
@@ -69,7 +69,7 @@ require "../conn.php";
             </div>
 <!-- Termin odovzdania zadani -->
             <div class="terminZadani">
-                <h1>datum odovzdania zadani</h1>
+                <h1>dátum odovzdania zadaní</h1>
                 <span>
                     <input class="datepicker" type="date">
                     <input class="timepicker" type="time">
@@ -171,8 +171,8 @@ require "../conn.php";
             <div class="mobileOverlayMenu">
                 <li class="overlayMenu-item"> <button class="linkM" id="hodnotenieM">Hodnotenie</button></li>
                 <li class="overlayMenu-item"> <button class="linkM" id="showmobilezadania">Zadania</button></li>
-                <li class="overlayMenu-item"> <button id="showMChat" class="linkM">Online chat</button></li>
-                <li class="overlayMenu-item"> <button id="showStudentiM" class="linkM">Studenti</button></li>  
+                <li class="overlayMenu-item"> <button id="showMChat" class="linkM">Diskusia</button></li>
+                <li class="overlayMenu-item"> <button id="showStudentiM" class="linkM">Študenti</button></li>  
             </div>
 <!--Mobile chat-->
             <div class="mobile-chat">
@@ -361,10 +361,10 @@ require "../conn.php";
          
             </div>
         </div>
-        <button class="chat"><i class="fas fa-envelope"></i>Chat</button>
+        <button class="chat"><i class="fas fa-envelope"></i>Diskusia</button>
        
     </div>
-    <script type="text/javascript" src="Admin.js?v=15c"></script>
+    <script type="text/javascript" src="Admin.js?v=15d"></script>
 
 
 </body>

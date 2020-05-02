@@ -325,7 +325,7 @@ delbutton.addEventListener("click", (e)=>{
       
         for(let i in studenti){
           let pocet = Number(i) +1;
-          output += `<tr><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr><br>`;
+          output += `<tr><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr>`;
         }
   
       document.querySelector(".tabulkaS").innerHTML = output;
@@ -731,7 +731,7 @@ xhr.onload = function(){
     let studenti = JSON.parse(this.responseText);
     
     let output = '';
-    output += "<tr class='nadpisH'><td>ID</td><td>Študent</td><td>Krúžok</td><td>Semester</td><td>Zadanie</td><td>Skuska</td><td>SPOLU</td></tr>";
+    output += "<tr class='nadpisH'><td>ID</td><td>Študent</td><td>Krúžok</td><td>Semester</td><td>Zadanie</td><td>Skúška</td><td>SPOLU</td></tr>";
   
     for(let i in studenti){
       let spoluBody = Number(studenti[i].semester) + Number(studenti[i].zadanie) + Number(studenti[i].Skuska);
@@ -883,7 +883,7 @@ function loadHodnotenie(){
       for(var i in studenti){
         let poradie = Number(i) + 1;
         let spolu = Number(studenti[i].semester) + Number(studenti[i].zadanie) + Number(studenti[i].Skuska);
-        output += `<tr class='riadok'><td>${poradie}</td> <td>${studenti[i].meno} ${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${spolu}</td></tr><br>`;
+        output += `<tr class='riadok'><td>${poradie}</td> <td>${studenti[i].meno} ${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${spolu}</td></tr>`;
       }
   
     document.querySelector(".zobrazenieHodnotenia2").innerHTML = output;
