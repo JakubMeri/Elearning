@@ -736,7 +736,7 @@ xhr.onload = function(){
     for(let i in studenti){
       let spoluBody = Number(studenti[i].semester) + Number(studenti[i].zadanie) + Number(studenti[i].Skuska);
       let poradie = Number(i) + 1;
-      output += `<tr class='riadok'><td>${poradie}</td> <td>${studenti[i].meno} ${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].semester}</td><td>${studenti[i].zadanie}</td><td>${studenti[i].Skuska}</td><td>${spoluBody}</td></tr><br>`;
+      output += `<tr class='riadok'><td>${poradie}</td> <td>${studenti[i].meno} ${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].semester}</td><td>${studenti[i].zadanie}</td><td>${studenti[i].Skuska}</td><td>${spoluBody}</td></tr>`;
     }
 
   document.querySelector(".zobrazenieHodnotenia").innerHTML = output;
