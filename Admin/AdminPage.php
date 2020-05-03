@@ -17,7 +17,7 @@ require "../conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AdminPage</title>
-    <link rel="stylesheet" href="AdminPage.css?version=20c">
+    <link rel="stylesheet" href="AdminPage.css?version=20d">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -304,7 +304,7 @@ require "../conn.php";
               <div class="uprava">
               <form class="StudentReset">
                 <input type="text" name="menoStudenta" class="delUname" placeholder="Meno a priezvisko pouzivatela...">
-                <input type="submit" value="zmazat" class="subDel" name="zmazstudenta">
+                <input type="submit" value="zmazať" class="subDel" name="zmazstudenta">
               </form>
               </div>
           </div>
@@ -364,7 +364,7 @@ require "../conn.php";
         <button class="chat"><i class="fas fa-envelope"></i>Diskusia</button>
        
     </div>
-    <script type="text/javascript" src="Admin.js?v=15d"></script>
+    <script type="text/javascript" src="Admin.js?v=15f"></script>
 
 
 </body>

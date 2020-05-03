@@ -273,12 +273,12 @@ function loadUsers(){
     
       for(var i in studenti){
         let pocet = Number(i) + 1;
-        output += `<tr><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr>`;
+        output += `<tr style="cursor: pointer" class="delete-student"><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr>`;
       }
       output += "</tbody>";
       document.querySelector(".tabulkaSL").innerHTML = output;
    
-
+      studentDeleteHandler();
       
     }
   }
@@ -288,27 +288,41 @@ function loadUsers(){
 loadUsers();
 
 //zmaz studenta
-let delbutton = document.querySelector(".subDel")
-delbutton.addEventListener("click", (e)=>{
-      e.preventDefault();
-      let input = document.querySelector('.delUname').value;
-      let pole =  input.split(" ");
-      let params = "meno="+pole[0] +"&priezvisko=" +pole[1];
-      let xhr = new XMLHttpRequest();
-      xhr.open('POST', 'studentZmaz.php', true);
-      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+let delbutton = document.querySelector(".subDel");
+const studentDeleteHandler = () =>{
+  let studentDelete = document.querySelectorAll(".delete-student");
+  studentDelete.forEach( student => {
+    student.addEventListener("click", (e)=> {
+      let meno = e.target.parentElement.children[1].innerHTML;
+      let priezvisko = e.target.parentElement.children[2].innerHTML;
+      let email = e.target.parentElement.children[4].innerHTML;
+      document.querySelector('.delUname').value = `${meno} ${priezvisko}`;
 
-      xhr.onload = function(){
-        console.log(this.responseText);
-      }
+      delbutton.addEventListener("click", (e)=>{
+        e.preventDefault();
+        let input = document.querySelector('.delUname').value;
+        let pole =  input.split(" ");
+        let params = "meno="+pole[0] +"&priezvisko=" +pole[1] + "&email="+email;
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'studentZmaz.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  
+        xhr.onload = function(){
+          console.log(this.responseText);
+        }
+  
+        xhr.send(params);
+        document.querySelector(".StudentReset").reset(); 
+        setTimeout(() => {
+          loadUsers();
+        }, 0);
+        
+      });
+    })
+  })
+}
 
-      xhr.send(params);
-      document.querySelector(".StudentReset").reset(); 
-      setTimeout(() => {
-        loadUsers();
-      }, 0);
-      
-    });
+
 //MOBIL
     //Nacitanie studentov
 
@@ -325,11 +339,11 @@ delbutton.addEventListener("click", (e)=>{
       
         for(let i in studenti){
           let pocet = Number(i) +1;
-          output += `<tr><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr>`;
+          output += `<tr class="delete-mobile-student"><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr>`;
         }
   
       document.querySelector(".tabulkaS").innerHTML = output;
-     
+      studentDeleteHandlerMobile();
   
         
       }
@@ -339,26 +353,42 @@ delbutton.addEventListener("click", (e)=>{
   }
   loadUsersM();
   //zmaz studenta
-  let delStudMobile = document.querySelector(".studentZmaz")
-  delStudMobile.addEventListener("click", (e)=>{
-        e.preventDefault();
-        let input = document.querySelector('.inputDelStud').value;
-        let pole =  input.split(" ");
-        let params = "meno="+pole[0] +"&priezvisko=" +pole[1];
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'studentDelMob.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  
-        xhr.onload = function(){
-          console.log(this.responseText);
-        }
-  
-        xhr.send(params);
-        document.querySelector(".resetMobileStudent").reset();
-        setTimeout(() => {
-          loadUsersM();
-        }, 0);
-      });
+  const studentDeleteHandlerMobile = () =>{
+    let studentDelete = document.querySelectorAll(".delete-mobile-student");
+    studentDelete.forEach( student => {
+      student.addEventListener("click", (e)=> {
+        let meno = e.target.parentElement.children[1].innerHTML;
+        let priezvisko = e.target.parentElement.children[2].innerHTML;
+        let email = e.target.parentElement.children[4].innerHTML;
+        document.querySelector('.inputDelStud').value = `${meno} ${priezvisko}`;
+        let delStudMobile = document.querySelector(".studentZmaz");
+        delStudMobile.addEventListener("click", (e)=>{
+              e.preventDefault();
+              let input = document.querySelector('.inputDelStud').value;
+              let pole =  input.split(" ");
+              let params = "meno="+pole[0] +"&priezvisko=" +pole[1] +"&email="+email;
+              var xhr = new XMLHttpRequest();
+              xhr.open('POST', 'studentDelMob.php', true);
+              xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        
+              xhr.onload = function(){
+                console.log(this.responseText);
+              }
+        
+              xhr.send(params);
+              document.querySelector(".resetMobileStudent").reset();
+              setTimeout(() => {
+                loadUsersM();
+              }, 0);
+            });
+      })
+    })
+  }
+
+
+
+
+
 //Zobrazenie sprav v chate
 
 
