@@ -16,7 +16,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prednášky</title>
-    <link rel="stylesheet" href="Prednasky.css?v=5b">
+    <link rel="stylesheet" href="Prednasky.css?v=5c">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
 </head>
@@ -30,8 +30,8 @@ else{
                 <a class="logo" href="/Elearning/Main page/Main.html">UIES</a>
                 <a class="home" href="/Elearning/home.php"><i class="home fas fa-home"></i></a>
                     <ul class="mainNav" style="width: 45% !important">
-                        <li class="main-item"> <a class="link link1" href="/Elearning/home.php">Hlavná stránka</a></li>
-                        <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
+                        <li class="main-item"> <a class="link link1" href="/Elearning/home.php">Domov</a></li>
+                        <li class="main-item"> <a class="link link1 active" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
                         <li class="main-item"> <a class="link link1" href="/Elearning/Data/upravaObsahu.php">Úprava obsahu</a></li>
                         <li class="main-item"> <button class="logout link link1" href="#">Logout</button></li>
                     </ul>
@@ -42,8 +42,8 @@ else{
                     <a class="logo" href="/Elearning/Main page/Main.html">UIES</a>
                     <a class="home" href="/Elearning/home.php"><i class="home fas fa-home"></i></a>
                     <ul class="mainNav" style="width: 30% !important">
-                        <li class="main-item"> <a class="link link1" href="/Elearning/home.php">Hlavná stránka</a></li>
-                        <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
+                        <li class="main-item"> <a class="link link1" href="/Elearning/home.php">Domov</a></li>
+                        <li class="main-item"> <a class="link link1 active" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
                         <li class="main-item"> <button class="logout link link1" href="#">Logout</button></li>
                     </ul>
                  </nav>';

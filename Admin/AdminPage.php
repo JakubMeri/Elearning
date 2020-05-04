@@ -17,7 +17,7 @@ require "../conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AdminPage</title>
-    <link rel="stylesheet" href="AdminPage.css?version=20d">
+    <link rel="stylesheet" href="AdminPage.css?version=20e">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -37,7 +37,7 @@ require "../conn.php";
             <button class="BackHodnotenie"><i class="BackHodnotenie fas fa-times"></i></button>
             <button class="BackZadania"><i class="BackZadania fas fa-times"></i></button>
             <ul class="mainNav">
-                <li class="main-item"> <a class="link link1" href="/Elearning/Admin/AdminPage.php">Domov</a></li>
+                <li class="main-item"> <a class="link link1 active" href="/Elearning/Admin/AdminPage.php">Domov</a></li>
                 <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
                 <li class="main-item"> <a class="link link1" href="/Elearning/Data/upravaObsahu.php">Úprava obsahu</a></li>
                 <li class="main-item"> <button class="link link1 logout" >Logout</button></li>
@@ -267,7 +267,7 @@ require "../conn.php";
                 <div class="onlineScroll">
                 <?php
                     
-                    $sql = "SELECT * FROM uzivatelia ORDER BY onlineU DESC";
+                    $sql = "SELECT * FROM uzivatelia WHERE typ_uzivatela='user' OR typ_uzivatela='admin' ORDER BY onlineU DESC";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                         while($row = $result->fetch_assoc()) {
@@ -364,7 +364,7 @@ require "../conn.php";
         <button class="chat"><i class="fas fa-envelope"></i>Diskusia</button>
        
     </div>
-    <script type="text/javascript" src="Admin.js?v=15f"></script>
+    <script type="text/javascript" src="Admin.js?v=15g"></script>
 
 
 </body>

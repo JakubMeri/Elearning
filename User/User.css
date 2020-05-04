@@ -52,6 +52,9 @@ nav{
     width: 100%;
     background: rgba(0,0,0,.8);
 }
+.active{
+    color: rgb(243, 219, 0) !important;
+}
 .logo{
     font-family: 'Advent Pro', sans-serif;
     position: absolute;

@@ -17,7 +17,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
-    <link rel="stylesheet" href="User.css?version=59f">
+    <link rel="stylesheet" href="User.css?version=59g">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -42,7 +42,7 @@ else{
             <button class="odovzdatMZ"><i class="odovzdatMZ fas fa-times"></i></button>
             <button class="vybratbackMZ"><i class="vybratbackMZ fas fa-times"></i></button>
             <ul class="mainNav">
-                <li class="main-item"> <a class="link link1" href="/Elearning/User/User.php">Domov</a></li>
+                <li class="main-item"> <a class="link link1 active" href="/Elearning/User/User.php">Domov</a></li>
                 <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
                 <li class="main-item"> <button class="link link1 logout" >Logout</button></li>
             </ul>
@@ -305,7 +305,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
                 <div class="onlineScroll">
                     <?php
                     
-                    $sql = "SELECT * FROM uzivatelia ORDER BY onlineU DESC";
+                    $sql = "SELECT * FROM uzivatelia WHERE typ_uzivatela='user' OR typ_uzivatela='admin' ORDER BY onlineU DESC";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                         while($row = $result->fetch_assoc()) {

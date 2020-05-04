@@ -16,7 +16,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uprava Obsahu</title>
     <link rel="stylesheet" href="../Admin/AdminPage.css?version=1b">
-    <link rel="stylesheet" href="editor.css?version=1b">
+    <link rel="stylesheet" href="editor.css?version=1c">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script type="text/javascript" src="./ckeditor/ckeditor.js" charset="utf-8"></script>
@@ -31,9 +31,9 @@ else{
             <button class="BackHodnotenie"><i class="BackHodnotenie fas fa-times"></i></button>
             <button class="BackZadania"><i class="BackZadania fas fa-times"></i></button>
             <ul class="mainNav">
-                <li class="main-item"> <a class="link link1" href="/Elearning/Admin/AdminPage.php">Hlavná stránka</a></li>
+                <li class="main-item"> <a class="link link1" href="/Elearning/Admin/AdminPage.php">Domov</a></li>
                 <li class="main-item"> <a class="link link1" href="/Elearning/Data/Prednasky.php">Prednášky</a></li>
-                <li class="main-item"> <a class="link link1" href="/Elearning/Data/upravaObsahu.php">Úprava obsahu</a></li>
+                <li class="main-item"> <a class="link link1 active" href="/Elearning/Data/upravaObsahu.php">Úprava obsahu</a></li>
                 <li class="main-item"> <button class="link link1 logout" >Logout</button></li>
             </ul>
 </nav>

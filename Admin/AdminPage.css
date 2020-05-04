@@ -363,6 +363,9 @@ nav{
     background: rgba(0,0,0,.8);
     z-index: 3;
 }
+.active{
+    color: rgb(243, 219, 0) !important;
+}
 .logo{
     font-family: 'Advent Pro', sans-serif;
     position: absolute;
@@ -379,7 +382,7 @@ nav{
     transition: .3s;
 }
 .logo:hover{
-    color: rgb(243, 219, 0);;
+    color: rgb(243, 219, 0);
 }
 .mainNav{
     margin-left: auto;

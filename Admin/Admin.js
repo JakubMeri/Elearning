@@ -271,7 +271,7 @@ function loadUsers(){
       var output = '';
       output += "<thead><tr class='nadpis'><th>ID</th><th>Meno</th><th>Priezvisko</th><th>Krúžok</th><th>Email</th></tr></thead><tbody>";
     
-      for(var i in studenti){
+      for(let i in studenti){
         let pocet = Number(i) + 1;
         output += `<tr style="cursor: pointer" class="delete-student"><td>${pocet}</td> <td>${studenti[i].meno}</td><td>${studenti[i].priezvisko}</td><td>${studenti[i].Kruzok}</td><td>${studenti[i].email}</td></tr>`;
       }
@@ -952,7 +952,7 @@ function loadHodnotenie(){
   xhr.send(params);
 }
 else{
-
+  e.preventDefault();
 }
   });
 
