@@ -303,7 +303,7 @@ require "../conn.php";
               </div>
               <div class="uprava">
               <form class="StudentReset">
-                <input type="text" name="menoStudenta" class="delUname" placeholder="Meno a priezvisko pouzivatela...">
+                <input type="text" name="menoStudenta" class="delUname" placeholder="Meno a priezvisko používateľa...">
                 <input type="submit" value="zmazať" class="subDel" name="zmazstudenta">
               </form>
               </div>
