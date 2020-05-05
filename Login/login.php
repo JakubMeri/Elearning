@@ -5,6 +5,9 @@ if(isset($_SESSION['typ'])){
     if($_SESSION['typ'] == "user"){
     header("Location: /Elearning/User/User.php"); 
     }
+    else if($_SESSION['typ'] == "spravca"){
+        header("Location: /Elearning/Spravca/spravca.php"); 
+        }
     else{
     header("Location: /Elearning/Admin/AdminPage.php");     
     }

@@ -82,7 +82,7 @@ body, html{
     color: rgb(243, 219, 0);
 }
 .prednaskyBox::before{
-    content: "DOWNLOAD";
+    content: "STIAHNUŤ";
     padding: 10px;
     position: absolute;
     background: rgba(0,0,0,.8);

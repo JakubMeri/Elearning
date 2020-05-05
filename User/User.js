@@ -442,6 +442,7 @@ backChat.addEventListener("click", () => {
 
             uloz();
             vyberZadanie.style.display = "none";
+            upravaDatumuOdovzdania();
             });
             
             zadaniaVyber.addEventListener("click", () => {
@@ -503,7 +504,6 @@ backChat.addEventListener("click", () => {
   (function datumOdovzdania(){
     let xhr = new XMLHttpRequest();
   xhr.open('GET', 'datumOdov.php', true);
-
   xhr.onload = function(){
     if(this.status == 200){
       let date = JSON.parse(this.responseText);
@@ -542,11 +542,20 @@ backChat.addEventListener("click", () => {
       odovzdatBtn.style.display = "block";
     }
     }
- 
+    upravaDatumuOdovzdania();
   }
   xhr.send();
 })();
-
+const upravaDatumuOdovzdania = () => {
+  setTimeout(() => {
+  if(document.querySelector(".zadanie").innerHTML == ""){
+    datumOdov.style.display = "none";
+  }
+  else{
+    datumOdov.style.display = "block";
+  }
+}, 300);
+}
 
   //Skrytie odovzdania
   function skrytZadania(){
