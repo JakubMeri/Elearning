@@ -17,7 +17,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
-    <link rel="stylesheet" href="User.css?version=59g">
+    <link rel="stylesheet" href="User.css?version=59i">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -89,7 +89,7 @@ else{
         </div>
         <div class="fhi"><a target="_blank" href="https://fhi.euba.sk/"></a><div class="stranka"><p>FHI</p></div></div>
         <div class="ais"><a target="_blank" href="https://ais2.euba.sk/ais/start.do"></a><div class="stranka"><p>AIS</p></div></div>
-        <div class="moodle"><a target="_blank" href="https://moodle.euba.sk/"></a><div class="stranka"><p>MOODLE</p></div></div>
+        <div class="euba"><a target="_blank" href="https://euba.sk/"></a><div class="stranka"><p>EUBA</p></div></div>
         </div>
 <!--Mobile menu-->
             <div class="mobilMenu">

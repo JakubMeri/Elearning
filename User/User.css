@@ -175,7 +175,7 @@ main{
     margin-top: 40px;
     grid-column-gap: 5px;
 }
-.fhi, .ais, .moodle{
+.fhi, .ais, .euba{
     height: 200px;
     width: 300px;
     position: relative;
@@ -197,12 +197,12 @@ main{
     box-shadow: 5px 5px 5px black;
 }
 
-.fhi a, .ais a, .moodle a{
+.fhi a, .ais a, .euba a{
     position: absolute;
     height: 100%;
     width: 100%;
 }
-.fhi a:hover, .ais a:hover, .moodle a:hover{
+.fhi a:hover, .ais a:hover, .euba a:hover{
 background: rgba(0,0,0,.4);
 }
 .fhi a:hover ~ .stranka:nth-child(2){
@@ -211,8 +211,8 @@ background: rgba(0,0,0,.4);
 .ais a:hover ~ .stranka:nth-child(2){
     color: rgb(0, 15, 226);
 }
-.moodle a:hover ~ .stranka:nth-child(2){
-    color: rgb(0, 162, 255);
+.euba a:hover ~ .stranka:nth-child(2){
+    color: #124990;
 }
 .fhi{
 background: url("IMG/fhi.png") center;
@@ -224,8 +224,8 @@ background: url("IMG/ais.png") center;
 background-size: cover;
 grid-row: 3;
 }
-.moodle{
-background: url("IMG/moodle.png") center;
+.euba{
+background: url("IMG/euba.png") center;
 background-size: cover;
 grid-row: 3;
 }
