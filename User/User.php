@@ -17,7 +17,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
-    <link rel="stylesheet" href="User.css?version=59i">
+    <link rel="stylesheet" href="User.css?version=59j">
     <link rel="shortcut icon" type="image/png" href="/Elearning/icon.png"/>
     <script src="https://kit.fontawesome.com/5cfe4f03a7.js"></script>
     <script
@@ -405,7 +405,7 @@ Sťažnosti</td><td>Chybná trieda</td><td>Model správania sa systému</td><td>
         <button class="chat"><i class="fas fa-envelope"></i>Diskusia</button>
        
     </div>
-    <script type="text/javascript" src="User.js?v=7a"></script>
+    <script type="text/javascript" src="User.js?v=7b"></script>
     <script type="text/javascript" src="jQuery.js?v=1b"></script>
     <?php
 

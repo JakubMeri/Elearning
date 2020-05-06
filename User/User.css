@@ -253,6 +253,9 @@ grid-row: 3;
     justify-content: center;
     transition: .4s;
 }
+.hodnotenie h1{
+    pointer-events: none;
+}
 .nadpis td{
     padding: 10px;
     box-shadow: inset 0px 0px 10px black;

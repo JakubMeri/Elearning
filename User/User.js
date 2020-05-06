@@ -472,7 +472,7 @@ backChat.addEventListener("click", () => {
   function uloz(){
       
     let zadanieOdoslane = document.querySelector('.zadanie').innerHTML;
-    console.log(zadanieOdoslane);
+   
     if(zadanieOdoslane == "")
     {
 
@@ -480,7 +480,7 @@ backChat.addEventListener("click", () => {
     else{
     let data = "zadanie="+ zadanieOdoslane;
     
-    console.log(zadanieOdoslane);
+  
 
     let xhr2 = new XMLHttpRequest();
     xhr2.open('POST', 'vybraneZadanie.php', true);
@@ -507,7 +507,6 @@ backChat.addEventListener("click", () => {
   xhr.onload = function(){
     if(this.status == 200){
       let date = JSON.parse(this.responseText);
-      console.log(date[0].zobraz)
       if(date[0].zobraz == 0){
         let output =  `Dátum odovzdania vypršal.`;
         datumOdov.innerHTML = output; 
@@ -550,9 +549,11 @@ const upravaDatumuOdovzdania = () => {
   setTimeout(() => {
   if(document.querySelector(".zadanie").innerHTML == ""){
     datumOdov.style.display = "none";
+    odovzdatBtn.style.display = "none";
   }
   else{
     datumOdov.style.display = "block";
+    odovzdatBtn.style.display = "block";
   }
 }, 300);
 }

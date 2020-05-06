@@ -15,6 +15,11 @@ body, html{
     background: url("IMG/prednaska.jpeg") center;
     background-size: cover;
 }
+
+::selection{
+    background: black;
+    color: white;
+}
 .predcontainer{
     position: absolute;
     height: 100%;
