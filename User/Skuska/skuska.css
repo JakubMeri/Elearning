@@ -339,6 +339,11 @@ align-items: center;
 }
 .otazka li{
     margin: 0px 10px;
+    margin-bottom: 5px;
+}
+.otazka li p{
+    width: 550px;
+    height: auto;
 }
 .otazka h3{
     margin-bottom: 10px;

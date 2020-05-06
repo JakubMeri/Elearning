@@ -956,16 +956,46 @@ setTimeout(() => {
       output += "<tr class='nadpis'><td>SEMESTER</td><td>ZADANIE</td><td>SKÚŠKA</td><td>SPOLU</td></tr>";
       for(let i = 0; i<hodnotenie.length; i++){
         let spoluBody = Number(hodnotenie[i].semester) + Number(hodnotenie[i].zadanie) + Number(hodnotenie[i].Skuska);
-        output += `<tr><td>${hodnotenie[i].semester}</td><td>${hodnotenie[i].zadanie}</td><td>${hodnotenie[i].Skuska}</td><td>${spoluBody}</td></tr><br>`;
+        output += `<tr><td>${hodnotenie[i].semester}</td><td>${hodnotenie[i].zadanie}</td><td>${hodnotenie[i].Skuska}</td><td class="body-spolu">${spoluBody}</td></tr>`;
+
+        setTimeout(() => {
+          let spolu = document.querySelector(".body-spolu");
+          spolu.addEventListener("mouseover", () =>{
+            if(Number(spolu.innerHTML)<50){
+              spolu.innerHTML = "Fx";
+            }
+            if(Number(spolu.innerHTML) > 50 && Number(spolu.innerHTML) < 60){
+              spolu.innerHTML = "E";
+            }
+            if(Number(spolu.innerHTML) >= 60 && Number(spolu.innerHTML) < 70){
+              spolu.innerHTML = "D";
+            }
+            if(Number(spolu.innerHTML) >= 70 && Number(spolu.innerHTML) < 80){
+              spolu.innerHTML = "C";
+            }
+            if(Number(spolu.innerHTML) >= 80 && Number(spolu.innerHTML) < 90){
+              spolu.innerHTML = "B";
+            }
+            if(Number(spolu.innerHTML) > 90){
+              spolu.innerHTML = "A";
+            }
+          });
+          spolu.addEventListener("mouseout", () =>{
+            spolu.innerHTML = spoluBody;
+          });
+        }, 500);
       }
 
     document.querySelector(".hodnotenieZobraz").innerHTML = output;
-   
+    
+
 
     }
   }
 
   xhr.send();
+
+
 });
 hideHodnotenie.addEventListener("click", () => {
     hodnotenie.style.opacity = "0";

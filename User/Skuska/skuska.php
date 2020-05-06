@@ -34,7 +34,7 @@ else{
             <br><br><br><br>
             <span class="inputCont">
                 <input type="password" id="heslo" placeholder="Zadaj heslo">
-                <button id="zahajit">Zahajit test</button>
+                <button id="zahajit">Zahájiť test</button>
             </span>
             <br>
             <p id="hlaska"></p>
@@ -73,6 +73,6 @@ else{
                 <a class="reloc" href="../User.php">Späť do kurzu</a>
         </div>
     </div>
-    <script type="text/javascript" src="skuska.js?version=3a"></script>
+    <script type="text/javascript" src="skuska.js?version=3b"></script>
 </body>
 </html>

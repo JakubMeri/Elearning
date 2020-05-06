@@ -13,6 +13,12 @@ let rok = date.getFullYear();
 
 datum.innerHTML = `Skúška z UIES (${den}. ${mesiac}. ${rok})`;
 
+
+
+window.onbeforeunload = function(e){
+    e.returnValue = "Ak refreshnes stránku, prídeš o pokus!";
+}
+
 function getDataHandler(url, pocetOtazok){
 let xhr = new XMLHttpRequest;
 
