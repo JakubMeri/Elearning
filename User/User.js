@@ -408,16 +408,16 @@ backChat.addEventListener("click", () => {
      //Zobrazit zadania
       function loadZadanie(){
 
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open('GET', 'showZadania.php', true);
       
         xhr.onload = function(){
           if(this.status == 200){
-            var zadania = JSON.parse(this.responseText);
+            let zadania = JSON.parse(this.responseText);
             
-            var output = '<tr><th>ID</th><th>Popis zadania</th></tr>';
+            let output = '<tr><th>ID</th><th>Popis zadania</th></tr>';
             
-            for(var i in zadania){
+            for(let i in zadania){
               let poradie = Number(i) + 1;
               output += `<tr>
               <td>${poradie}</td>
@@ -1295,7 +1295,7 @@ let testy = document.querySelectorAll(".btn-test");
 testy.forEach( a => {
   if(a.style.display == "block"){
     if(a.innerHTML == "Skúška"){
-      showTestBtn.innerHTML = "Použi NTB";
+      showTestBtn.innerHTML = "Použi PC";
       setTimeout(() => {
         showTestBtn.innerHTML = "dostupné testy";
       }, 3000);
