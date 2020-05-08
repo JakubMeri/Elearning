@@ -38,6 +38,7 @@ zobrazStudentov.addEventListener("click", () =>{
 //Studenti Vypnutie
 hideStudenti.addEventListener("click", () => {
     studenti.style.opacity = "0";
+    document.querySelector(".StudentReset").reset();
     
     setTimeout(()=>{
         studenti.style.display = "none";
@@ -251,7 +252,8 @@ backChat.addEventListener("click", () => {
   backStud.style.display = "none";  
   setTimeout(() => {
     studentMob.style.display = "none";
-      backBtn.style.display = "block";     
+      backBtn.style.display = "block";
+      document.querySelector(".resetMobileStudent").reset();      
   }, 500);
 });
 
