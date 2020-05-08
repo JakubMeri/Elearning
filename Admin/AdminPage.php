@@ -82,7 +82,7 @@ require "../conn.php";
             <h1>Heslo na skúšku</h1>
             <br><br><br><br>
             <span>
-                <input type="text" id="nastavHeslo">
+                <input type="text" id="nastavHeslo" placeholder="Zadaj heslo...">
                 <button id="hesloOk">Nastaviť</button>
             </span>
             <br>
