@@ -136,7 +136,9 @@ body, html{
     color: white;
     font-weight: bold;
     box-shadow: 5px 5px 5px black;
+    font-weight: 900;
     outline: none;
+    cursor: pointer;
 }
 .reloc:hover{
     color: black;

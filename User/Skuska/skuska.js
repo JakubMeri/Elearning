@@ -15,9 +15,8 @@ datum.innerHTML = `Skúška z UIES (${den}. ${mesiac}. ${rok})`;
 
 
 
-window.onbeforeunload = function(e){
-    e.returnValue = "Ak refreshnes stránku, prídeš o pokus!";
-}
+window.onbeforeunload = () => "Ak refreshnes stránku, prídeš o pokus!";
+
 
 function getDataHandler(url, pocetOtazok){
 let xhr = new XMLHttpRequest;
@@ -262,12 +261,10 @@ function otazkyHandler(){
                         else{
                             vysledneBody.push(pocetBodov);
                         }
-                        console.log(pocetBodov)
                         pocetBodov = 0;
                         counter = [];
                     });
                     let hodnotenie = 0;
-                    console.log(vysledneBody)
                     vysledneBody.forEach( a => {
                         hodnotenie += Number(a);
     
@@ -303,6 +300,11 @@ function otazkyHandler(){
     });
 }
 otazkyHandler();
+
+document.querySelector(".reloc").addEventListener("click", () => {
+    window.onbeforeunload = () => null;
+    window.location.href = "../User.php";
+})
 
 
 function selected(){

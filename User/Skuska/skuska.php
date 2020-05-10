@@ -70,7 +70,7 @@ else{
                 <br>
                 <h1 class="emoji"></h1>
                 <br>
-                <a class="reloc" href="../User.php">Späť do kurzu</a>
+                <button class="reloc">Späť do kurzu</button>
         </div>
     </div>
     <script type="text/javascript" src="skuska.js?version=3b"></script>
