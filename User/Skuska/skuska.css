@@ -139,6 +139,7 @@ body, html{
     font-weight: 900;
     outline: none;
     cursor: pointer;
+    text-transform: uppercase
 }
 .reloc:hover{
     color: black;
