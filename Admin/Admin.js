@@ -550,6 +550,21 @@ sendMobChat.addEventListener("click", (e)=>{
       xhr.send(params);
       document.querySelector(".ResetMobileChat").reset();
 });
+
+
+//Load zadanie po kliknutí naň
+const oznacZadanie = () => {
+  let zadaniaNacitanie = document.querySelectorAll(".zadanie-zmaz");
+  zadaniaNacitanie.forEach( zadanie => {
+    zadanie.addEventListener("click", (e) => {
+       document.querySelector(".noveZadanie").value = e.target.parentElement.children[1].innerHTML
+       document.querySelector(".noveZadanieM").value = e.target.parentElement.children[1].innerHTML
+    })
+  })
+}
+
+
+
 //Zadania praca
 function pracasoZadaniami(url){
   let zadanie = document.querySelector('.noveZadanie').value;
@@ -562,7 +577,7 @@ function pracasoZadaniami(url){
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
   xhr.onload = function(){
-    console.log(this.responseText);
+    /* console.log(this.responseText); */
   }
 
   xhr.send(params);
@@ -591,6 +606,7 @@ let zadanie = document.querySelector(".zadania");
 let zavrietZadania = document.querySelector(".btnZ");
 let zobrazZadania = document.getElementById("showZadania");
 zobrazZadania.addEventListener("click", () => {
+  loadzadania("showZadania");
   zadanie.style.display = "flex";
   setTimeout(() => {
   zadanie.style.opacity = "1";
@@ -612,11 +628,19 @@ pridatZadanie.addEventListener("click", (e)=>{
       e.preventDefault();
      
       pracasoZadaniami('zadania.php');
+      loadzadania("showZadania");
+      loadzadania("showZadania2");
+      loadzadania("showZadania3");
+      loadzadania("showZadania4");
 });
 pridatZadanieM.addEventListener("click", (e)=>{
   e.preventDefault();
  
-  pracasoZadaniamiM('zadania.php');
+      pracasoZadaniamiM('zadania.php');
+      loadzadania("showZadania");
+      loadzadania("showZadania2");
+      loadzadania("showZadania3");
+      loadzadania("showZadania4");
 });
 //Dell zadanie
 let delZadanie = document.querySelector(".zadanieDel");
@@ -625,11 +649,19 @@ delZadanie.addEventListener("click", (e)=>{
       e.preventDefault();
      
       pracasoZadaniami('odstranZadanie.php');
+      loadzadania("showZadania");
+      loadzadania("showZadania2");
+      loadzadania("showZadania3");
+      loadzadania("showZadania4");
 });
 //Dell zadanieM
 delZadanieM.addEventListener("click", (e)=>{
   e.preventDefault();
   pracasoZadaniamiM('odstranZadanie.php');
+  loadzadania("showZadania");
+  loadzadania("showZadania2");
+  loadzadania("showZadania3");
+  loadzadania("showZadania4");
 });
 
      //Zobrazit zadania
@@ -647,7 +679,7 @@ delZadanieM.addEventListener("click", (e)=>{
             for(var i in zadania){
               let poradie = Number(i) + 1;
               if(zadania[i].priradene == null){
-                output += `<tr>
+                output += `<tr class="zadanie-zmaz">
                 <td>${poradie}</td>
                 <td>${zadania[i].popiszadania}</td>
                 <td>${zadania[i].Kruzok}</td>
@@ -655,7 +687,7 @@ delZadanieM.addEventListener("click", (e)=>{
                 </tr>`;
               }
               else{
-                output += `<tr>
+                output += `<tr class="zadanie-zmaz">
                 <td>${poradie}</td>
                 <td>${zadania[i].popiszadania}</td>
                 <td>${zadania[i].Kruzok}</td>
@@ -666,6 +698,7 @@ delZadanieM.addEventListener("click", (e)=>{
       
             document.querySelector(".zadaniaZoznam").innerHTML = output;
             document.querySelector(".zadaniaZoznam2").innerHTML = output;
+            oznacZadanie();
           }
         }
       
@@ -742,6 +775,7 @@ showZadaniaMobile.addEventListener("click", () => {
 mobileZadania.style.right = "0";
 zadaniaBackM.style.display = "block";
 backBtn.style.display = "none";
+loadzadania("showZadania");
 });
 
 

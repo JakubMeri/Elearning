@@ -76,6 +76,9 @@ body, html{
     text-transform: uppercase;
     color: black;
 }
+.zadanie-zmaz{
+    cursor: pointer;
+}
 .odovzdaneZadania{
     grid-column: 3;
     grid-row: 1/3;
