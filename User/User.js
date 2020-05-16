@@ -1357,21 +1357,32 @@ hideOdovzdanie();
 //nove heslo
 document.getElementById("resetHesla").addEventListener("click", () =>{
   let hlaska = document.querySelector(".uspesnyReset");
-  let params = "heslo="+ document.getElementById("noveHeslo").value;
-        
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', 'noveHeslo.php', true);
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-  xhr.onload = function(){
-    hlaska.style.display = "block";
-    hlaska.innerHTML = "ZMENENÉ HESLO!";
+  let noveheslo = document.getElementById("noveHeslo").value;
+  if(noveheslo.length < 8){
+    hlaska.innerHTML = "MIN. 8 ZNAKOV";
+    hlaska.style.color = "red";
+    setTimeout(() => {
+      hlaska.style.display = "none";
+      hlaska.innerHTML = "";
+      hlaska.style.color = "green";
+    }, 2000);
   }
-
-  xhr.send(params);
-  document.getElementById("noveHeslo").value = "";
-  setTimeout(() => {
-    hlaska.style.display = "none";
-    hlaska.innerHTML = "";
-  }, 2000);
+  else{
+    let params = "heslo=" + noveheslo;
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'noveHeslo.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  
+    xhr.onload = function(){
+      hlaska.style.display = "block";
+      hlaska.innerHTML = "ZMENENÉ HESLO!";
+    }
+  
+    xhr.send(params);
+    document.getElementById("noveHeslo").value = "";
+    setTimeout(() => {
+      hlaska.style.display = "none";
+      hlaska.innerHTML = "";
+    }, 2000);
+  }  
 });
