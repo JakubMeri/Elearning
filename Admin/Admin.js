@@ -606,7 +606,7 @@ let zadanie = document.querySelector(".zadania");
 let zavrietZadania = document.querySelector(".btnZ");
 let zobrazZadania = document.getElementById("showZadania");
 zobrazZadania.addEventListener("click", () => {
-  loadzadania("showZadania");
+  loadzadania("showZadania.php");
   zadanie.style.display = "flex";
   setTimeout(() => {
   zadanie.style.opacity = "1";
@@ -628,19 +628,19 @@ pridatZadanie.addEventListener("click", (e)=>{
       e.preventDefault();
      
       pracasoZadaniami('zadania.php');
-      loadzadania("showZadania");
-      loadzadania("showZadania2");
-      loadzadania("showZadania3");
-      loadzadania("showZadania4");
+      loadzadania("showZadania.php");
+      loadzadania("showZadania2.php");
+      loadzadania("showZadania3.php");
+      loadzadania("showZadania4.php");
 });
 pridatZadanieM.addEventListener("click", (e)=>{
   e.preventDefault();
  
       pracasoZadaniamiM('zadania.php');
-      loadzadania("showZadania");
-      loadzadania("showZadania2");
-      loadzadania("showZadania3");
-      loadzadania("showZadania4");
+      loadzadania("showZadania.php");
+      loadzadania("showZadania2.php");
+      loadzadania("showZadania3.php");
+      loadzadania("showZadania4.php");
 });
 //Dell zadanie
 let delZadanie = document.querySelector(".zadanieDel");
@@ -649,19 +649,19 @@ delZadanie.addEventListener("click", (e)=>{
       e.preventDefault();
      
       pracasoZadaniami('odstranZadanie.php');
-      loadzadania("showZadania");
-      loadzadania("showZadania2");
-      loadzadania("showZadania3");
-      loadzadania("showZadania4");
+      loadzadania("showZadania.php");
+      loadzadania("showZadania2.php");
+      loadzadania("showZadania3.php");
+      loadzadania("showZadania4.php");
 });
 //Dell zadanieM
 delZadanieM.addEventListener("click", (e)=>{
   e.preventDefault();
   pracasoZadaniamiM('odstranZadanie.php');
-  loadzadania("showZadania");
-  loadzadania("showZadania2");
-  loadzadania("showZadania3");
-  loadzadania("showZadania4");
+  loadzadania("showZadania.php");
+  loadzadania("showZadania2.php");
+  loadzadania("showZadania3.php");
+  loadzadania("showZadania4.php");
 });
 
      //Zobrazit zadania
@@ -775,7 +775,7 @@ showZadaniaMobile.addEventListener("click", () => {
 mobileZadania.style.right = "0";
 zadaniaBackM.style.display = "block";
 backBtn.style.display = "none";
-loadzadania("showZadania");
+loadzadania("showZadania.php");
 });
 
 
@@ -1016,7 +1016,7 @@ else{
   });
   //LOAD DATUM ODOVZDANIA
   const loadDatumOdovzdania = () => {
-    fetch("datumOdovzdaniaZadani").then(res => res.json())
+    fetch("datumOdovzdaniaZadani.php").then(res => res.json())
     .then(data => zobrazenyTermin.innerHTML = data[0].den +"." + data[0].mesiac+"."+data[0].rok + " / " + data[0].cas)
   }
   loadDatumOdovzdania();
