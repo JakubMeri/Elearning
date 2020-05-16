@@ -130,9 +130,9 @@ setTimeout(() => {
 });
 
 
-var IDLE_TIMEOUT = (60*60)* 2.5;
+let IDLE_TIMEOUT = (60*60)* 2.5;
 console.log(IDLE_TIMEOUT)
-var _idleSecondsCounter = 0;
+let _idleSecondsCounter = 0;
 document.onclick = function() {
     _idleSecondsCounter = 0;
 };

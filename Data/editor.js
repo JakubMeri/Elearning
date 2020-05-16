@@ -38,6 +38,25 @@ getData.addEventListener("click", (e) =>{
 }, 2000);
 });
 
+let IDLE_TIMEOUT = (60*60)* 2.5;
+console.log(IDLE_TIMEOUT)
+let _idleSecondsCounter = 0;
+document.onclick = function() {
+    _idleSecondsCounter = 0;
+};
+document.onmousemove = function() {
+    _idleSecondsCounter = 0;
+};
+document.onkeypress = function() {
+    _idleSecondsCounter = 0;
+};
+window.setInterval(CheckIdleTime, 1000);
+function CheckIdleTime() {
+    _idleSecondsCounter++;
+    if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+        document.location.href = "../Logout.php";
+    }
+}
 
 //show Nahlad
     let showNAhlad = document.querySelector(".show-prew");
