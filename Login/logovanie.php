@@ -56,7 +56,7 @@ else{
                     exit();  
                 } 
                 else if($row['typ_uzivatela'] == "spravca"){
-                    header("Location: /Elearning/Spravca/Spravca.php");
+                    header("Location: /Elearning/Spravca/spravca.php");
                     $query = "UPDATE uzivatelia SET onlineU = 1 WHERE email = '".$_SESSION['uzivatel']."'";
 
                     if(mysqli_query($conn, $query)){
