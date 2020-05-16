@@ -131,7 +131,6 @@ setTimeout(() => {
 
 
 let IDLE_TIMEOUT = 60 * 60;
-console.log(IDLE_TIMEOUT)
 let _idleSecondsCounter = 0;
 document.onclick = function() {
     _idleSecondsCounter = 0;
@@ -508,7 +507,7 @@ backChat.addEventListener("click", () => {
     xhr2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
     xhr2.onload = function(){
-      console.log(xhr2.responseText);
+     /*  console.log(xhr2.responseText); */
 
     }
     xhr2.send(data);

@@ -39,7 +39,6 @@ getData.addEventListener("click", (e) =>{
 });
 
 let IDLE_TIMEOUT = 60 * 60;
-console.log(IDLE_TIMEOUT)
 let _idleSecondsCounter = 0;
 document.onclick = function() {
     _idleSecondsCounter = 0;
